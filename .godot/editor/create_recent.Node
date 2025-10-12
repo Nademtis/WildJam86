@@ -1,3 +1,4 @@
+AnimatedSprite2D
 ColorRect
 CanvasLayer
 Node
@@ -7,6 +8,5 @@ Area2D
 PhantomCamera2D
 Camera2D
 PhantomCameraHost
-AnimatedSprite2D
 CharacterBody2D
 TileMapLayer

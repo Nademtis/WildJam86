@@ -10,3 +10,4 @@ res://scripts/globals/Events.gd
 res://scripts/fade_to_black_canvas_layer.gd
 res://scenes/levelSwapper/level_swapper.gd
 res://shaders/black_screen.gdshader
+res://scenes/enemies/enemy1/enemy_1.tscn

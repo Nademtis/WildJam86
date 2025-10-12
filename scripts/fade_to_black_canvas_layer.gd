@@ -10,7 +10,7 @@ func _ready() -> void:
 	Events.connect("new_level_done_loading", remove_black)
 
 func fade_to_black() -> void:
-	print("fade to black starting")
+	#print("fade to black starting")
 	color_rect.material.set_shader_parameter("radius", 1.5)
 	color_rect.visible = true
 	
@@ -25,7 +25,8 @@ func fade_to_black() -> void:
 	pass
 
 func remove_black() -> void:
-	print_debug("remove black")
+	await get_tree().create_timer(0.5).timeout
+	#print_debug("remove black")
 	color_rect.material.set_shader_parameter("radius", 0.0)
 	color_rect.visible = true
 	
