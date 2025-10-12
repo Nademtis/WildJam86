@@ -1,4 +1,10 @@
+PhantomCamera2D
+Node
+Node2D
+Camera2D
+PhantomCameraHost
+CollisionShape2D
+Area2D
 AnimatedSprite2D
 CharacterBody2D
 TileMapLayer
-Node2D

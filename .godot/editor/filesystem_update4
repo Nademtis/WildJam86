@@ -2,3 +2,7 @@ res://README.md
 res://levels/level_1.tscn
 res://tileset/tileset.tres
 res://levels/level.tscn
+res://scenes/player/player.tscn
+res://addons/phantom_camera/themes/theme.tres
+res://levels/main.tscn
+res://scripts/main.gd
