@@ -1,6 +1,7 @@
+res://shaders
+res://scripts
 res://scenes/levelSwapper
 res://scripts/globals
-res://scripts
 res://levels
 res://scenes/player/assets
 res://scenes/player
