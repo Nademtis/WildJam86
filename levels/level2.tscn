@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://c2prex8q2jkoi"]
+[gd_scene load_steps=5 format=4 uid="uid://c2prex8q2jkoi"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_py88r"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_g1dg4"]
 [ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="3_s1bpp"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="4_76ugp"]
-[ext_resource type="PackedScene" uid="uid://y2833booovk" path="res://levels/level3.tscn" id="5_g1dg4"]
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_py88r")
@@ -35,4 +34,3 @@ position = Vector2(-31, 325)
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("4_76ugp")]
 position = Vector2(31, 318)
-next_level_packed_scene = ExtResource("5_g1dg4")
