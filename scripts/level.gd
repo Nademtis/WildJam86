@@ -4,5 +4,4 @@ extends Node2D
 @onready var camera_container: Node = $CameraContainer
 
 func _ready() -> void:
-	
 	pass

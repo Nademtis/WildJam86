@@ -9,3 +9,6 @@ res://scripts/main.gd
 res://scripts/level.gd
 res://scripts/globals/Events.gd
 res://scenes/player/player.gd
+res://scenes/levelSwapper/level_swapper.gd
+res://scenes/levelSwapper/level_swapper.tscn
+res://levels/level2.tscn

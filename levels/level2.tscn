@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=4 uid="uid://c2prex8q2jkoi"]
+
+[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_py88r"]
+[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_g1dg4"]
+[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="3_s1bpp"]
+[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="4_76ugp"]
+
+[node name="level" type="Node2D"]
+script = ExtResource("1_py88r")
+
+[node name="ysort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="tilemaps" type="Node2D" parent="ysort"]
+y_sort_enabled = true
+position = Vector2(0, 300)
+
+[node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
+tile_map_data = PackedByteArray("AAD7/wAAAAAIAAYAAAD6/wAAAAAIAAYAAAD6/wEAAAAIAAYAAAD6/wIAAAAIAAYAAAD6/wMAAAAIAAYAAAD7/wEAAAAIAAYAAAD7/wIAAAAIAAYAAAAEAAAAAAAIAAYAAAAEAAEAAAAIAAYAAAAEAAIAAAAIAAYAAAAEAAMAAAAIAAYAAAADAAMAAAAIAAYAAAACAAMAAAAIAAYAAAABAAMAAAAIAAYAAAAAAAMAAAAIAAYAAAD//wMAAAAIAAYAAAD+/wMAAAAIAAYAAAD9/wMAAAAIAAYAAAD8/wMAAAAIAAYAAAD7/wMAAAAIAAYAAAD6////AAAIAAYAAAD7////AAAIAAYAAAD7//7/AAAIAAYAAAD8//7/AAAIAAYAAAD9//7/AAAIAAYAAAD+//7/AAAIAAYAAAD///7/AAAIAAYAAAAAAP7/AAAIAAYAAAABAP7/AAAIAAYAAAACAP7/AAAIAAYAAAADAP7/AAAIAAYAAAADAP//AAAIAAYAAAACAP//AAAIAAYAAAABAP//AAAIAAYAAAAAAP//AAAIAAYAAAD/////AAAIAAYAAAD+////AAAIAAYAAAD9////AAAIAAYAAAAEAP//AAAIAAYAAAA=")
+tile_set = ExtResource("2_g1dg4")
+
+[node name="walkable" type="TileMapLayer" parent="ysort/tilemaps"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAEAAAAJAAQAAAD//wEAAAAJAAQAAAD//wIAAAAJAAUAAAAAAAIAAAAJAAUAAAABAAIAAAAJAAUAAAABAAEAAAAJAAQAAAD//wAAAAAJAAQAAAD+/wAAAAAJAAQAAAD9/wAAAAAJAAQAAAD9/wEAAAAJAAQAAAD+/wEAAAAJAAQAAAD9/wIAAAAJAAUAAAD8/wIAAAAIAAUAAAD+/wIAAAAJAAUAAAD8/wEAAAAIAAMAAAD8/wAAAAAIAAMAAAD9////AAAKAAIAAAD+////AAAKAAIAAAD/////AAAKAAIAAAD8////AAAIAAIAAAAAAAAAAAAJAAQAAAABAAAAAAAJAAQAAAAAAP//AAAKAAIAAAABAP//AAAKAAIAAAACAAIAAAALAAUAAAACAAEAAAALAAQAAAACAAAAAAALAAQAAAACAP//AAALAAIAAAA=")
+tile_set = ExtResource("2_g1dg4")
+
+[node name="player" parent="ysort" instance=ExtResource("3_s1bpp")]
+z_index = 1
+position = Vector2(-31, 325)
+
+[node name="CameraContainer" type="Node" parent="."]
+
+[node name="LevelSwapperContainer" type="Node" parent="."]
+
+[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("4_76ugp")]
+position = Vector2(31, 318)

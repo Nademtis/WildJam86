@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccydbfmd3a76c"]
+
+[ext_resource type="Script" uid="uid://buaerm1l2w6rg" path="res://scenes/levelSwapper/level_swapper.gd" id="1_3owun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75t4b"]
+
+[node name="levelSwapper" type="Area2D"]
+script = ExtResource("1_3owun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_75t4b")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
