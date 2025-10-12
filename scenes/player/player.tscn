@@ -1,5 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://ko3hyfcl18x3"]
+[gd_scene load_steps=40 format=3 uid="uid://ko3hyfcl18x3"]
 
+[ext_resource type="Script" uid="uid://csomb53cwt1pc" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://sqn36fcbdfc" path="res://scenes/player/assets/idle.png" id="1_p47bc"]
 [ext_resource type="Texture2D" uid="uid://cxf3o1ypvex3u" path="res://scenes/player/assets/w_down.png" id="2_75vfm"]
 [ext_resource type="Texture2D" uid="uid://dtrpfo2knba4n" path="res://scenes/player/assets/w_left.png" id="3_0owmy"]
@@ -253,6 +254,7 @@ radius = 3.16228
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 motion_mode = 1
+script = ExtResource("1_75vfm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)

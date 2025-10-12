@@ -6,3 +6,6 @@ res://scenes/player/player.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://levels/main.tscn
 res://scripts/main.gd
+res://scripts/level.gd
+res://scripts/globals/Events.gd
+res://scenes/player/player.gd
