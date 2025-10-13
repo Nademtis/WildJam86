@@ -14,3 +14,6 @@ res://scripts/globals/Events.gd
 res://levels/level2_test.tscn
 res://scenes/levelSwapper/level_swapper.gd
 res://scripts/fade_to_black_canvas_layer.gd
+res://levels/level_1.tscn
+res://levels/level_2.tscn
+res://levels/level_template.tscn
