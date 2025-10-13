@@ -6,10 +6,13 @@ extends CharacterBody2D
 @export var acceleration: float = 12
 @export var deceleration: float = 95
 
+var can_move = true
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
-	move_player(delta) #also animates
+	if can_move:
+		move_player(delta) #also animates
 	move_and_slide()
 
 
@@ -26,7 +29,12 @@ func move_player(delta : float) -> void:
 		velocity = lerp(velocity, input_vector * max_speed, acceleration * delta)
 	else: # Apply deceleration when no input is detected
 		velocity = lerp(velocity, input_vector * max_speed, deceleration * delta)
-	
+
+func kill_player() -> void:
+	can_move = false
+	velocity = Vector2.ZERO
+	animated_sprite_2d.play("dead")
+	Events.emit_signal("restart_level")
 
 func anim_player(input_vector) -> void:
 	#TODO with mask

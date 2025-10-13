@@ -1,9 +1,9 @@
+res://scenes/player/assets
 res://scenes/enemies/enemy1
 res://shaders
 res://scripts
 res://scenes/levelSwapper
 res://scripts/globals
 res://levels
-res://scenes/player/assets
 res://scenes/player
 res://tileset

@@ -7,12 +7,12 @@ func _ready() -> void:
 		print("no path given on ", self)
 		queue_free()
 		
-	Events.connect("screen_is_black", swap_level)
+	#Events.connect("screen_is_black", swap_level)
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		print("player is here. swap levels")
-		Events.emit_signal("fade_to_black")
+		swap_level()
 	pass # Replace with function body.
 
 func swap_level() -> void:

@@ -35,8 +35,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
-process_callback = 0
+zoom = Vector2(4, 4)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -50,7 +49,7 @@ top_level = true
 script = ExtResource("3_m1504")
 priority = 1
 follow_mode = 1
-zoom = Vector2(5, 5)
+zoom = Vector2(4, 4)
 tween_resource = SubResource("Resource_5k4jt")
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 

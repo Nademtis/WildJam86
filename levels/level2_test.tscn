@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://c8wv53b6agllw"]
+[gd_scene load_steps=7 format=4 uid="uid://8ib81xrxywm4"]
 
-[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="1_80vhd"]
-[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_safpt"]
-[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="2_hjsbj"]
-[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="4_5mrsh"]
-[ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_1.tscn" id="4_safpt"]
-[ext_resource type="PackedScene" uid="uid://8ib81xrxywm4" path="res://levels/level2_test.tscn" id="6_gjl0y"]
+[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_d2lls"]
+[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_2ssv1"]
+[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="3_n855d"]
+[ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_1.tscn" id="4_dliej"]
+[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="5_15qbw"]
 
 [sub_resource type="Curve2D" id="Curve2D_5mrsh"]
 _data = {
@@ -14,7 +13,7 @@ _data = {
 point_count = 8
 
 [node name="level" type="Node2D"]
-script = ExtResource("1_safpt")
+script = ExtResource("1_d2lls")
 
 [node name="ysort" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -24,14 +23,15 @@ y_sort_enabled = true
 position = Vector2(0, 300)
 
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
-tile_set = ExtResource("1_80vhd")
+tile_map_data = PackedByteArray("AAD9//3/AAAIAAYAAAD8//3/AAAIAAYAAAD8//7/AAAIAAYAAAD7//7/AAAIAAYAAAD7////AAAIAAYAAAD8////AAAIAAYAAAD8//z/AAAIAAYAAAD7//z/AAAIAAYAAAD7//3/AAAIAAYAAAD9//7/AAAIAAYAAAD9//z/AAAIAAYAAAD7//v/AAAIAAYAAAD6//v/AAAIAAYAAAD5//v/AAAIAAYAAAD4//v/AAAIAAYAAAD4//z/AAAIAAYAAAD5//z/AAAIAAYAAAD3//v/AAAIAAYAAAD2//v/AAAIAAYAAAD2//z/AAAIAAYAAAD1//z/AAAIAAYAAAD0//z/AAAIAAYAAADz//z/AAAIAAYAAADy//z/AAAIAAYAAADx//z/AAAIAAYAAADw//z/AAAIAAYAAADw//3/AAAIAAYAAADv//3/AAAIAAYAAADu//7/AAAIAAYAAADt////AAAIAAYAAADt/wAAAAAIAAYAAADt/wEAAAAIAAYAAADt/wIAAAAIAAYAAADt/wMAAAAIAAYAAADt/wQAAAAIAAYAAADt/wUAAAAIAAYAAADu/wYAAAAIAAYAAADu/wcAAAAIAAYAAADv/wcAAAAIAAYAAADv/wgAAAAIAAYAAADw/wgAAAAIAAYAAADx/wkAAAAIAAYAAADy/wkAAAAIAAYAAADz/wkAAAAIAAYAAADz/woAAAAIAAYAAAD0/woAAAAIAAYAAAD1/woAAAAIAAYAAAD2/woAAAAIAAYAAAD3/woAAAAIAAYAAAD4/wkAAAAIAAYAAAD5/wkAAAAIAAYAAAD6/wgAAAAIAAYAAAD7/wgAAAAIAAYAAAD7/wcAAAAIAAYAAAD8/wcAAAAIAAYAAAD9/wYAAAAIAAYAAAD9/wUAAAAIAAYAAAD9/wQAAAAIAAYAAAD9/wMAAAAIAAYAAAD8/wMAAAAIAAYAAAD8/wIAAAAIAAYAAAD7/wIAAAAIAAYAAAD8/wEAAAAIAAYAAAD9/wEAAAAIAAYAAAD9/wAAAAAIAAYAAAD+/wEAAAAIAAYAAAD+/wIAAAAIAAYAAAD+/wMAAAAIAAYAAAD+/wQAAAAIAAYAAAD+/wUAAAAIAAYAAAD//wUAAAAIAAYAAAAAAAUAAAAIAAYAAAAAAAQAAAAIAAYAAAABAAQAAAAIAAYAAAACAAQAAAAIAAYAAAADAAQAAAAIAAYAAAAEAAQAAAAIAAYAAAAFAAQAAAAIAAYAAAA=")
+tile_set = ExtResource("2_2ssv1")
 
 [node name="walkable" type="TileMapLayer" parent="ysort/tilemaps"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAAEAAAAJAAQAAAD//wEAAAAJAAQAAAD//wIAAAAGAAQAAAAAAAIAAAAJAAUAAAABAAIAAAAJAAUAAAABAAEAAAAJAAQAAAD//wAAAAAJAAQAAAD+/wAAAAAJAAQAAAD9/wAAAAAJAAQAAAD9/wEAAAAJAAQAAAD+/wEAAAAJAAQAAAD9/wIAAAAJAAQAAAD8/wIAAAAJAAQAAAD+/wIAAAAJAAQAAAD8/wEAAAAJAAQAAAD8/wAAAAAJAAQAAAD9////AAAJAAQAAAD+////AAAJAAQAAAD/////AAAGAAMAAAD8////AAAJAAQAAAAAAAAAAAAJAAQAAAABAAAAAAAJAAQAAAAAAP//AAAKAAIAAAABAP//AAAKAAIAAAACAAIAAAALAAUAAAACAAEAAAALAAQAAAACAAAAAAALAAQAAAACAP//AAALAAIAAAD///7/AAALAAQAAAD///3/AAALAAIAAAD+//7/AAAJAAQAAAD+//3/AAAKAAIAAAD9//7/AAAJAAQAAAD9//3/AAAKAAIAAAD8//7/AAAJAAQAAAD8//3/AAAKAAIAAAD7////AAAJAAQAAAD7//7/AAAJAAQAAAD7//3/AAAKAAIAAAD7/wMAAAAJAAQAAAD7/wIAAAAJAAQAAAD7/wEAAAAJAAQAAAD7/wAAAAAJAAQAAAD6/wMAAAAJAAQAAAD6/wIAAAAJAAQAAAD6/wEAAAAJAAQAAAD6/wAAAAAJAAQAAAD6////AAAJAAQAAAD6//7/AAAJAAQAAAD6//3/AAAGAAMAAAD5/wMAAAAJAAQAAAD5/wIAAAAJAAQAAAD5/wEAAAAJAAQAAAD5/wAAAAAJAAQAAAD5////AAAJAAQAAAD5//7/AAAJAAQAAAD5//3/AAAJAAQAAAD4/wMAAAAJAAQAAAD4/wIAAAAJAAQAAAD4/wEAAAAJAAQAAAD4/wAAAAAJAAQAAAD4////AAAJAAQAAAD4//7/AAAJAAQAAAD4//3/AAAJAAQAAAD3/wMAAAAJAAQAAAD3/wIAAAAJAAQAAAD3/wEAAAAJAAQAAAD3/wAAAAAJAAQAAAD3////AAAJAAQAAAD3//7/AAAJAAQAAAD3//3/AAAJAAQAAAD//wUAAAALAAUAAAD//wQAAAALAAQAAAD//wMAAAALAAQAAAD+/wUAAAAJAAUAAAD+/wQAAAAJAAQAAAD+/wMAAAAJAAQAAAD9/wUAAAAJAAUAAAD9/wQAAAAJAAQAAAD9/wMAAAAJAAQAAAD8/wUAAAAJAAUAAAD8/wQAAAAJAAQAAAD8/wMAAAAJAAQAAAD7/wUAAAAJAAUAAAD7/wQAAAAJAAQAAAD6/wUAAAAGAAQAAAD6/wQAAAAJAAQAAAD6/wYAAAALAAUAAAD6//z/AAALAAIAAAD5/wYAAAAJAAUAAAD5/wUAAAAJAAQAAAD5/wQAAAAJAAQAAAD5//z/AAAKAAIAAAD4/wYAAAAJAAUAAAD4/wUAAAAJAAQAAAD4/wQAAAAJAAQAAAD4//z/AAAKAAIAAAD3/wYAAAAJAAUAAAD3/wUAAAAJAAQAAAD3/wQAAAAJAAQAAAD3//z/AAAKAAIAAAD2/wYAAAAJAAUAAAD2/wUAAAAJAAQAAAD2/wQAAAAJAAQAAAD2/wMAAAAJAAQAAAD2/wIAAAAJAAQAAAD2/wEAAAAJAAQAAAD2/wAAAAAJAAQAAAD2////AAAJAAQAAAD2//7/AAAJAAQAAAD2//3/AAAJAAQAAAD2//z/AAAKAAIAAAD1/wYAAAAJAAUAAAD1/wUAAAAJAAQAAAD1/wQAAAAJAAQAAAD1/wMAAAAJAAQAAAD1/wIAAAAJAAQAAAD1/wEAAAAJAAQAAAD1/wAAAAAJAAQAAAD1////AAAJAAQAAAD1//7/AAAJAAQAAAD1//3/AAAJAAQAAAD1//z/AAAKAAIAAAD0/wYAAAAJAAUAAAD0/wUAAAAJAAQAAAD0/wQAAAAJAAQAAAD0/wMAAAAJAAQAAAD0/wIAAAAJAAQAAAD0/wEAAAAJAAQAAAD0/wAAAAAJAAQAAAD0////AAAJAAQAAAD0//7/AAAJAAQAAAD0//3/AAAJAAQAAAD0//z/AAAKAAIAAADz/wYAAAAIAAUAAADz/wUAAAAIAAMAAADz/wQAAAAIAAMAAADz/wMAAAAIAAMAAADz/wIAAAAIAAMAAADz/wEAAAAIAAMAAADz/wAAAAAIAAMAAADz////AAAIAAMAAADz//7/AAAIAAMAAADz//3/AAAIAAMAAADz//z/AAAIAAIAAAA=")
-tile_set = ExtResource("1_80vhd")
+tile_set = ExtResource("2_2ssv1")
 
-[node name="player" parent="ysort" instance=ExtResource("2_hjsbj")]
+[node name="player" parent="ysort" instance=ExtResource("3_n855d")]
 z_index = 1
 position = Vector2(-102, 332)
 
@@ -43,7 +43,7 @@ position = Vector2(-10, -20)
 curve = SubResource("Curve2D_5mrsh")
 metadata/_edit_lock_ = true
 
-[node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("4_safpt")]
+[node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("4_dliej")]
 position = Vector2(-166, 321)
 speed = 50.0
 
@@ -51,6 +51,5 @@ speed = 50.0
 
 [node name="LevelSwapperContainer" type="Node" parent="."]
 
-[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("4_5mrsh")]
+[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("5_15qbw")]
 position = Vector2(31, 318)
-next_level_packed_scene = ExtResource("6_gjl0y")
