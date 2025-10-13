@@ -1,11 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://butei8yip7reh"]
+[gd_scene load_steps=11 format=3 uid="uid://butei8yip7reh"]
 
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_2262g"]
 [ext_resource type="Script" uid="uid://b0sb5c542mjmt" path="res://scripts/main.gd" id="1_wdj6m"]
 [ext_resource type="Script" uid="uid://mtj0sitiaxmd" path="res://scripts/fade_to_black_canvas_layer.gd" id="2_ifaiv"]
+[ext_resource type="Shader" uid="uid://cfmov07a0e6c1" path="res://shaders/vignette.gdshader" id="2_qy63d"]
 [ext_resource type="Shader" uid="uid://c7g1odt280dvm" path="res://shaders/black_screen.gdshader" id="3_5k4jt"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_m1504"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ifaiv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6et1j"]
+shader = ExtResource("2_qy63d")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.25
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qy63d"]
 shader = ExtResource("3_5k4jt")
@@ -22,6 +29,16 @@ ease = 2
 [node name="main" type="Node2D"]
 script = ExtResource("1_wdj6m")
 
+[node name="vignette" type="CanvasLayer" parent="."]
+
+[node name="vignette" type="ColorRect" parent="vignette"]
+material = SubResource("ShaderMaterial_6et1j")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="FadeToBlackCanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_ifaiv")
 
@@ -36,7 +53,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
-process_callback = 0
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300

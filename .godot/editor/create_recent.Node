@@ -1,4 +1,6 @@
+CanvasLayer
 ColorRect
+TextureRect
 TileMapLayer
 CollisionShape2D
 Area2D
@@ -6,9 +8,7 @@ PathFollow2D
 Path2D
 Node2D
 AnimatedSprite2D
-CanvasLayer
 Node
 PhantomCamera2D
 Camera2D
 PhantomCameraHost
-CharacterBody2D
