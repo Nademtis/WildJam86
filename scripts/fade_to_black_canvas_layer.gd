@@ -10,7 +10,6 @@ func _ready() -> void:
 	Events.connect("new_level_done_loading", remove_black)
 
 func fade_to_black() -> void:
-	#print("fade to black starting")
 	color_rect.material.set_shader_parameter("radius", 1.5)
 	color_rect.visible = true
 	
@@ -22,11 +21,9 @@ func fade_to_black() -> void:
 	await tween.finished
 	
 	Events.emit_signal("screen_is_black")
-	pass
 
 func remove_black() -> void:
 	await get_tree().create_timer(0.5).timeout
-	#print_debug("remove black")
 	color_rect.material.set_shader_parameter("radius", 0.0)
 	color_rect.visible = true
 	
@@ -34,7 +31,6 @@ func remove_black() -> void:
 	# First tween (small radius)
 	tween.tween_property(color_rect.material, "shader_parameter/radius", 0.15, 0.5)
 	tween.tween_interval(0.25)  # Wait for 1 second
-	# Second tween (large radius)
-	tween.tween_property(color_rect.material, "shader_parameter/radius", 1.5, 3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(color_rect.material, "shader_parameter/radius", 1.5, 1).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	await tween.finished
-	color_rect.visible = false  # Hide when done
+	color_rect.visible = false

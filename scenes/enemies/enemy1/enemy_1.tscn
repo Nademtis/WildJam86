@@ -115,11 +115,12 @@ script = ExtResource("1_5uu7d")
 
 [node name="Animated_body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3nxvx")
-animation = &"up"
+animation = &"down"
 
 [node name="Animated_mask" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u7h1f")
-animation = &"up"
+animation = &"down"
+frame_progress = 0.743585
 
 [node name="Area2D" type="Area2D" parent="."]
 

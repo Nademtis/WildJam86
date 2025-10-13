@@ -1,3 +1,4 @@
+TileMapLayer
 CollisionShape2D
 Area2D
 PathFollow2D
@@ -11,4 +12,3 @@ PhantomCamera2D
 Camera2D
 PhantomCameraHost
 CharacterBody2D
-TileMapLayer

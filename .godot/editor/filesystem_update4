@@ -13,3 +13,4 @@ res://scripts/main.gd
 res://scripts/globals/Events.gd
 res://levels/level2_test.tscn
 res://scenes/levelSwapper/level_swapper.gd
+res://scripts/fade_to_black_canvas_layer.gd
