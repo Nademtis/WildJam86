@@ -1,9 +1,9 @@
-res://levels/main.tscn
+res://levels/level_1.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://tileset/tileset.tres
-res://shaders/black_screen.gdshader
 res://shaders/vignette.gdshader
+res://shaders/black_screen.gdshader
+res://levels/main.tscn
 res://scenes/player/player.tscn
 res://levels/level_2.tscn
-res://levels/level_1.tscn
 res://levels/level_template.tscn
