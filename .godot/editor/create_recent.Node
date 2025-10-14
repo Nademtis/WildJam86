@@ -1,5 +1,5 @@
-CanvasGroup
 Node2D
+CanvasGroup
 TileMapLayer
 CanvasLayer
 ColorRect
@@ -12,4 +12,3 @@ AnimatedSprite2D
 Node
 PhantomCamera2D
 Camera2D
-PhantomCameraHost
