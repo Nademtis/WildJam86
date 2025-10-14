@@ -26,3 +26,4 @@ res://scenes/player/slealth.gd
 res://scripts/globals/Events.gd
 res://scenes/stealthVisuals/stealth_canvaslayer.gd
 res://scenes/player/player.gd
+res://levels/level_3.tscn

@@ -961,7 +961,7 @@ position = Vector2(-170, 454)
 
 [node name="player" parent="ysort" instance=ExtResource("4_jk5kv")]
 z_index = 1
-position = Vector2(103, 519)
+position = Vector2(26, 302)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
