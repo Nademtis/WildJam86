@@ -1,5 +1,8 @@
-Polygon2D
 PointLight2D
+Polygon2D
+DirectionalLight2D
+LightOccluder2D
+PhantomCamera2D
 ColorRect
 CanvasLayer
 CollisionShape2D
@@ -9,6 +12,3 @@ CollisionPolygon2D
 CanvasGroup
 TileMapLayer
 TextureRect
-PathFollow2D
-Path2D
-AnimatedSprite2D

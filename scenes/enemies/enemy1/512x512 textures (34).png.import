@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ytnejexpgouw"
-path="res://.godot/imported/flashlight_test.png-61a201f51052e745353c30f57c103973.ctex"
+uid="uid://x81tjwt5uafc"
+path="res://.godot/imported/512x512 textures (34).png-a1b033a0ec0e614897db8c3223fcabdc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enemies/enemy1/flashlight_test.png"
-dest_files=["res://.godot/imported/flashlight_test.png-61a201f51052e745353c30f57c103973.ctex"]
+source_file="res://scenes/enemies/enemy1/512x512 textures (34).png"
+dest_files=["res://.godot/imported/512x512 textures (34).png-a1b033a0ec0e614897db8c3223fcabdc.ctex"]
 
 [params]
 
