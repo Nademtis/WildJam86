@@ -16,3 +16,6 @@ res://tileset/upper_tileset.tres
 res://export_presets.cfg
 res://scripts/globals/Events.gd
 res://scenes/bushes/bush2.tscn
+res://scenes/camera/fixedCamera.gd
+res://scenes/camera/FixedCamera.tscn
+res://scenes/player/player.tscn

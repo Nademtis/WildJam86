@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c0cqtjfbm5ro"]
+[gd_scene load_steps=14 format=4 uid="uid://c0cqtjfbm5ro"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_gj1dp"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_gt2y6"]
@@ -9,8 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_1.tscn" id="5_d1j47"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="6_1y5qq"]
 [ext_resource type="PackedScene" uid="uid://vih2a271hafp" path="res://scenes/bushes/bush2.tscn" id="6_gt2y6"]
-[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_lsnkt"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_wj73x"]
+[ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="9_lsnkt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnv7o"]
 texture = ExtResource("3_imdem")
@@ -424,12 +423,6 @@ _data = {
 }
 point_count = 10
 
-[sub_resource type="Resource" id="Resource_67vg4"]
-script = ExtResource("9_wj73x")
-duration = 1.0
-transition = 0
-ease = 2
-
 [node name="level" type="Node2D"]
 script = ExtResource("1_gj1dp")
 
@@ -490,7 +483,7 @@ position = Vector2(-170, 454)
 
 [node name="player" parent="ysort" instance=ExtResource("4_jk5kv")]
 z_index = 1
-position = Vector2(30, 307)
+position = Vector2(53, 306)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
@@ -507,13 +500,8 @@ speed = 50.0
 
 [node name="CameraContainer" type="Node" parent="."]
 
-[node name="PhantomCamera2D" type="Node2D" parent="CameraContainer"]
-position = Vector2(-129, 374)
-script = ExtResource("8_lsnkt")
-zoom = Vector2(6, 6)
-tween_resource = SubResource("Resource_67vg4")
-draw_limits = true
-metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+[node name="PhantomCamera2D" parent="CameraContainer" instance=ExtResource("9_lsnkt")]
+position = Vector2(-132, 374)
 
 [node name="LevelSwapperContainer" type="Node" parent="."]
 
