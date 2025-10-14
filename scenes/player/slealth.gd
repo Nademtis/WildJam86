@@ -3,8 +3,6 @@ extends Node2D
 var is_hidden = false
 var in_bush_list : Array = []
 
-var is_mask_equipped
-
 func check_if_hidden() -> void:
 	if in_bush_list.is_empty():
 		is_hidden = false

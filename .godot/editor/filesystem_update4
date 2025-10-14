@@ -19,3 +19,5 @@ res://scenes/bushes/bush2.tscn
 res://scenes/camera/fixedCamera.gd
 res://scenes/camera/FixedCamera.tscn
 res://scenes/player/player.tscn
+res://scenes/player/slealth.gd
+res://scenes/player/player.gd
