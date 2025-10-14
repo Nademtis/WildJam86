@@ -21,3 +21,8 @@ res://levels/level_1_new.tscn
 res://levels/level_2_new.tscn
 res://levels/level_3_new.tscn
 res://scripts/main.gd
+res://scenes/bushes/bush3.tscn
+res://scenes/player/slealth.gd
+res://scripts/globals/Events.gd
+res://scenes/stealthVisuals/stealth_canvaslayer.gd
+res://scenes/player/player.gd

@@ -1,7 +1,7 @@
 extends Node2D
 #main
 
-const LEVEL_1 = preload("res://levels/level_3_new.tscn")
+const LEVEL_1 = preload("res://levels/level_1_new.tscn")
 
 @onready var level_container: Node2D = $levelContainer
 @onready var follow_pcam: PhantomCamera2D = $FollowPhantomCamera2D

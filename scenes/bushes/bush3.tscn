@@ -13,6 +13,11 @@ z_index = 1
 y_sort_enabled = true
 material = ExtResource("1_2rqkp")
 
+[node name="Area2D" type="Area2D" parent="." groups=["bush"]]
+
+[node name="Polygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-17, -12, -13, 12, 19, 17, 30, -11, 4, -21)
+
 [node name="Bush4" type="Sprite2D" parent="."]
 use_parent_material = true
 position = Vector2(-3, -4)

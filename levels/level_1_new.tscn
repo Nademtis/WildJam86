@@ -931,7 +931,7 @@ y_sort_enabled = true
 position = Vector2(-183, 285)
 
 [node name="bush2" parent="ysort/BushContainer" instance=ExtResource("6_xtnx3")]
-position = Vector2(-189, 468)
+position = Vector2(-171, 308)
 
 [node name="bush3" parent="ysort/BushContainer" instance=ExtResource("6_xtnx3")]
 position = Vector2(72, 465)
@@ -944,7 +944,7 @@ position = Vector2(70, 389)
 
 [node name="player" parent="ysort" instance=ExtResource("4_3anyq")]
 z_index = 1
-position = Vector2(-413, 306)
+position = Vector2(-223, 298)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
