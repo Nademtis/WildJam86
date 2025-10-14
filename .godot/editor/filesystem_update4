@@ -16,3 +16,4 @@ res://shaders/nature_material.tres
 res://shaders/tree_shader.gdshader
 res://scenes/tree_1.tscn
 res://shaders/sway.gdshader
+res://scenes/enemies/enemy1/enemy_1.tscn

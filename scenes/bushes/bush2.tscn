@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://vih2a271hafp"]
 
 [ext_resource type="Texture2D" uid="uid://dy71svc2rg63v" path="res://assets/nature/bush4.png" id="1_4oayu"]
-[ext_resource type="Material" uid="uid://brbu71tq3lkw8" path="res://shaders/nature_material.tres" id="1_qjjk1"]
+[ext_resource type="Material" uid="uid://brbu71tq3lkw8" path="res://shaders/foliage_material.tres" id="1_qjjk1"]
 [ext_resource type="Texture2D" uid="uid://oh5cokdkd2q2" path="res://assets/nature/bush8.png" id="2_qjjk1"]
 [ext_resource type="Texture2D" uid="uid://by5jlwv4cp0is" path="res://assets/nature/bush6.png" id="3_3omyr"]
 [ext_resource type="Texture2D" uid="uid://b6vc3mu4lg41" path="res://assets/nature/bush5.png" id="4_rj20m"]
