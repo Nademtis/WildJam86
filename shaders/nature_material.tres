@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://brbu71tq3lkw8"]
+
+[ext_resource type="Shader" uid="uid://6ie7ed3aasje" path="res://shaders/foliage.gdshader" id="1_71fui"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2rqkp"]
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wjyl4"]
+seamless = true
+seamless_blend_skirt = 0.171
+normalize = false
+noise = SubResource("FastNoiseLite_2rqkp")
+
+[resource]
+shader = ExtResource("1_71fui")
+shader_parameter/render_noise = false
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_wjyl4")
+shader_parameter/amplitude = 0.2
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)

@@ -1,3 +1,5 @@
+CanvasGroup
+Node2D
 TileMapLayer
 CanvasLayer
 ColorRect
@@ -6,7 +8,6 @@ CollisionShape2D
 Area2D
 PathFollow2D
 Path2D
-Node2D
 AnimatedSprite2D
 Node
 PhantomCamera2D

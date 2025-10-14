@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://vih2a271hafp"]
+
+[ext_resource type="Texture2D" uid="uid://dy71svc2rg63v" path="res://assets/nature/bush4.png" id="1_4oayu"]
+[ext_resource type="Material" uid="uid://brbu71tq3lkw8" path="res://shaders/nature_material.tres" id="1_qjjk1"]
+[ext_resource type="Texture2D" uid="uid://oh5cokdkd2q2" path="res://assets/nature/bush8.png" id="2_qjjk1"]
+[ext_resource type="Texture2D" uid="uid://by5jlwv4cp0is" path="res://assets/nature/bush6.png" id="3_3omyr"]
+[ext_resource type="Texture2D" uid="uid://b6vc3mu4lg41" path="res://assets/nature/bush5.png" id="4_rj20m"]
+[ext_resource type="Texture2D" uid="uid://cor3d5ex4f0go" path="res://assets/nature/bush3.png" id="5_68ne2"]
+[ext_resource type="Texture2D" uid="uid://cwm62c4y5pnpt" path="res://assets/nature/bush2.png" id="6_g6afk"]
+
+[node name="bush2" type="Node2D"]
+z_index = 1
+y_sort_enabled = true
+material = ExtResource("1_qjjk1")
+
+[node name="Bush4" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-5, -3)
+texture = ExtResource("1_4oayu")
+
+[node name="Bush8" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(7, 1)
+texture = ExtResource("2_qjjk1")
+
+[node name="Bush6" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-11, 4)
+texture = ExtResource("3_3omyr")
+
+[node name="Bush5" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-2, 5)
+texture = ExtResource("1_4oayu")
+
+[node name="Bush7" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(7, 8)
+texture = ExtResource("4_rj20m")
+
+[node name="Bush9" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-5, 13)
+texture = ExtResource("2_qjjk1")
+
+[node name="Bush3" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(10, 16)
+texture = ExtResource("5_68ne2")
+
+[node name="Bush10" type="Sprite2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(-16, 17)
+texture = ExtResource("4_rj20m")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+use_parent_material = true
+position = Vector2(-3, 22)
+texture = ExtResource("6_g6afk")
