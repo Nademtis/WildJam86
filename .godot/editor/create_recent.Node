@@ -1,13 +1,13 @@
+Node2D
+LightOccluder2D
+ColorRect
 PointLight2D
 Polygon2D
 DirectionalLight2D
-LightOccluder2D
 PhantomCamera2D
-ColorRect
 CanvasLayer
 CollisionShape2D
 Area2D
-Node2D
 CollisionPolygon2D
 CanvasGroup
 TileMapLayer

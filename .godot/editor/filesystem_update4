@@ -8,3 +8,8 @@ res://shaders/black_screen.gdshader
 res://shaders/sway.gdshader
 res://levels/level_3.tscn
 res://levels/main.tscn
+res://scenes/enemies/enemy1/path_enemy.gd
+res://scenes/stealthVisuals/stealth_canvaslayer.gd
+res://levels/level_1.tscn
+res://levels/level_2.tscn
+res://tileset/upper_tileset.tres

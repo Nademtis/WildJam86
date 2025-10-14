@@ -1,3 +1,4 @@
+res://tileset
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.2
 res://scenes/stealthVisuals
 res://shaders
@@ -12,4 +13,3 @@ res://scenes/levelSwapper
 res://scripts/globals
 res://levels
 res://scenes/player
-res://tileset

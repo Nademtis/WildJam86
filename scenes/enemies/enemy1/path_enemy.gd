@@ -3,6 +3,7 @@ extends PathFollow2D
 #@onready var enemy_1: PathFollow2D = $"."
 @onready var animated_mask: AnimatedSprite2D = $Animated_mask
 @onready var animated_body: AnimatedSprite2D = $Animated_body
+@onready var light: Node2D = $light
 
 @export var speed: float = 100.0 # pixels per second
 var last_position: Vector2
@@ -16,7 +17,15 @@ func _process(delta: float) -> void:
 	
 	var direction: Vector2 = global_position - last_position
 	
+	#light.look_at(direction) # this does not work
+	
 	if direction.length() > 0.1:
+		
+		#for rotation 
+		var target_angle = direction.angle() - deg_to_rad(90)
+		var rotation_speed = 10.0  # higher = snappier, lower = smoother
+		light.rotation = lerp_angle(light.rotation, target_angle, rotation_speed * delta)
+		
 		play_direction_animation(direction.normalized())
 	last_position = global_position
 
@@ -35,7 +44,7 @@ func play_direction_animation(dir: Vector2) -> void:
 			anim = "down"
 		else:
 			anim = "up"
-
+	
 	animated_mask.play(anim)
 	animated_body.play(anim)
 

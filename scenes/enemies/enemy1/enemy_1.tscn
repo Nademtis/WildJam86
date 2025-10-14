@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://ddmksap2gxosk"]
+[gd_scene load_steps=22 format=3 uid="uid://ddmksap2gxosk"]
 
 [ext_resource type="Script" uid="uid://b1vycfioevhyh" path="res://scenes/enemies/enemy1/path_enemy.gd" id="1_5uu7d"]
 [ext_resource type="Texture2D" uid="uid://bjql4kkg0jy4" path="res://scenes/enemies/enemy1/enemy_body_spritesheet.png" id="2_m0bq8"]
 [ext_resource type="Shader" uid="uid://6ie7ed3aasje" path="res://shaders/foliage.gdshader" id="2_u8gn5"]
 [ext_resource type="Texture2D" uid="uid://cem845ub2fsis" path="res://scenes/enemies/enemy1/enemy_mask_spritesheet.png" id="3_u8gn5"]
+[ext_resource type="Texture2D" uid="uid://cg8v7xryf038s" path="res://scenes/enemies/enemy1/512x512 textures (61).png" id="5_u8gn5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m0bq8"]
 domain_warp_amplitude = 100.0
@@ -128,11 +129,25 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uu7d"]
 radius = 27.0185
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8gn5"]
+polygon = PackedVector2Array(-34, 45, 0, -15, 29, 46, 0, -46)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mq2de"]
+polygon = PackedVector2Array(-82, 123, 76, 122, 87, 126, -103, 126)
+
 [node name="enemy1" type="PathFollow2D"]
 z_index = 1
 y_sort_enabled = true
 rotates = false
 script = ExtResource("1_5uu7d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -191.0
+offset_top = -171.0
+offset_right = 195.0
+offset_bottom = 148.0
+color = Color(0.241156, 0.241156, 0.241156, 1)
 
 [node name="Animated_body" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_d6oql")
@@ -143,7 +158,6 @@ animation = &"down"
 light_mask = 0
 sprite_frames = SubResource("SpriteFrames_u7h1f")
 animation = &"down"
-frame_progress = 0.743585
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -151,12 +165,23 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5uu7d")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-z_as_relative = false
-position = Vector2(-1295, -1158)
-color = Color(0.478431, 0.211765, 0.482353, 0.470588)
-polygon = PackedVector2Array(1291.9, 1153.59, 1326, 1262, 1263, 1261)
-uv = PackedVector2Array(1291.9, 1153.59, 1451.96, 1075.13, 1455.09, 1304.24)
+[node name="light" type="Node2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="PointLight2D" type="PointLight2D" parent="light"]
+color = Color(0.478431, 0.211765, 0.482353, 1)
+energy = 3.0
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("5_u8gn5")
+texture_scale = 0.7
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="light"]
+position = Vector2(0, 11)
+occluder = SubResource("OccluderPolygon2D_u8gn5")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+position = Vector2(2, -19)
+occluder = SubResource("OccluderPolygon2D_mq2de")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
