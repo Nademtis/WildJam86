@@ -127,7 +127,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uu7d"]
-radius = 27.0185
+radius = 13.0384
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8gn5"]
 polygon = PackedVector2Array(-34, 45, 0, -15, 29, 46, 0, -46)
@@ -160,7 +160,6 @@ sprite_frames = SubResource("SpriteFrames_u7h1f")
 animation = &"down"
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5uu7d")
@@ -174,7 +173,7 @@ energy = 3.0
 blend_mode = 2
 shadow_enabled = true
 texture = ExtResource("5_u8gn5")
-texture_scale = 0.7
+texture_scale = 0.35
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="light"]
 position = Vector2(0, 11)
@@ -183,5 +182,11 @@ occluder = SubResource("OccluderPolygon2D_u8gn5")
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
 position = Vector2(2, -19)
 occluder = SubResource("OccluderPolygon2D_mq2de")
+
+[node name="Area2D" type="Area2D" parent="light"]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light/Area2D"]
+polygon = PackedVector2Array(0, 2, -53, 99, 42, 99)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -5,7 +5,7 @@ extends PathFollow2D
 @onready var animated_body: AnimatedSprite2D = $Animated_body
 @onready var light: Node2D = $light
 
-@export var speed: float = 100.0 # pixels per second
+@export var speed: float = 100.0
 var last_position: Vector2
 
 

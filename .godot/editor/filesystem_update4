@@ -13,3 +13,6 @@ res://scenes/stealthVisuals/stealth_canvaslayer.gd
 res://levels/level_1.tscn
 res://levels/level_2.tscn
 res://tileset/upper_tileset.tres
+res://export_presets.cfg
+res://scripts/globals/Events.gd
+res://scenes/bushes/bush2.tscn
