@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	
 	if mask_timer >= mask_max_time:
 		kill_player()
-	print(mask_timer)
+	#print(mask_timer)
 
 func _physics_process(delta: float) -> void:
 	if can_move:

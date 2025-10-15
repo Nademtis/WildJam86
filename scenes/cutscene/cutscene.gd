@@ -13,7 +13,7 @@ func _on_start_cutscene_area_2d_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(1).timeout
 		animation_player.play("create_mask_cutscene")
 		
-func walk() -> void:
+func walk_down() -> void:
 	player.animated_sprite_2d.play("walk_down")
 
 func stop() -> void:
