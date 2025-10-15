@@ -137,6 +137,7 @@ polygon = PackedVector2Array(-82, 123, 76, 122, 87, 126, -103, 126)
 
 [node name="enemy1" type="PathFollow2D"]
 z_index = 1
+z_as_relative = false
 y_sort_enabled = true
 rotates = false
 script = ExtResource("1_5uu7d")
@@ -188,6 +189,7 @@ occluder = SubResource("OccluderPolygon2D_mq2de")
 [node name="Area2D" type="Area2D" parent="light"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light/Area2D"]
+visible = false
 polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
