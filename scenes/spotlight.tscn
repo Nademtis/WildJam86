@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://o0l13h4qxyp8"]
+
+[ext_resource type="Texture2D" uid="uid://cg8v7xryf038s" path="res://scenes/enemies/enemy1/512x512 textures (61).png" id="1_qvrmg"]
+
+[node name="PointLight2D" type="PointLight2D"]
+light_mask = 0
+visibility_layer = 0
+color = Color(0.145098, 0.227451, 0.368627, 1)
+energy = 9.45
+texture = ExtResource("1_qvrmg")
+texture_scale = 0.2

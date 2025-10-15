@@ -18,3 +18,5 @@ res://scripts/level.gd
 res://levels/level_2.tscn
 res://levels/level_1.tscn
 res://levels/level_template.tscn
+res://tileset/dark_corner_bush_tileset.tres
+res://shaders/sway_material.tres

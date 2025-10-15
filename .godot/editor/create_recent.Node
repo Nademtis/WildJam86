@@ -1,3 +1,5 @@
+PointLight2D
+TileMapLayer
 CollisionShape2D
 Node2D
 Path2D
@@ -5,10 +7,8 @@ CollisionPolygon2D
 Area2D
 LightOccluder2D
 ColorRect
-PointLight2D
 Polygon2D
 DirectionalLight2D
 PhantomCamera2D
 CanvasLayer
 CanvasGroup
-TileMapLayer

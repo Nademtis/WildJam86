@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://c8wv53b6agllw"]
+[gd_scene load_steps=14 format=4 uid="uid://c8wv53b6agllw"]
 
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="1_80vhd"]
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_safpt"]
 [ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="2_hjsbj"]
 [ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="3_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="4_5mrsh"]
+[ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="4_glpk1"]
 [ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_1.tscn" id="4_safpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
@@ -902,11 +903,13 @@ point_count = 8
 script = ExtResource("1_safpt")
 
 [node name="BG" type="ColorRect" parent="."]
+z_index = -5
 offset_left = -524.0
 offset_top = 46.0
 offset_right = 403.0
 offset_bottom = 621.0
-color = Color(0, 0, 0, 1)
+color = Color(0.121569, 0.160784, 0.215686, 1)
+metadata/_edit_lock_ = true
 
 [node name="cameraLimit" type="Node2D" parent="."]
 
@@ -922,21 +925,33 @@ y_sort_enabled = true
 position = Vector2(0, 300)
 
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
+z_index = -1
 tile_set = ExtResource("1_80vhd")
+metadata/_edit_lock_ = true
 
 [node name="walkable" type="TileMapLayer" parent="ysort/tilemaps"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAAAAEAAAAJAAQAAAD//wEAAAAJAAQAAAD//wIAAAAGAAQAAAAAAAIAAAAJAAUAAAABAAIAAAAJAAUAAAABAAEAAAAJAAQAAAD//wAAAAAJAAQAAAD+/wAAAAAJAAQAAAD9/wAAAAAJAAQAAAD9/wEAAAAJAAQAAAD+/wEAAAAJAAQAAAD9/wIAAAAJAAQAAAD8/wIAAAAJAAQAAAD+/wIAAAAJAAQAAAD8/wEAAAAJAAQAAAD8/wAAAAAJAAQAAAD9////AAAJAAQAAAD+////AAAJAAQAAAD/////AAAGAAMAAAD8////AAAJAAQAAAAAAAAAAAAJAAQAAAABAAAAAAAJAAQAAAAAAP//AAAKAAIAAAABAP//AAAKAAIAAAACAAIAAAALAAUAAAACAAEAAAALAAQAAAACAAAAAAALAAQAAAACAP//AAALAAIAAAD///7/AAALAAQAAAD///3/AAALAAIAAAD+//7/AAAJAAQAAAD+//3/AAAKAAIAAAD9//7/AAAJAAQAAAD9//3/AAAKAAIAAAD8//7/AAAJAAQAAAD8//3/AAAKAAIAAAD7////AAAJAAQAAAD7//7/AAAJAAQAAAD7//3/AAAKAAIAAAD7/wMAAAAJAAQAAAD7/wIAAAAJAAQAAAD7/wEAAAAJAAQAAAD7/wAAAAAJAAQAAAD6/wMAAAAJAAQAAAD6/wIAAAAJAAQAAAD6/wEAAAAJAAQAAAD6/wAAAAAJAAQAAAD6////AAAJAAQAAAD6//7/AAAJAAQAAAD6//3/AAAGAAMAAAD5/wMAAAAJAAQAAAD5/wIAAAAJAAQAAAD5/wEAAAAJAAQAAAD5/wAAAAAJAAQAAAD5////AAAJAAQAAAD5//7/AAAJAAQAAAD5//3/AAAJAAQAAAD4/wMAAAAJAAQAAAD4/wIAAAAJAAQAAAD4/wEAAAAJAAQAAAD4/wAAAAAJAAQAAAD4////AAAJAAQAAAD4//7/AAAJAAQAAAD4//3/AAAJAAQAAAD3/wMAAAAJAAQAAAD3/wIAAAAJAAQAAAD3/wEAAAAJAAQAAAD3/wAAAAAJAAQAAAD3////AAAJAAQAAAD3//7/AAAJAAQAAAD3//3/AAAJAAQAAAD//wUAAAALAAUAAAD//wQAAAALAAQAAAD//wMAAAALAAQAAAD+/wUAAAAJAAUAAAD+/wQAAAAJAAQAAAD+/wMAAAAJAAQAAAD9/wUAAAAJAAUAAAD9/wQAAAAJAAQAAAD9/wMAAAAJAAQAAAD8/wUAAAAJAAUAAAD8/wQAAAAJAAQAAAD8/wMAAAAJAAQAAAD7/wUAAAAJAAUAAAD7/wQAAAAJAAQAAAD6/wUAAAAGAAQAAAD6/wQAAAAJAAQAAAD6/wYAAAALAAUAAAD6//z/AAALAAIAAAD5/wYAAAAJAAUAAAD5/wUAAAAJAAQAAAD5/wQAAAAJAAQAAAD5//z/AAAKAAIAAAD4/wYAAAAJAAUAAAD4/wUAAAAJAAQAAAD4/wQAAAAJAAQAAAD4//z/AAAKAAIAAAD3/wYAAAAJAAUAAAD3/wUAAAAJAAQAAAD3/wQAAAAJAAQAAAD3//z/AAAKAAIAAAD2/wYAAAAJAAUAAAD2/wUAAAAJAAQAAAD2/wQAAAAJAAQAAAD2/wMAAAAJAAQAAAD2/wIAAAAJAAQAAAD2/wEAAAAJAAQAAAD2/wAAAAAJAAQAAAD2////AAAJAAQAAAD2//7/AAAJAAQAAAD2//3/AAAJAAQAAAD2//z/AAAKAAIAAAD1/wYAAAAJAAUAAAD1/wUAAAAJAAQAAAD1/wQAAAAJAAQAAAD1/wMAAAAJAAQAAAD1/wIAAAAJAAQAAAD1/wEAAAAJAAQAAAD1/wAAAAAJAAQAAAD1////AAAJAAQAAAD1//7/AAAJAAQAAAD1//3/AAAJAAQAAAD1//z/AAAKAAIAAAD0/wYAAAAJAAUAAAD0/wUAAAAJAAQAAAD0/wQAAAAJAAQAAAD0/wMAAAAJAAQAAAD0/wIAAAAJAAQAAAD0/wEAAAAJAAQAAAD0/wAAAAAJAAQAAAD0////AAAJAAQAAAD0//7/AAAJAAQAAAD0//3/AAAJAAQAAAD0//z/AAAKAAIAAADz/wYAAAAIAAUAAADz/wUAAAAIAAMAAADz/wQAAAAIAAMAAADz/wMAAAAIAAMAAADz/wIAAAAIAAMAAADz/wEAAAAIAAMAAADz/wAAAAAIAAMAAADz////AAAIAAMAAADz//7/AAAIAAMAAADz//3/AAAIAAMAAADz//z/AAAIAAIAAAA=")
 tile_set = ExtResource("1_80vhd")
+metadata/_edit_lock_ = true
 
 [node name="upper" type="TileMapLayer" parent="ysort/tilemaps"]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD+////AAALAAUAAAD+//7/AAALAAIAAAD9////AAAJAAUAAAD9//7/AAAKAAIAAAD8////AAAJAAUAAAD8//7/AAAKAAIAAAD7////AAAIAAUAAAD7//7/AAAIAAIAAAD7/wAAAAAAAAcAAAD+/wAAAAAGAAcAAAD8/wAAAAAIAAYAAAD9/wAAAAAIAAYAAAA=")
 tile_set = SubResource("TileSet_vnv7o")
+metadata/_edit_lock_ = true
 
 [node name="visual_upper" type="TileMapLayer" parent="ysort/tilemaps"]
 z_index = 2
 tile_set = SubResource("TileSet_d5x7l")
+metadata/_edit_lock_ = true
+
+[node name="dark_outer_bushes" type="TileMapLayer" parent="ysort/tilemaps"]
+light_mask = 0
+z_index = 2
+position = Vector2(0, -300)
+tile_set = ExtResource("4_glpk1")
+metadata/_edit_lock_ = true
 
 [node name="BushContainer" type="Node2D" parent="ysort"]
 y_sort_enabled = true
