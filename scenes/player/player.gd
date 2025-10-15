@@ -1,17 +1,21 @@
 extends CharacterBody2D
 #player script
 
-#enum MovementState{IDLE, WALKING, ATTACKING, DASHING}
 @export var max_speed: float = 60
 @export var acceleration: float = 8
 @export var deceleration: float = 60
 
+#used for die animation
 var can_move = true
+
 var is_mask_equipped : bool
+@export var mask_max_time: float = 2.0
+var mask_timer: float = 0.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-@onready var animation_player: AnimationPlayer = $dieanim/AnimationPlayer # used for player die anim
+# used for player die anim
+@onready var animation_player: AnimationPlayer = $dieanim/AnimationPlayer
 @onready var dieanim: Node2D = $dieanim
 @onready var slealth: Node2D = $slealth
 
@@ -23,6 +27,16 @@ func _process(delta: float) -> void:
 		is_mask_equipped = true
 	else:
 		is_mask_equipped = false
+	
+	if is_mask_equipped:
+		mask_timer += delta
+	elif !is_mask_equipped and velocity.length() < 5.0: # yes mask and standing still
+		mask_timer -= delta
+	
+	mask_timer = clamp(mask_timer, 0.0, mask_max_time)
+	
+	if mask_timer >= mask_max_time:
+		kill_player()
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -57,6 +71,7 @@ func can_kill_player() -> bool:
 func kill_player() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
+	mask_timer = 0
 
 	animated_sprite_2d.visible = false
 	dieanim.visible = true
