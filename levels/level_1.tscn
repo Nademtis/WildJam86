@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://d3t278ghjk8os"]
+[gd_scene load_steps=12 format=4 uid="uid://d3t278ghjk8os"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_xtnx3"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_dtt55"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="6_g8hgv"]
 [ext_resource type="PackedScene" uid="uid://d3jw4ey7orykn" path="res://scenes/bushes/bush1.tscn" id="6_xtnx3"]
 [ext_resource type="PackedScene" uid="uid://cy7kuro31f7m5" path="res://levels/level_2.tscn" id="7_dtt55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l53as"]
+size = Vector2(662.5, 298)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnv7o"]
 texture = ExtResource("3_2ic13")
@@ -425,6 +428,12 @@ offset_right = 403.0
 offset_bottom = 621.0
 color = Color(0, 0, 0, 1)
 
+[node name="cameraLimit" type="Node2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cameraLimit"]
+position = Vector2(-112.25, 335)
+shape = SubResource("RectangleShape2D_l53as")
+
 [node name="ysort" type="Node2D" parent="."]
 y_sort_enabled = true
 
@@ -469,7 +478,7 @@ position = Vector2(70, 389)
 
 [node name="player" parent="ysort" instance=ExtResource("4_3anyq")]
 z_index = 1
-position = Vector2(-223, 298)
+position = Vector2(-411, 307)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true

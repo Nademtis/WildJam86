@@ -9,6 +9,8 @@ const LEVEL_1 = preload("res://levels/level_3.tscn")
 var current_level : PackedScene
 var new_level : PackedScene
 
+
+
 func _ready() -> void:
 	start_new_level(LEVEL_1)
 	current_level = LEVEL_1
@@ -18,6 +20,9 @@ func _ready() -> void:
 	#Events.connect("restart_level", restart_level)
 	#Events.connect("fade_to_black_and_restart_current_level", fade_to_black)
 	Events.connect("screen_is_black", swap_levels)
+
+func set_follow_cam_limit(coll_shape : CollisionShape2D) -> void:
+	follow_pcam.limit_target = coll_shape.get_path()
 
 func restart_level() -> void:
 	init_level_swapping(current_level)

@@ -176,17 +176,18 @@ texture = ExtResource("5_u8gn5")
 texture_scale = 0.35
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="light"]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, 11)
 occluder = SubResource("OccluderPolygon2D_u8gn5")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(2, -19)
 occluder = SubResource("OccluderPolygon2D_mq2de")
 
 [node name="Area2D" type="Area2D" parent="light"]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light/Area2D"]
-polygon = PackedVector2Array(0, 2, -53, 99, 42, 99)
+polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

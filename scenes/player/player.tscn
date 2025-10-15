@@ -521,6 +521,7 @@ script = ExtResource("2_qek5x")
 [node name="stealthArea2D" type="Area2D" parent="slealth"]
 
 [node name="stealthCollisionShape2D" type="CollisionShape2D" parent="slealth/stealthArea2D"]
+visible = false
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_5gtgg")
 debug_color = Color(0.247433, 0.635779, 0, 0.42)
@@ -528,9 +529,8 @@ debug_color = Color(0.247433, 0.635779, 0, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"walk_up"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.224406
 
 [node name="Area2D" type="Area2D" parent="." groups=["player"]]
 position = Vector2(0, -4)
@@ -541,6 +541,7 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_p47bc")
 
 [node name="movementColl" type="CollisionShape2D" parent="." groups=["player"]]
+visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_75vfm")
 

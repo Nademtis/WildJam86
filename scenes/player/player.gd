@@ -1,10 +1,9 @@
 extends CharacterBody2D
 
 #enum MovementState{IDLE, WALKING, ATTACKING, DASHING}
-#player movement
-@export var max_speed: float = 75
-@export var acceleration: float = 12
-@export var deceleration: float = 95
+@export var max_speed: float = 60
+@export var acceleration: float = 8
+@export var deceleration: float = 60
 
 var can_move = true
 var is_mask_equipped : bool
@@ -16,7 +15,6 @@ func _process(delta: float) -> void:
 		is_mask_equipped = true
 	else:
 		is_mask_equipped = false
-	print(is_mask_equipped)
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -35,10 +33,10 @@ func move_player(delta : float) -> void:
 	else:
 		anim_player_no_mask(input_vector)
 	
-		# apply acceleration when input is detected
+		# acceleration
 	if input_vector != Vector2.ZERO:
 		velocity = lerp(velocity, input_vector * max_speed, acceleration * delta)
-	else: # Apply deceleration when no input is detected
+	else: #deceleration
 		velocity = lerp(velocity, input_vector * max_speed, deceleration * delta)
 
 func kill_player() -> void:
@@ -60,7 +58,7 @@ func anim_player_no_mask(input_vector) -> void:
 			else:
 				animated_sprite_2d.play("walk_up")
 	else:
-		animated_sprite_2d.play("idle")  # Default idle animation
+		animated_sprite_2d.play("idle")
 
 func anim_player_mask(input_vector) -> void:
 	if input_vector != Vector2.ZERO:
@@ -75,4 +73,4 @@ func anim_player_mask(input_vector) -> void:
 			else:
 				animated_sprite_2d.play("mask_walk_up")
 	else:
-		animated_sprite_2d.play("mask_idle")  # Default idle animation
+		animated_sprite_2d.play("mask_idle")
