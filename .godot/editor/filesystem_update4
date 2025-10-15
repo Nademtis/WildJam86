@@ -25,3 +25,4 @@ res://scenes/tree_1.tscn
 res://scenes/tree_4.tscn
 res://scenes/tree_3.tscn
 res://scenes/tree_5.tscn
+res://scenes/enemies/enemy1/path_enemy.gd

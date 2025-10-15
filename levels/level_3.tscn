@@ -563,7 +563,7 @@ position = Vector2(26, 484)
 
 [node name="player" parent="ysort" instance=ExtResource("4_jk5kv")]
 z_index = 1
-position = Vector2(104, 519)
+position = Vector2(-174, 374)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
@@ -586,7 +586,7 @@ curve = SubResource("Curve2D_lsnkt")
 
 [node name="PhantomCamera2D" parent="CameraContainer/Path2D" node_paths=PackedStringArray("follow_target", "follow_path") instance=ExtResource("9_lsnkt")]
 top_level = true
-position = Vector2(-160, 420)
+position = Vector2(-160, 374)
 follow_mode = 4
 follow_target = NodePath("../../../ysort/player")
 follow_path = NodePath("..")

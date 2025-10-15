@@ -1,7 +1,7 @@
 extends Node2D
 #main
 
-const LEVEL_1 = preload("res://levels/level_1.tscn")
+const LEVEL_1 = preload("res://levels/level_3.tscn")
 
 @onready var level_container: Node2D = $levelContainer
 @onready var follow_pcam: PhantomCamera2D = $FollowPhantomCamera2D
@@ -15,8 +15,6 @@ func _ready() -> void:
 	
 	Events.connect("swap_level", init_level_swapping) # level_swapper uses this
 	Events.connect("restart_level", restart_level)
-	#Events.connect("restart_level", restart_level)
-	#Events.connect("fade_to_black_and_restart_current_level", fade_to_black)
 	Events.connect("screen_is_black", swap_levels)
 
 func set_follow_cam_limit(coll_shape : CollisionShape2D) -> void:

@@ -52,4 +52,5 @@ func play_direction_animation(dir: Vector2) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		area.get_parent().kill_player()
+		speed = speed * 0.2
 	pass # Replace with function body.

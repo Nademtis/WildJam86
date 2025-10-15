@@ -10,6 +10,12 @@ var is_mask_equipped : bool
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var animation_player: AnimationPlayer = $dieanim/AnimationPlayer # used for player die anim
+@onready var dieanim: Node2D = $dieanim
+
+func _ready() -> void:
+	dieanim.visible = false
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("mask"):
 		is_mask_equipped = true
@@ -42,7 +48,25 @@ func move_player(delta : float) -> void:
 func kill_player() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
-	animated_sprite_2d.play("dead")
+
+	animated_sprite_2d.visible = false
+	dieanim.visible = true
+	animation_player.play("die_anim")
+	
+	#shake behavior
+	var shake_time := 1
+	var elapsed := 0.0 # don't change
+	var amplitude := 0.5
+
+	while elapsed < shake_time:
+		var offset_x := sin(elapsed * 50.0) * amplitude
+		position.x += offset_x
+		await get_tree().process_frame
+		position.x -= offset_x
+		elapsed += get_process_delta_time()
+	
+	#await get_tree().create_timer(1).timeout
+	
 	Events.emit_signal("restart_level")
 
 func anim_player_no_mask(input_vector) -> void:
