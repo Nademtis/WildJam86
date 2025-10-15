@@ -1,5 +1,5 @@
 extends CharacterBody2D
-#player script
+class_name Player
 
 @export var max_speed: float = 60
 @export var acceleration: float = 8
@@ -33,10 +33,11 @@ func _process(delta: float) -> void:
 	elif !is_mask_equipped and velocity.length() < 5.0: # yes mask and standing still
 		mask_timer -= delta
 	
-	mask_timer = clamp(mask_timer, 0.0, mask_max_time)
+	mask_timer = clamp(mask_timer, 0.0, mask_max_time) # so mask value not negative
 	
 	if mask_timer >= mask_max_time:
 		kill_player()
+	print(mask_timer)
 
 func _physics_process(delta: float) -> void:
 	if can_move:

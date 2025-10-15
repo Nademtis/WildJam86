@@ -1,5 +1,6 @@
 extends Area2D
 
+
 @onready var phantom_camera_2d: PhantomCamera2D = $".."
 
 
