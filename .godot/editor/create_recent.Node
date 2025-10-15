@@ -1,9 +1,9 @@
+AnimationPlayer
 CollisionShape2D
 Area2D
 Node
 Timer
 ColorRect
-AnimationPlayer
 Sprite2D
 Node2D
 StaticBody2D
