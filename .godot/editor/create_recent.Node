@@ -1,3 +1,6 @@
+ColorRect
+AnimationPlayer
+Sprite2D
 Node2D
 CollisionShape2D
 StaticBody2D
@@ -8,7 +11,4 @@ Path2D
 CollisionPolygon2D
 Area2D
 LightOccluder2D
-ColorRect
 Polygon2D
-DirectionalLight2D
-PhantomCamera2D

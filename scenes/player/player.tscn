@@ -1,10 +1,11 @@
-[gd_scene load_steps=79 format=3 uid="uid://ko3hyfcl18x3"]
+[gd_scene load_steps=84 format=3 uid="uid://ko3hyfcl18x3"]
 
 [ext_resource type="Script" uid="uid://csomb53cwt1pc" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://sqn36fcbdfc" path="res://scenes/player/assets/idle.png" id="1_p47bc"]
 [ext_resource type="Texture2D" uid="uid://csgjsqt3hw408" path="res://scenes/player/assets/dead.png" id="2_0owmy"]
 [ext_resource type="Texture2D" uid="uid://cxf3o1ypvex3u" path="res://scenes/player/assets/w_down.png" id="2_75vfm"]
 [ext_resource type="Script" uid="uid://brwy2s88yoqcq" path="res://scenes/player/slealth.gd" id="2_qek5x"]
+[ext_resource type="Texture2D" uid="uid://bv3i4xvcs0wjp" path="res://scenes/player/assets/player_shadow.png" id="2_ugbui"]
 [ext_resource type="Texture2D" uid="uid://dtrpfo2knba4n" path="res://scenes/player/assets/w_left.png" id="3_0owmy"]
 [ext_resource type="Texture2D" uid="uid://cbnfs0gev4vo8" path="res://scenes/player/assets/w_right.png" id="4_qek5x"]
 [ext_resource type="Texture2D" uid="uid://hspuc67jdgoa" path="res://scenes/player/assets/w_up.png" id="5_5gtgg"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dqfu7ku6f1yah" path="res://scenes/player/assets/mask/w_left_mask.png" id="7_fcs02"]
 [ext_resource type="Texture2D" uid="uid://ceoxrx67n38fq" path="res://scenes/player/assets/mask/w_right__mask.png" id="8_myrg7"]
 [ext_resource type="Texture2D" uid="uid://dmo8vdk1r5uyw" path="res://scenes/player/assets/mask/w_up__mask.png" id="9_kvlxm"]
+[ext_resource type="Texture2D" uid="uid://c3yxmwdkrlg76" path="res://scenes/player/assets/mask/die.png" id="15_fcs02"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gtgg"]
 radius = 4.0
@@ -508,6 +510,188 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_75vfm"]
 radius = 3.16228
 
+[sub_resource type="Animation" id="Animation_myrg7"]
+resource_name = "die_anim"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.566667, 1.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.49653),
+"transitions": PackedFloat32Array(3.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.49485),
+"transitions": PackedFloat32Array(3.5, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.2, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.49485),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.218104, 0.562037, 1.14085),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3, -12), Vector2(-3, -10.9929), Vector2(-3, -9.80523), Vector2(-3, -10.6791)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.999922),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.678431, 0.466667, 0.341176, 1), Color(0.478431, 0.211765, 0.482353, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kvlxm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../shadow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../shadow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, 5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -12)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.678431, 0.466667, 0.341176, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uf5tr"]
+_data = {
+&"RESET": SubResource("Animation_kvlxm"),
+&"die_anim": SubResource("Animation_myrg7")
+}
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -526,7 +710,12 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_5gtgg")
 debug_color = Color(0.247433, 0.635779, 0, 0.42)
 
+[node name="shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.196078)
+texture = ExtResource("2_ugbui")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_x7p2l")
 animation = &"idle"
@@ -544,6 +733,25 @@ shape = SubResource("CircleShape2D_p47bc")
 visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_75vfm")
+
+[node name="dieanim" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="dieanim"]
+offset_left = -3.0
+offset_top = -12.0
+offset_right = 3.0
+offset_bottom = -7.0
+color = Color(0.678431, 0.466667, 0.341176, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="dieanim"]
+position = Vector2(0, -7)
+texture = ExtResource("15_fcs02")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="dieanim"]
+libraries = {
+&"": SubResource("AnimationLibrary_uf5tr")
+}
 
 [connection signal="area_entered" from="slealth/stealthArea2D" to="slealth" method="_on_stealth_area_2d_area_entered"]
 [connection signal="area_exited" from="slealth/stealthArea2D" to="slealth" method="_on_stealth_area_2d_area_exited"]
