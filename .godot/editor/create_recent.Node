@@ -1,7 +1,9 @@
-PointLight2D
-TileMapLayer
-CollisionShape2D
 Node2D
+CollisionShape2D
+StaticBody2D
+Node
+TileMapLayer
+PointLight2D
 Path2D
 CollisionPolygon2D
 Area2D
@@ -10,5 +12,3 @@ ColorRect
 Polygon2D
 DirectionalLight2D
 PhantomCamera2D
-CanvasLayer
-CanvasGroup

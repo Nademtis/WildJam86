@@ -1,15 +1,20 @@
-[gd_scene load_steps=14 format=4 uid="uid://d3t278ghjk8os"]
+[gd_scene load_steps=19 format=4 uid="uid://d3t278ghjk8os"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_xtnx3"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_dtt55"]
 [ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="3_2ic13"]
+[ext_resource type="PackedScene" uid="uid://bljx1se6b2y3h" path="res://scenes/tree_1.tscn" id="3_aerfg"]
 [ext_resource type="TileSet" uid="uid://cnbrfba4o0fwm" path="res://tileset/upper_tileset.tres" id="3_l53as"]
 [ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="4_3anyq"]
+[ext_resource type="PackedScene" uid="uid://djsdexvhq6aho" path="res://scenes/tree_2.tscn" id="4_nmsli"]
 [ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="5_3sk1a"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="6_g8hgv"]
 [ext_resource type="PackedScene" uid="uid://d3jw4ey7orykn" path="res://scenes/bushes/bush1.tscn" id="6_xtnx3"]
 [ext_resource type="PackedScene" uid="uid://cy7kuro31f7m5" path="res://levels/level_2.tscn" id="7_dtt55"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="10_08mmt"]
+[ext_resource type="PackedScene" uid="uid://dgirdur0fcok3" path="res://scenes/tree_4.tscn" id="10_vjtdm"]
+[ext_resource type="PackedScene" uid="uid://w4u7ysrkfi2q" path="res://scenes/tree_5.tscn" id="11_bgw3c"]
+[ext_resource type="PackedScene" uid="uid://qufqtwowdaqs" path="res://scenes/tree_3.tscn" id="12_lrvbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l53as"]
 size = Vector2(662.5, 298)
@@ -447,6 +452,7 @@ y_sort_enabled = true
 position = Vector2(0, 300)
 
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
 z_index = -1
 tile_map_data = PackedByteArray("AAD0//v/AAAEAAYAAADz//v/AAAIAAYAAADy//v/AAALAAYAAADx//v/AAAIAAYAAADw//v/AAAIAAYAAADv//v/AAAKAAYAAADu//v/AAAAAAYAAADx//z/AAAIAAYAAADw//z/AAAIAAcAAADv//z/AAAIAAYAAADu//z/AAAAAAcAAAD0//z/AAAFAAcAAADz//z/AAAKAAYAAADy//z/AAAIAAYAAADw/wgAAAAEAAYAAADv/wgAAAAJAAcAAADu/wgAAAAJAAcAAADt/wgAAAAJAAcAAADs/wgAAAALAAcAAADr/wgAAAAKAAYAAADq/wgAAAAKAAYAAADp/wgAAAAIAAcAAADw/wkAAAAGAAYAAADv/wkAAAAIAAYAAADu/wkAAAAJAAcAAADt/wkAAAAJAAcAAADs/wkAAAAKAAcAAADr/wkAAAAKAAYAAADq/wkAAAALAAcAAADp/wkAAAAEAAcAAADo/wkAAAACAAcAAADo/wgAAAABAAYAAADw/woAAAAGAAcAAADv/woAAAAKAAYAAADu/woAAAAIAAYAAAAIAAEAAAAIAAcAAAAHAAEAAAACAAcAAAAJAAEAAAAEAAcAAAAJAAAAAAAGAAYAAAAIAAAAAAACAAYAAADy/wEAAAAGAAcAAADx/wEAAAAKAAcAAADw/wEAAAAJAAYAAADv/wEAAAALAAcAAADu/wEAAAAJAAcAAADt/wEAAAAIAAYAAADs/wEAAAAKAAYAAADr/wEAAAAKAAYAAADq/wEAAAAIAAYAAADp/wEAAAAJAAYAAADo/wEAAAAJAAcAAADn/wEAAAALAAYAAADm/wEAAAAIAAcAAADl/wEAAAABAAcAAAD3/wEAAAAGAAcAAAD2/wEAAAAKAAYAAAD1/wEAAAABAAcAAAAFAAsAAAAEAAcAAAAEAAsAAAAJAAYAAAADAAsAAAAIAAYAAAACAAsAAAAKAAcAAAABAAsAAAAJAAYAAAAAAAsAAAAIAAcAAAD//wsAAAAKAAYAAAD+/wsAAAAIAAYAAAD9/wsAAAAIAAYAAAD8/wsAAAAJAAYAAAD7/wsAAAAKAAYAAAD6/wsAAAAIAAcAAAD5/wsAAAALAAcAAAD4/wsAAAAJAAcAAAD3/wsAAAAJAAYAAAD2/wsAAAALAAYAAAD1/wsAAAAJAAYAAAD0/wsAAAAKAAYAAADz/wsAAAALAAYAAADy/wsAAAABAAcAAAALAPz/AAAEAAcAAAAKAPz/AAAKAAYAAAAJAPz/AAAJAAcAAAAIAPz/AAALAAcAAAAHAPz/AAAIAAYAAAAGAPz/AAAIAAYAAAAFAPz/AAALAAYAAAAEAPz/AAAIAAYAAAADAPz/AAACAAcAAAADAPv/AAAAAAYAAAAKAPv/AAABAAYAAAAEAPv/AAAFAAYAAAA=")
 tile_set = ExtResource("2_dtt55")
@@ -458,7 +464,14 @@ tile_map_data = PackedByteArray("AADl////AAAIAAIAAADm////AAAKAAIAAADn////AAAFAAM
 tile_set = ExtResource("2_dtt55")
 metadata/_edit_lock_ = true
 
+[node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AADq/wQAAAAHAAAAAADq/wUAAAAKAAAAAADr/wUAAAABAAAAAADr/wYAAAAJAAAAAAD0/wIAAAAFAAAAAADz/wIAAAANAAAAAADz/wMAAAAEAAAAAAD0/wMAAAAGAAAAAADz/wEAAAAJAAAAAAADAAkAAAAJAAAAAAAEAAgAAAAJAAAAAAD//wkAAAAKAAAAAAACAAEAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAABAAEAAAAEAAAAAAAAAAEAAAAEAAAAAADz/wgAAAAHAAAAAADz/wkAAAAEAAAAAADz/woAAAAGAAAAAAD0/wkAAAAFAAAAAAD4/wkAAAAJAAAAAAD5/wkAAAAKAAAAAAD6/wkAAAANAAAAAAABAAIAAAANAAAAAAABAAMAAAAEAAAAAAABAAQAAAAGAAAAAAACAAMAAAAFAAAAAAACAPv/AAAKAAAAAAADAPr/AAAKAAAAAAADAPv/AAALAAAAAADu////AAAEAAAAAADv//7/AAAKAAAAAADv////AAAHAAAAAADw////AAAHAAAAAADx////AAAKAAAAAADp/wAAAAAGAAAAAADr////AAABAAAAAAA=")
+tile_set = ExtResource("2_dtt55")
+metadata/_edit_lock_ = true
+
 [node name="upper" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.783523, 0.783523, 0.783523, 1)
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AADo/wQAAAAIAAMAAADo/wMAAAAIAAIAAADp/wMAAAAKAAIAAADq/wMAAAAKAAIAAADr/wMAAAAKAAIAAADs/wMAAAAKAAIAAADt/wMAAAAKAAIAAADu/wMAAAALAAIAAADu/wQAAAAGAAMAAADv/wQAAAAKAAIAAADw/wQAAAALAAIAAADv/wUAAAAJAAQAAADu/wUAAAAJAAQAAADt/wQAAAAJAAQAAADs/wQAAAAJAAQAAADw/wUAAAALAAQAAADt/wUAAAAJAAQAAADs/wUAAAAJAAQAAADr/wUAAAAJAAQAAADr/wQAAAAJAAQAAADq/wQAAAAJAAQAAADp/wQAAAAJAAQAAADp/wUAAAAJAAQAAADq/wUAAAAJAAQAAADp/wYAAAAJAAQAAADo/wUAAAAIAAMAAADq/wYAAAAJAAQAAADr/wYAAAAJAAQAAADs/wYAAAAJAAQAAADt/wYAAAAJAAQAAADt/wcAAAAJAAUAAADs/wcAAAAJAAUAAADr/wcAAAAJAAUAAADq/wcAAAAJAAUAAADp/wcAAAAJAAUAAADo/wcAAAAIAAUAAADo/wYAAAAIAAMAAADu/wYAAAAJAAQAAADv/wYAAAAJAAQAAADv/wcAAAAJAAUAAADu/wcAAAAJAAUAAADw/wcAAAALAAUAAADw/wYAAAALAAQAAADu//j/AAAIAAIAAADu//n/AAAIAAMAAADu//r/AAAIAAUAAADv//r/AAAJAAUAAADw//r/AAAJAAUAAADx//r/AAAJAAUAAADy//r/AAAJAAUAAADz//r/AAAJAAUAAAD0//n/AAALAAQAAAD0//j/AAALAAIAAADz//j/AAAKAAIAAADy//j/AAAKAAIAAADx//j/AAAKAAIAAADw//j/AAAKAAIAAADv//n/AAAJAAQAAADw//n/AAAJAAQAAADx//n/AAAJAAQAAADy//n/AAAJAAQAAADz//n/AAAJAAQAAADv//j/AAAKAAIAAAD0//r/AAALAAUAAAAMAAAAAAALAAQAAAALAAAAAAAJAAQAAAAKAAAAAAAJAAQAAAAKAAEAAAAJAAQAAAAJAAEAAAAIAAMAAAAJAAIAAAAIAAMAAAAJAAMAAAAIAAMAAAAJAAQAAAAIAAUAAAAKAAQAAAALAAUAAAAKAAMAAAAGAAQAAAALAAMAAAAHAAQAAAALAAIAAAALAAQAAAALAAEAAAAGAAQAAAAKAAIAAAAJAAQAAAAMAAEAAAALAAUAAAAJAAAAAAAFAAQAAAAIAAAAAAAJAAUAAAAIAP//AAAFAAMAAAAHAP//AAAIAAIAAAAJAP//AAAJAAQAAAAHAAAAAAAIAAUAAAAKAP//AAAJAAQAAAALAP//AAAJAAQAAAAMAP//AAALAAQAAAALAP7/AAAKAAIAAAAKAP7/AAAKAAIAAAAJAP7/AAAKAAIAAAAIAP7/AAAIAAIAAAAMAP7/AAALAAIAAAA=")
 tile_set = ExtResource("3_l53as")
@@ -497,10 +510,53 @@ position = Vector2(70, 389)
 
 [node name="player" parent="ysort" instance=ExtResource("4_3anyq")]
 z_index = 1
-position = Vector2(-411, 307)
+position = Vector2(-358, 294)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
+
+[node name="TreeContainer" type="Node2D" parent="ysort"]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="tree1" parent="ysort/TreeContainer" instance=ExtResource("3_aerfg")]
+position = Vector2(-322, 277)
+
+[node name="tree10" parent="ysort/TreeContainer" instance=ExtResource("3_aerfg")]
+position = Vector2(68, 290)
+
+[node name="tree2" parent="ysort/TreeContainer" instance=ExtResource("4_nmsli")]
+position = Vector2(-364, 365)
+
+[node name="tree3" parent="ysort/TreeContainer" instance=ExtResource("12_lrvbd")]
+position = Vector2(-291, 308)
+
+[node name="tree6" parent="ysort/TreeContainer" instance=ExtResource("12_lrvbd")]
+position = Vector2(-209, 465)
+
+[node name="tree12" parent="ysort/TreeContainer" instance=ExtResource("12_lrvbd")]
+position = Vector2(-174, 374)
+
+[node name="tree13" parent="ysort/TreeContainer" instance=ExtResource("12_lrvbd")]
+position = Vector2(139, 287)
+
+[node name="tree7" parent="ysort/TreeContainer" instance=ExtResource("12_lrvbd")]
+position = Vector2(-54, 442)
+
+[node name="tree4" parent="ysort/TreeContainer" instance=ExtResource("10_vjtdm")]
+position = Vector2(-291, 369)
+
+[node name="tree5" parent="ysort/TreeContainer" instance=ExtResource("11_bgw3c")]
+position = Vector2(-252, 413)
+
+[node name="tree8" parent="ysort/TreeContainer" instance=ExtResource("11_bgw3c")]
+position = Vector2(20, 409)
+
+[node name="tree9" parent="ysort/TreeContainer" instance=ExtResource("11_bgw3c")]
+position = Vector2(31, 212)
+
+[node name="tree11" parent="ysort/TreeContainer" instance=ExtResource("11_bgw3c")]
+position = Vector2(163, 347)
 
 [node name="CameraContainer" type="Node" parent="."]
 

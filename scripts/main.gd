@@ -9,8 +9,6 @@ const LEVEL_1 = preload("res://levels/level_1.tscn")
 var current_level : PackedScene
 var new_level : PackedScene
 
-
-
 func _ready() -> void:
 	start_new_level(LEVEL_1)
 	current_level = LEVEL_1

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qufqtwowdaqs"]
+
+[ext_resource type="Material" uid="uid://c3rmy14bmbrr3" path="res://shaders/sway_material.tres" id="1_t3ebc"]
+[ext_resource type="Texture2D" uid="uid://dx88p2hwiviuu" path="res://assets/nature/tree_3.png" id="2_t3ebc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3ebc"]
+radius = 3.0
+
+[node name="tree1" type="Node2D"]
+z_index = 1
+material = ExtResource("1_t3ebc")
+
+[node name="Tree1" type="Sprite2D" parent="."]
+y_sort_enabled = true
+use_parent_material = true
+position = Vector2(5, -24)
+texture = ExtResource("2_t3ebc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_t3ebc")

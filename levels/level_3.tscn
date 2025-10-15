@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c0cqtjfbm5ro"]
+[gd_scene load_steps=23 format=4 uid="uid://c0cqtjfbm5ro"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_gj1dp"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_gt2y6"]
@@ -10,8 +10,13 @@
 [ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="5_wj73x"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="6_1y5qq"]
 [ext_resource type="PackedScene" uid="uid://vih2a271hafp" path="res://scenes/bushes/bush2.tscn" id="6_gt2y6"]
+[ext_resource type="PackedScene" uid="uid://bljx1se6b2y3h" path="res://scenes/tree_1.tscn" id="8_u4kh1"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="9_lsnkt"]
+[ext_resource type="PackedScene" uid="uid://dgirdur0fcok3" path="res://scenes/tree_4.tscn" id="9_svivd"]
+[ext_resource type="PackedScene" uid="uid://qufqtwowdaqs" path="res://scenes/tree_3.tscn" id="10_yafm2"]
+[ext_resource type="PackedScene" uid="uid://w4u7ysrkfi2q" path="res://scenes/tree_5.tscn" id="11_46211"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="12_0unm6"]
+[ext_resource type="PackedScene" uid="uid://djsdexvhq6aho" path="res://scenes/tree_2.tscn" id="12_svivd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsnkt"]
 size = Vector2(694, 298)
@@ -424,7 +429,7 @@ sources/0 = SubResource("TileSetAtlasSource_vnv7o")
 
 [sub_resource type="Curve2D" id="Curve2D_5mrsh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -125, 422, 0, 0, 0, 0, -105, 454, 0, 0, 0, 0, -36, 457, -19.8042, 15.6693, 19.8042, -15.6693, -6, 444, 8.37872, 14.8423, -8.37872, -14.8423, -11, 365, 0, 0, 0, 0, -34, 349, 0, 0, 0, 0, -68, 346, 0, 0, 0, 0, -102, 348, 15.3557, -23.2179, -15.3557, 23.2179, -127, 363, 0, 0, 0, 0, -125, 422)
+"points": PackedVector2Array(0, 0, 0, 0, -125, 422, 0, 0, 0, 0, -105, 454, 0, 0, 0, 0, -40, 453, -19.8042, 15.6693, 19.8042, -15.6693, -15, 446, 8.37872, 14.8423, -8.37872, -14.8423, -9, 372, 0, 0, 0, 0, -34, 352, 0, 0, 0, 0, -68, 353, 0, 0, 0, 0, -99, 361, 7.38993, -13.659, -7.38993, 13.659, -129, 383, 0, 0, 0, 0, -125, 422)
 }
 point_count = 10
 
@@ -461,6 +466,7 @@ y_sort_enabled = true
 position = Vector2(0, 300)
 
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 tile_map_data = PackedByteArray("AAAHAA8AAAAGAAcAAAAFAA8AAAAAAAcAAAAGAA8AAAAIAAYAAAAFAAEAAAAIAAYAAAAGAAIAAAAIAAYAAAAGAAMAAAAIAAYAAADu/w4AAAAIAAYAAADu/w8AAAAIAAYAAADe/xkAAAAGAAcAAADe/xgAAAAEAAYAAADe/xcAAAAFAAYAAADe/xYAAAAEAAYAAADd/xYAAAAIAAYAAADc/xYAAAAAAAYAAADc/xcAAAAAAAYAAADc/xgAAAABAAYAAADc/xkAAAAAAAcAAADd/xkAAAAKAAYAAADd/xgAAAAIAAYAAADd/xcAAAAJAAYAAADw/wwAAAAIAAYAAADv/wwAAAAKAAYAAADu/wwAAAAKAAYAAADt/wwAAAAKAAcAAADs/wwAAAAIAAYAAADr/wwAAAAJAAYAAADq/wwAAAAIAAcAAADp/wwAAAALAAYAAADo/wwAAAAIAAYAAADn/wwAAAAIAAcAAADm/wwAAAAAAAcAAAD//wwAAAAEAAcAAAD+/wwAAAAIAAcAAAD9/wwAAAAJAAYAAAD8/wwAAAAIAAYAAAD7/wwAAAAJAAYAAAD6/wwAAAAKAAYAAAD5/wwAAAAJAAcAAAD4/wwAAAAIAAcAAAD3/wwAAAALAAcAAAD2/wwAAAAIAAcAAAD1/wwAAAAIAAYAAAD0/wwAAAALAAYAAADz/wwAAAAKAAYAAADy/wwAAAALAAYAAADx/wwAAAALAAYAAAAEAA0AAAAGAAcAAAADAA0AAAALAAYAAAACAA0AAAAAAAcAAAAFAAIAAAAIAAYAAAAEAAIAAAAIAAYAAAADAAIAAAAJAAYAAAADAAEAAAACAAYAAAAEAAEAAAAJAAcAAAACAAIAAAAIAAYAAAABAAIAAAAJAAcAAAAAAAIAAAAJAAcAAAD//wIAAAAIAAcAAAD//wEAAAAAAAYAAAAAAAEAAAAFAAYAAAAFAAMAAAAKAAYAAAAEAAMAAAAJAAYAAAADAAMAAAAKAAYAAAACAAMAAAAIAAcAAAABAAMAAAAKAAYAAAAAAAMAAAAIAAYAAAD//wMAAAACAAcAAAD+/wIAAAAAAAcAAAA=")
 tile_set = ExtResource("2_gt2y6")
 metadata/_edit_lock_ = true
@@ -471,13 +477,21 @@ tile_map_data = PackedByteArray("AAACAAEAAAAJAAUAAAACAAAAAAAJAAQAAAACAP//AAAKAAI
 tile_set = ExtResource("2_gt2y6")
 metadata/_edit_lock_ = true
 
+[node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD8/wIAAAAHAAAAAAD8/wMAAAAEAAAAAAD8/wQAAAAGAAAAAAD9/wMAAAAFAAAAAAD4/wMAAAAHAAAAAAD4/wQAAAAEAAAAAAD4/wUAAAAGAAAAAAD5/wQAAAAFAAAAAAD8/wcAAAAKAAAAAAD9/wYAAAAKAAAAAAD9/wcAAAALAAAAAAD5/wcAAAAKAAAAAAD6/wYAAAAKAAAAAAD6/wcAAAALAAAAAADp/woAAAAKAAAAAADq/wkAAAAKAAAAAADq/woAAAALAAAAAAD1/wEAAAAHAAAAAAD1/wIAAAAEAAAAAAD1/wMAAAAGAAAAAAD2/wIAAAAFAAAAAAAFAAoAAAAJAAAAAAAGAAoAAAAKAAAAAAAHAAoAAAANAAAAAAAFAAAAAAAJAAAAAAAGAAAAAAAKAAAAAAAHAAAAAAANAAAAAAABAP//AAAHAAAAAAABAAAAAAAEAAAAAAABAAEAAAAGAAAAAAACAAAAAAAFAAAAAADy/wkAAAAHAAAAAADy/woAAAAEAAAAAADy/wsAAAAGAAAAAADz/woAAAAFAAAAAAA=")
+tile_set = ExtResource("2_gt2y6")
+metadata/_edit_lock_ = true
+
 [node name="upper" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 1
 tile_map_data = PackedByteArray("AAD5/wMAAAAIAAIAAAD5/wQAAAAIAAMAAAD5/wUAAAAIAAUAAAD6/wMAAAAKAAIAAAD6/wQAAAAJAAQAAAD6/wUAAAAJAAUAAAD7/wMAAAAKAAIAAAD7/wQAAAAJAAQAAAD7/wUAAAAJAAUAAAD8/wMAAAAKAAIAAAD8/wQAAAAJAAQAAAD8/wUAAAAJAAUAAAD9/wMAAAALAAIAAAD9/wQAAAALAAQAAAD9/wUAAAALAAUAAAAEAAwAAAALAAUAAAAEAAsAAAALAAQAAAAEAAoAAAALAAQAAAAEAAkAAAALAAQAAAAEAAgAAAALAAQAAAAEAAcAAAALAAQAAAAEAAYAAAALAAQAAAAEAAUAAAALAAQAAAAEAAQAAAALAAQAAAAEAAMAAAALAAQAAAAEAAIAAAALAAIAAAADAAwAAAAJAAUAAAADAAsAAAAJAAQAAAADAAoAAAAJAAQAAAADAAkAAAAJAAQAAAADAAgAAAAJAAQAAAADAAcAAAAJAAQAAAADAAYAAAAJAAQAAAADAAUAAAAJAAQAAAADAAQAAAAJAAQAAAADAAMAAAAJAAQAAAADAAIAAAAKAAIAAAACAAwAAAAJAAUAAAACAAsAAAAJAAQAAAACAAoAAAAJAAQAAAACAAkAAAAJAAQAAAACAAgAAAAJAAQAAAACAAcAAAAJAAQAAAACAAYAAAAJAAQAAAACAAUAAAAJAAQAAAACAAQAAAAJAAQAAAACAAMAAAAJAAQAAAACAAIAAAAKAAIAAAABAAwAAAAIAAUAAAABAAsAAAAIAAMAAAABAAoAAAAIAAMAAAABAAkAAAAIAAMAAAABAAgAAAAIAAMAAAABAAcAAAAIAAMAAAABAAYAAAAIAAMAAAABAAUAAAAIAAMAAAABAAQAAAAIAAMAAAABAAMAAAAIAAMAAAABAAIAAAAIAAIAAAD5/wYAAAAAAAcAAAD9/wYAAAAGAAcAAAD8/wYAAAAIAAYAAAD7/wYAAAAIAAYAAAD6/wYAAAAIAAYAAADt/wUAAAAIAAIAAADt/wYAAAAIAAMAAADt/wcAAAAIAAUAAADt/wgAAAAAAAcAAADu/wUAAAAKAAIAAADu/wYAAAAJAAQAAADu/wcAAAAJAAUAAADu/wgAAAAIAAYAAADv/wUAAAAKAAIAAADv/wYAAAAJAAQAAADv/wcAAAAJAAUAAADv/wgAAAAKAAYAAADw/wUAAAAKAAIAAADw/wYAAAAJAAQAAADw/wcAAAAJAAUAAADw/wgAAAAIAAYAAADx/wUAAAALAAIAAADx/wYAAAALAAQAAADx/wcAAAALAAUAAADx/wgAAAAGAAcAAADm/wQAAAAIAAIAAADm/wUAAAAIAAMAAADm/wYAAAAIAAUAAADm/wcAAAAAAAcAAADn/wQAAAAKAAIAAADn/wUAAAAJAAQAAADn/wYAAAAJAAUAAADn/wcAAAAIAAYAAADo/wQAAAAKAAIAAADo/wUAAAAJAAQAAADo/wYAAAAJAAUAAADo/wcAAAAKAAYAAADp/wQAAAAKAAIAAADp/wUAAAAJAAQAAADp/wYAAAAJAAUAAADp/wcAAAAIAAYAAADq/wQAAAALAAIAAADq/wUAAAALAAQAAADq/wYAAAALAAUAAADq/wcAAAAGAAcAAADl/w4AAAAIAAIAAADl/w8AAAAIAAMAAADl/xAAAAAIAAUAAADl/xEAAAAAAAcAAADm/w4AAAAKAAIAAADm/w8AAAAJAAQAAADm/xAAAAAJAAUAAADm/xEAAAAIAAYAAADn/w4AAAAKAAIAAADn/w8AAAAJAAQAAADn/xAAAAAJAAUAAADn/xEAAAAKAAYAAADo/w4AAAAKAAIAAADo/w8AAAAJAAQAAADo/xAAAAAJAAUAAADo/xEAAAAIAAYAAADp/w4AAAALAAIAAADp/w8AAAALAAQAAADp/xAAAAALAAUAAADp/xEAAAAGAAcAAAD5/w4AAAAIAAIAAAD5/w8AAAAIAAMAAAD5/xAAAAAIAAUAAAD5/xEAAAAAAAcAAAD6/w4AAAAKAAIAAAD6/w8AAAAJAAQAAAD6/xAAAAAJAAUAAAD6/xEAAAAIAAYAAAD7/w4AAAAKAAIAAAD7/w8AAAAJAAQAAAD7/xAAAAAJAAUAAAD7/xEAAAAKAAYAAAD8/w4AAAAKAAIAAAD8/w8AAAAJAAQAAAD8/xAAAAAJAAUAAAD8/xEAAAAIAAYAAAD9/w4AAAALAAIAAAD9/w8AAAALAAQAAAD9/xAAAAALAAUAAAD9/xEAAAAGAAcAAADt/w0AAAAIAAIAAADt/w4AAAAIAAMAAADt/w8AAAAIAAUAAADt/xAAAAAAAAcAAADu/w0AAAAKAAIAAADu/w4AAAAGAAQAAADu/w8AAAALAAUAAADu/xAAAAAGAAcAAADv/w0AAAAKAAIAAADv/w4AAAAJAAUAAADv/w8AAAAIAAYAAADw/w0AAAAKAAIAAADw/w4AAAAJAAUAAADw/w8AAAAKAAYAAADx/wwAAAAIAAIAAADx/w0AAAAFAAMAAADx/w4AAAAJAAUAAADx/w8AAAAKAAYAAADy/wwAAAAKAAIAAADy/w0AAAAJAAQAAADy/w4AAAAJAAUAAADy/w8AAAAIAAYAAADz/wwAAAALAAIAAADz/w0AAAALAAQAAADz/w4AAAALAAUAAADz/w8AAAAGAAcAAAAJAA8AAAAIAAIAAAAJABAAAAAIAAMAAAAJABEAAAAIAAUAAAAJABIAAAAAAAcAAAAKAA8AAAAKAAIAAAAKABAAAAAGAAQAAAAKABEAAAALAAUAAAAKABIAAAAGAAcAAAALAA8AAAAKAAIAAAALABAAAAAJAAUAAAALABEAAAAIAAYAAAAMAA8AAAAKAAIAAAAMABAAAAAJAAUAAAAMABEAAAAKAAYAAAANAA4AAAAIAAIAAAANAA8AAAAFAAMAAAANABAAAAAJAAUAAAANABEAAAAKAAYAAAAOAA4AAAAKAAIAAAAOAA8AAAAJAAQAAAAOABAAAAAJAAUAAAAOABEAAAAIAAYAAAAPAA4AAAALAAIAAAAPAA8AAAALAAQAAAAPABAAAAALAAUAAAAPABEAAAAGAAcAAAA=")
 tile_set = ExtResource("3_wj73x")
 metadata/_edit_lock_ = true
 
 [node name="visual_upper" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 2
 tile_set = SubResource("TileSet_d5x7l")
 metadata/_edit_lock_ = true
@@ -495,23 +509,57 @@ y_sort_enabled = true
 [node name="bush8" parent="ysort/BushContainer" instance=ExtResource("4_imdem")]
 position = Vector2(-33, 468)
 
-[node name="bush2" parent="ysort/BushContainer" instance=ExtResource("6_gt2y6")]
-position = Vector2(-21, 327)
-
 [node name="bush3" parent="ysort/BushContainer" instance=ExtResource("6_gt2y6")]
-position = Vector2(-28, 299)
+position = Vector2(-12, 305)
 
 [node name="bush4" parent="ysort/BushContainer" instance=ExtResource("6_gt2y6")]
-position = Vector2(-60, 294)
+position = Vector2(-43, 293)
 
 [node name="bush5" parent="ysort/BushContainer" instance=ExtResource("6_gt2y6")]
-position = Vector2(-90, 302)
+position = Vector2(-79, 298)
 
 [node name="bush6" parent="ysort/BushContainer" instance=ExtResource("6_gt2y6")]
-position = Vector2(-121, 298)
+position = Vector2(-113, 294)
 
 [node name="bush7" parent="ysort/BushContainer" instance=ExtResource("4_imdem")]
 position = Vector2(-170, 454)
+
+[node name="bush9" parent="ysort/BushContainer" instance=ExtResource("6_gt2y6")]
+position = Vector2(-134, 461)
+
+[node name="TreeContainer" type="Node2D" parent="ysort"]
+z_as_relative = false
+y_sort_enabled = true
+
+[node name="tree1" parent="ysort/TreeContainer" instance=ExtResource("8_u4kh1")]
+position = Vector2(-267, 475)
+
+[node name="tree2" parent="ysort/TreeContainer" instance=ExtResource("9_svivd")]
+position = Vector2(-385, 454)
+
+[node name="tree3" parent="ysort/TreeContainer" instance=ExtResource("8_u4kh1")]
+position = Vector2(-208, 523)
+
+[node name="tree4" parent="ysort/TreeContainer" instance=ExtResource("10_yafm2")]
+position = Vector2(117, 414)
+
+[node name="tree5" parent="ysort/TreeContainer" instance=ExtResource("9_svivd")]
+position = Vector2(57, 296)
+
+[node name="tree6" parent="ysort/TreeContainer" instance=ExtResource("11_46211")]
+position = Vector2(0, 295)
+
+[node name="tree7" parent="ysort/TreeContainer" instance=ExtResource("8_u4kh1")]
+position = Vector2(-62, 477)
+
+[node name="tree8" parent="ysort/TreeContainer" instance=ExtResource("10_yafm2")]
+position = Vector2(29, 390)
+
+[node name="tree9" parent="ysort/TreeContainer" instance=ExtResource("12_svivd")]
+position = Vector2(61, 436)
+
+[node name="tree10" parent="ysort/TreeContainer" instance=ExtResource("9_svivd")]
+position = Vector2(26, 484)
 
 [node name="player" parent="ysort" instance=ExtResource("4_jk5kv")]
 z_index = 1
@@ -529,9 +577,6 @@ curve = SubResource("Curve2D_5mrsh")
 [node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("5_d1j47")]
 position = Vector2(-125, 422)
 speed = 50.0
-
-[node name="bush2" parent="ysort" instance=ExtResource("6_gt2y6")]
-position = Vector2(-134, 461)
 
 [node name="CameraContainer" type="Node" parent="."]
 

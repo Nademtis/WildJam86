@@ -925,6 +925,7 @@ y_sort_enabled = true
 position = Vector2(0, 300)
 
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
 tile_set = ExtResource("1_80vhd")
 metadata/_edit_lock_ = true
@@ -935,13 +936,21 @@ tile_map_data = PackedByteArray("AAAAAAEAAAAJAAQAAAD//wEAAAAJAAQAAAD//wIAAAAGAAQ
 tile_set = ExtResource("1_80vhd")
 metadata/_edit_lock_ = true
 
+[node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD4/wAAAAABAAAAAAA=")
+tile_set = ExtResource("1_80vhd")
+metadata/_edit_lock_ = true
+
 [node name="upper" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD+////AAALAAUAAAD+//7/AAALAAIAAAD9////AAAJAAUAAAD9//7/AAAKAAIAAAD8////AAAJAAUAAAD8//7/AAAKAAIAAAD7////AAAIAAUAAAD7//7/AAAIAAIAAAD7/wAAAAAAAAcAAAD+/wAAAAAGAAcAAAD8/wAAAAAIAAYAAAD9/wAAAAAIAAYAAAA=")
 tile_set = SubResource("TileSet_vnv7o")
 metadata/_edit_lock_ = true
 
 [node name="visual_upper" type="TileMapLayer" parent="ysort/tilemaps"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = 2
 tile_set = SubResource("TileSet_d5x7l")
 metadata/_edit_lock_ = true
@@ -954,6 +963,10 @@ tile_set = ExtResource("4_glpk1")
 metadata/_edit_lock_ = true
 
 [node name="BushContainer" type="Node2D" parent="ysort"]
+y_sort_enabled = true
+
+[node name="TreeContainer" type="Node2D" parent="ysort"]
+z_as_relative = false
 y_sort_enabled = true
 
 [node name="player" parent="ysort" instance=ExtResource("2_hjsbj")]

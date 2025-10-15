@@ -20,3 +20,8 @@ res://levels/level_1.tscn
 res://levels/level_template.tscn
 res://tileset/dark_corner_bush_tileset.tres
 res://shaders/sway_material.tres
+res://scenes/tree_2.tscn
+res://scenes/tree_1.tscn
+res://scenes/tree_4.tscn
+res://scenes/tree_3.tscn
+res://scenes/tree_5.tscn
