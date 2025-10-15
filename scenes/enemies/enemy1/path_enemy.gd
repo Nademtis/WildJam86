@@ -1,9 +1,5 @@
 extends PathFollow2D
 
-#@onready var enemy_1: PathFollow2D = $"."
-
-
-
 @onready var animated_mask: AnimatedSprite2D = $Animated_mask
 @onready var animated_body: AnimatedSprite2D = $Animated_body
 @onready var light: Node2D = $light
@@ -11,6 +7,9 @@ extends PathFollow2D
 @export var speed: float = 100.0
 var last_position: Vector2
 
+#kill player variables
+var player_area: Area2D = null
+@onready var timer: Timer = $Timer
 
 
 func _ready() -> void:
@@ -55,6 +54,19 @@ func play_direction_animation(dir: Vector2) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		area.get_parent().kill_player()
-		speed = speed * 0.2
-	pass # Replace with function body.
+		player_area = area
+		timer.start()
+			
+
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("player"):
+		player_area = null
+		timer.stop()
+
+func _on_timer_timeout() -> void:
+	if player_area:
+		if player_area.get_parent().can_kill_player():
+			player_area.get_parent().kill_player()
+			speed = speed * 0.2
+			timer.stop()

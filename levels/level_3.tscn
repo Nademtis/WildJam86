@@ -576,8 +576,7 @@ position = Vector2(-13, -19)
 curve = SubResource("Curve2D_5mrsh")
 
 [node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("5_d1j47")]
-z_as_relative = false
-position = Vector2(-140, 413)
+position = Vector2(-139, 406)
 speed = 50.0
 
 [node name="CameraContainer" type="Node" parent="."]

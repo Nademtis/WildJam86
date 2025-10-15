@@ -192,5 +192,10 @@ occluder = SubResource("OccluderPolygon2D_mq2de")
 visible = false
 polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="light/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="light/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

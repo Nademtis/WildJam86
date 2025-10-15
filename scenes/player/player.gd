@@ -1,4 +1,5 @@
 extends CharacterBody2D
+#player script
 
 #enum MovementState{IDLE, WALKING, ATTACKING, DASHING}
 @export var max_speed: float = 60
@@ -12,6 +13,7 @@ var is_mask_equipped : bool
 
 @onready var animation_player: AnimationPlayer = $dieanim/AnimationPlayer # used for player die anim
 @onready var dieanim: Node2D = $dieanim
+@onready var slealth: Node2D = $slealth
 
 func _ready() -> void:
 	dieanim.visible = false
@@ -44,6 +46,13 @@ func move_player(delta : float) -> void:
 		velocity = lerp(velocity, input_vector * max_speed, acceleration * delta)
 	else: #deceleration
 		velocity = lerp(velocity, input_vector * max_speed, deceleration * delta)
+
+func can_kill_player() -> bool:
+	if slealth.is_hidden or is_mask_equipped:
+		#print("not killing since mask or hidden")
+		return false
+	else:
+		return true
 
 func kill_player() -> void:
 	can_move = false
