@@ -190,7 +190,7 @@ occluder = SubResource("OccluderPolygon2D_mq2de")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light/Area2D"]
 visible = false
-polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
+polygon = PackedVector2Array(0, 2, -41, 71, -2, 80, 34, 72)
 
 [node name="killTimer" type="Timer" parent="."]
 wait_time = 0.2
@@ -198,6 +198,7 @@ wait_time = 0.2
 [node name="lookAtTimer" type="Timer" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
 collision_mask = 4
 hit_from_inside = true
 collide_with_areas = true
