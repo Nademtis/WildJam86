@@ -4,8 +4,8 @@ extends PointLight2D
 @export var is_blinking = false
 @export var light_color : Color
 
-@export var max_pause_time = 1
-@export var min_pause_time = 0.3
+@export var max_pause_time : float = 1
+@export var min_pause_time : float = 0.3
 
 var is_turned_off = false
 @onready var timer: Timer = $Timer
