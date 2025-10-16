@@ -1,20 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8wv53b6agllw"]
+[gd_scene load_steps=14 format=4 uid="uid://bdd0n66iywf25"]
 
-[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="1_80vhd"]
-[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_safpt"]
-[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="2_hjsbj"]
-[ext_resource type="TileSet" uid="uid://cnbrfba4o0fwm" path="res://tileset/upper_tileset.tres" id="3_22dcj"]
-[ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="3_gjl0y"]
-[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="4_5mrsh"]
-[ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="4_glpk1"]
-[ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_path.tscn" id="4_safpt"]
-[ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_8urs1"]
+[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_ldpug"]
+[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_8vr3t"]
+[ext_resource type="TileSet" uid="uid://cnbrfba4o0fwm" path="res://tileset/upper_tileset.tres" id="3_a58qw"]
+[ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="4_ij65d"]
+[ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="5_gci8k"]
+[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="6_gder6"]
+[ext_resource type="PackedScene" uid="uid://bo0tqunn5ba34" path="res://scenes/enemies/enemy1/enemy_stand_and_look.tscn" id="7_ldpug"]
+[ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_p0827"]
+[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_brp6y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
-size = Vector2(597, 298)
+size = Vector2(629, 403)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnv7o"]
-texture = ExtResource("3_gjl0y")
+texture = ExtResource("4_ij65d")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -419,12 +419,6 @@ terrain_set_0/terrain_0/name = "walkable 0"
 terrain_set_0/terrain_0/color = Color(0.682955, 0.143194, 0.248297, 1)
 sources/0 = SubResource("TileSetAtlasSource_vnv7o")
 
-[sub_resource type="Curve2D" id="Curve2D_5mrsh"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -166, 321, 0, 0, 0, 0, -184, 358, 0, 0, 0, 0, -166, 414, 0, 0, 0, 0, -94, 415, 0, 0, 0, 0, -82, 358, 0, 0, 0, 0, -97, 322, 0, 0, 0, 0, -128, 312, 0, 0, 0, 0, -166, 321)
-}
-point_count = 8
-
 [sub_resource type="Curve2D" id="Curve2D_64qpc"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -320, 320)
@@ -432,7 +426,7 @@ _data = {
 point_count = 1
 
 [node name="level" type="Node2D"]
-script = ExtResource("1_safpt")
+script = ExtResource("1_ldpug")
 
 [node name="BG" type="ColorRect" parent="."]
 z_index = -5
@@ -446,7 +440,8 @@ metadata/_edit_lock_ = true
 [node name="cameraLimit" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraLimit"]
-position = Vector2(-152.5, 411)
+visible = false
+position = Vector2(-168.5, 358.5)
 shape = SubResource("RectangleShape2D_yglgk")
 
 [node name="ysort" type="Node2D" parent="."]
@@ -459,23 +454,24 @@ position = Vector2(0, 300)
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
-tile_set = ExtResource("1_80vhd")
+tile_set = ExtResource("2_8vr3t")
 metadata/_edit_lock_ = true
 
 [node name="walkable" type="TileMapLayer" parent="ysort/tilemaps"]
 y_sort_enabled = true
-tile_set = ExtResource("1_80vhd")
+tile_map_data = PackedByteArray("AADw/wEAAAAJAAQAAADv/wEAAAAJAAQAAADu/wEAAAAJAAQAAADt/wIAAAAJAAQAAADs/wIAAAAJAAQAAADs/wMAAAAJAAQAAADr/wMAAAAJAAQAAADr/wQAAAAJAAQAAADq/wUAAAAJAAQAAADq/wYAAAAJAAQAAADr/wcAAAAJAAQAAADs/wgAAAAJAAQAAADt/wgAAAAJAAQAAADu/wgAAAAJAAQAAADv/wgAAAAJAAQAAADw/wgAAAAJAAQAAADx/wgAAAAJAAQAAADy/wcAAAAKAAIAAADz/wcAAAAFAAMAAADz/wYAAAAIAAMAAADz/wUAAAAIAAMAAADz/wQAAAAIAAMAAADv/wcAAAAKAAIAAADw/wcAAAAKAAIAAADy/wgAAAAJAAQAAADz/wgAAAAJAAQAAAD0/wgAAAAJAAQAAAD1/wcAAAAJAAQAAAD2/wcAAAAJAAQAAAD5/wMAAAAJAAQAAAD4/wMAAAAJAAQAAAD4/wIAAAAJAAQAAAD3/wIAAAAJAAQAAAD2/wIAAAAJAAQAAAD1/wIAAAAJAAQAAAD0/wIAAAAJAAQAAADz/wMAAAAIAAMAAAD0/wYAAAAJAAQAAAD1/wYAAAAJAAQAAAD2/wYAAAAJAAQAAAD3/wYAAAAJAAQAAAD1/wEAAAAJAAQAAAD0/wEAAAAJAAQAAADz/wEAAAAJAAQAAADy/wIAAAAJAAUAAADx/wIAAAAJAAUAAAD0/wQAAAAJAAQAAAD0/wMAAAAJAAQAAADz/wIAAAAFAAQAAAD0/wUAAAAJAAQAAAD1/wUAAAAJAAQAAAD1/wQAAAAJAAQAAAD2/wQAAAAJAAQAAAD2/wMAAAAJAAQAAADy/wEAAAAJAAQAAADx/wEAAAAJAAQAAADw/wIAAAAJAAUAAADu/wUAAAALAAQAAADu/wYAAAALAAQAAADu/wcAAAAGAAMAAAD0/wcAAAAJAAQAAAD2/wUAAAAJAAQAAAD1/wMAAAAJAAQAAADx/wcAAAAKAAIAAADv/wIAAAAJAAUAAADu/wMAAAALAAQAAADu/wQAAAALAAQAAADu/wIAAAAGAAQAAADt/wMAAAAJAAQAAADt/wQAAAAJAAQAAADs/wUAAAAJAAQAAADs/wYAAAAJAAQAAADs/wcAAAAJAAQAAADt/wcAAAAJAAQAAADs/wQAAAAJAAQAAADr/wUAAAAJAAQAAADr/wYAAAAJAAQAAADt/wYAAAAJAAQAAADt/wUAAAAJAAQAAADu/wAAAAAKAAIAAADt/wAAAAAKAAIAAADs/wAAAAAKAAIAAADr/wAAAAAKAAIAAADq/wEAAAAJAAQAAADq/wIAAAAJAAQAAADp/wIAAAAIAAMAAADq/wcAAAAFAAQAAADr/wgAAAAFAAQAAADs/wEAAAAJAAQAAADr/wEAAAAJAAQAAADq/wMAAAAJAAQAAADt/wEAAAAJAAQAAADr/wIAAAAJAAQAAADq/wQAAAAJAAQAAADs/wkAAAAJAAUAAADt/wkAAAAJAAUAAADu/wkAAAAJAAUAAADv/wkAAAAJAAUAAADw/wkAAAAJAAUAAADx/wkAAAAJAAUAAADy/wkAAAAJAAUAAADz/wkAAAAJAAUAAAD0/wkAAAAJAAUAAAD3/wMAAAAJAAQAAAD3/wQAAAAJAAQAAAD3/wUAAAAJAAQAAAD4/wQAAAAJAAQAAAD5/wIAAAAJAAQAAAD5/wEAAAAJAAQAAAD4/wEAAAAJAAQAAAD6/wIAAAAJAAQAAAD6/wEAAAAGAAMAAAD3/wEAAAAJAAQAAAD2/wEAAAAJAAQAAAD4/wAAAAAFAAMAAAD3/wAAAAAKAAIAAAD2/wAAAAAKAAIAAAD1/wAAAAAKAAIAAAD0/wAAAAAKAAIAAADz/wAAAAAKAAIAAADy/wAAAAAKAAIAAADx/wAAAAAKAAIAAADw/wAAAAAKAAIAAADv/wAAAAAKAAIAAAD6//z/AAALAAQAAAD6//3/AAALAAQAAAD6//7/AAALAAQAAAD6////AAALAAQAAAD6/wAAAAALAAQAAAD5/wAAAAAJAAQAAAD5////AAAJAAQAAAD5//7/AAAJAAQAAAD5//3/AAAJAAQAAAD5//z/AAAJAAQAAAD4//z/AAAIAAMAAAD4//3/AAAIAAMAAAD4//7/AAAIAAMAAAD4////AAAIAAMAAAD6//v/AAALAAQAAAD5//v/AAAJAAQAAAD4//v/AAAIAAMAAAD4//r/AAAIAAMAAAD5//r/AAAJAAQAAAD6//r/AAALAAQAAAD6//n/AAALAAIAAAD5//n/AAAKAAIAAAD4//n/AAAIAAIAAADq/wAAAAAKAAIAAADp/wAAAAAKAAIAAADo/wAAAAAKAAIAAADn/wAAAAAKAAIAAADm/wAAAAAKAAIAAADl/wAAAAAKAAIAAADk/wAAAAAKAAIAAADj/wAAAAAKAAIAAADi/wAAAAAIAAIAAADi/wEAAAAIAAUAAADj/wEAAAAJAAUAAADk/wEAAAAJAAUAAADl/wEAAAAJAAUAAADm/wEAAAAJAAUAAADn/wEAAAAJAAUAAADo/wEAAAAJAAUAAADp/wEAAAAFAAQAAAD5/wQAAAAJAAQAAAD6/wQAAAAJAAQAAAD6/wMAAAAJAAQAAAD5/wUAAAAJAAQAAAD4/wUAAAAJAAQAAAD4/wYAAAAJAAQAAAD3/wcAAAAJAAQAAAD2/wgAAAAJAAQAAAD1/wgAAAAJAAQAAAD3/wgAAAAJAAQAAAD5/wYAAAAGAAQAAAD4/wcAAAAJAAQAAAD2/wkAAAAJAAUAAAD1/wkAAAAJAAUAAAD4/wgAAAAGAAQAAAD5/wcAAAALAAQAAAD6/wUAAAAGAAQAAAD3/wkAAAAJAAUAAAD4/wkAAAALAAUAAAD5/wgAAAALAAUAAAD6/wYAAAALAAUAAAD7/wUAAAALAAUAAAD7/wQAAAALAAQAAAD7/wMAAAALAAQAAAD7/wIAAAALAAQAAAD7/wEAAAALAAIAAADp/wMAAAAIAAMAAADp/wQAAAAIAAMAAADp/wUAAAAIAAMAAADp/wYAAAAIAAMAAADp/wcAAAAIAAUAAADr/wkAAAAIAAUAAADq/wgAAAAIAAUAAAA=")
+tile_set = ExtResource("2_8vr3t")
 metadata/_edit_lock_ = true
 
 [node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
 y_sort_enabled = true
-tile_set = ExtResource("1_80vhd")
+tile_set = ExtResource("2_8vr3t")
 metadata/_edit_lock_ = true
 
 [node name="upper" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 y_sort_enabled = true
-tile_set = ExtResource("3_22dcj")
+tile_set = ExtResource("3_a58qw")
 metadata/_edit_lock_ = true
 
 [node name="visual_upper" type="TileMapLayer" parent="ysort/tilemaps"]
@@ -488,7 +484,7 @@ metadata/_edit_lock_ = true
 light_mask = 0
 z_index = 2
 position = Vector2(0, -300)
-tile_set = ExtResource("4_glpk1")
+tile_set = ExtResource("5_gci8k")
 metadata/_edit_lock_ = true
 
 [node name="BushContainer" type="Node2D" parent="ysort"]
@@ -498,34 +494,35 @@ y_sort_enabled = true
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="player" parent="ysort" instance=ExtResource("2_hjsbj")]
+[node name="player" parent="ysort" instance=ExtResource("6_gder6")]
 z_index = 1
-position = Vector2(-46, 326)
+position = Vector2(-104, 213)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
 
-[node name="Path2D" type="Path2D" parent="ysort/EnemyContainer"]
-position = Vector2(-10, -20)
-curve = SubResource("Curve2D_5mrsh")
+[node name="enemyStandAndLook" parent="ysort/EnemyContainer" node_paths=PackedStringArray("marker_list") instance=ExtResource("7_ldpug")]
+position = Vector2(-181, 366)
+marker_list = [NodePath("Marker2D")]
+duration_list = Array[float]([1.0])
 
-[node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("4_safpt")]
-position = Vector2(-166, 321)
-speed = 50.0
+[node name="Marker2D" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook"]
+position = Vector2(-57, 8)
 
 [node name="CameraContainer" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="CameraContainer"]
+position = Vector2(99, 58)
 curve = SubResource("Curve2D_64qpc")
 
-[node name="FixedCamera" parent="CameraContainer/Path2D" node_paths=PackedStringArray("follow_target", "follow_path") instance=ExtResource("8_8urs1")]
+[node name="FixedCamera" parent="CameraContainer/Path2D" node_paths=PackedStringArray("follow_target", "follow_path") instance=ExtResource("8_p0827")]
 top_level = true
-position = Vector2(-320, 320)
+position = Vector2(-221, 378)
 follow_mode = 4
 follow_target = NodePath("../../../ysort/player")
 follow_path = NodePath("..")
 
 [node name="LevelSwapperContainer" type="Node" parent="."]
 
-[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("4_5mrsh")]
-position = Vector2(31, 318)
+[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("9_brp6y")]
+position = Vector2(-461, 316)

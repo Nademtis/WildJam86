@@ -1,3 +1,4 @@
+res://scenes/enemies/enemy1
 res://scripts/globals
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.3.1
 res://scenes/player/assets
@@ -14,7 +15,6 @@ res://shaders
 res://scenes/bushes
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported
 C:/Users/Mathias/Documents/wildjam86-ver.4.4/WildJam86
-res://scenes/enemies/enemy1
 res://scripts
 res://scenes/levelSwapper
 res://levels

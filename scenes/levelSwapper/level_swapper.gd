@@ -11,9 +11,8 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		print("player is here. swap levels")
+		#print("player is here. swap levels")
 		swap_level()
-	pass # Replace with function body.
 
 func swap_level() -> void:
 	Events.emit_signal("swap_level", next_level_packed_scene)

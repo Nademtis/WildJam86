@@ -1,0 +1,201 @@
+[gd_scene load_steps=22 format=3 uid="uid://ddmksap2gxosk"]
+
+[ext_resource type="Script" uid="uid://b1vycfioevhyh" path="res://scenes/enemies/enemy1/path_enemy.gd" id="1_w8vdo"]
+[ext_resource type="Shader" uid="uid://6ie7ed3aasje" path="res://shaders/foliage.gdshader" id="2_c02no"]
+[ext_resource type="Texture2D" uid="uid://bjql4kkg0jy4" path="res://scenes/enemies/enemy1/enemy_body_spritesheet.png" id="3_mtq0t"]
+[ext_resource type="Texture2D" uid="uid://cem845ub2fsis" path="res://scenes/enemies/enemy1/enemy_mask_spritesheet.png" id="4_bgxam"]
+[ext_resource type="Texture2D" uid="uid://cg8v7xryf038s" path="res://scenes/enemies/enemy1/512x512 textures (61).png" id="5_f1xuj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m0bq8"]
+domain_warp_amplitude = 100.0
+domain_warp_frequency = 0.5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u8gn5"]
+seamless = true
+noise = SubResource("FastNoiseLite_m0bq8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d6oql"]
+shader = ExtResource("2_c02no")
+shader_parameter/render_noise = false
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_u8gn5")
+shader_parameter/amplitude = 0.2
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 0.4
+shader_parameter/rotation_pivot = Vector2(-0.265, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq2de"]
+atlas = ExtResource("3_mtq0t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6oql"]
+atlas = ExtResource("3_mtq0t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08wgd"]
+atlas = ExtResource("3_mtq0t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1twna"]
+atlas = ExtResource("3_mtq0t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nxvx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq2de")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6oql")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08wgd")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1twna")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8r5ae"]
+atlas = ExtResource("4_bgxam")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh30d"]
+atlas = ExtResource("4_bgxam")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlg88"]
+atlas = ExtResource("4_bgxam")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a72l0"]
+atlas = ExtResource("4_bgxam")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7h1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8r5ae")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh30d")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlg88")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a72l0")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uu7d"]
+radius = 13.0384
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8gn5"]
+polygon = PackedVector2Array(-34, 45, 0, -15, 29, 46, 0, -46)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mq2de"]
+polygon = PackedVector2Array(-82, 123, 76, 122, 87, 126, -103, 126)
+
+[node name="enemyPath" type="PathFollow2D"]
+z_index = 1
+z_as_relative = false
+y_sort_enabled = true
+rotates = false
+script = ExtResource("1_w8vdo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -191.0
+offset_top = -171.0
+offset_right = 195.0
+offset_bottom = 148.0
+color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[node name="Animated_body" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_d6oql")
+sprite_frames = SubResource("SpriteFrames_3nxvx")
+animation = &"down"
+
+[node name="Animated_mask" type="AnimatedSprite2D" parent="."]
+light_mask = 0
+sprite_frames = SubResource("SpriteFrames_u7h1f")
+animation = &"down"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5uu7d")
+
+[node name="light" type="Node2D" parent="."]
+position = Vector2(0, -9)
+
+[node name="PointLight2D" type="PointLight2D" parent="light"]
+color = Color(0.478431, 0.211765, 0.482353, 1)
+energy = 3.0
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("5_f1xuj")
+texture_scale = 0.35
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="light"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 11)
+occluder = SubResource("OccluderPolygon2D_u8gn5")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(2, -19)
+occluder = SubResource("OccluderPolygon2D_mq2de")
+
+[node name="Area2D" type="Area2D" parent="light"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light/Area2D"]
+visible = false
+polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="light/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="light/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -19,3 +19,10 @@ res://levels/level_1.tscn
 res://levels/level_2.tscn
 res://scenes/player/player.gd
 res://scripts/globals/PlayerStats.gd
+res://levels/level_4.tscn
+res://scenes/levelSwapper/level_swapper.gd
+res://levels/level_5.tscn
+res://scenes/enemies/enemy1/enemy_path.tscn
+res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
+res://scenes/enemies/enemy1/enemy_stand_and_look.gd
+res://scenes/enemies/MarkerData.gd
