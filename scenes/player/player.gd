@@ -23,21 +23,25 @@ func _ready() -> void:
 	dieanim.visible = false
 
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("mask"):
-		is_mask_equipped = true
-	else:
-		is_mask_equipped = false
-	
-	if is_mask_equipped:
-		mask_timer += delta
-	elif !is_mask_equipped and velocity.length() < 5.0: # yes mask and standing still
-		mask_timer -= delta
-	
-	mask_timer = clamp(mask_timer, 0.0, mask_max_time) # so mask value not negative
-	
-	if mask_timer >= mask_max_time:
-		kill_player()
-	#print(mask_timer)
+	if PlayerStats.mask_unlocked:
+		mask_logic(delta)
+
+func mask_logic(delta: float) -> void:
+		if Input.is_action_pressed("mask"):
+			is_mask_equipped = true
+		else:
+			is_mask_equipped = false
+		
+		if is_mask_equipped:
+			mask_timer += delta
+		elif !is_mask_equipped and velocity.length() < 5.0: # yes mask and standing still
+			mask_timer -= delta
+		
+		mask_timer = clamp(mask_timer, 0.0, mask_max_time) # so mask value not negative
+		
+		if mask_timer >= mask_max_time:
+			kill_player()
+		#print(mask_timer)
 
 func _physics_process(delta: float) -> void:
 	if can_move:
