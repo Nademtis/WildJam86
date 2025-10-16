@@ -12,3 +12,5 @@ signal fade_to_black_and_restart_current_level
 
 #stealth
 signal is_hidden(is_hidden : bool)
+
+signal health_changed(percentage : float) #0.0 to 1.0 

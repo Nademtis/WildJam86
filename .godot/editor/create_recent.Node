@@ -1,13 +1,13 @@
+ColorRect
+CanvasLayer
 CollisionShape2D
 Area2D
 RayCast2D
 Marker2D
 Timer
 LightOccluder2D
-CanvasLayer
 Node2D
 Path2D
-ColorRect
 AnimationPlayer
 Node
 Sprite2D

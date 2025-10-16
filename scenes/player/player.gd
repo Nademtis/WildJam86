@@ -19,6 +19,9 @@ var mask_timer: float = 0.0
 @onready var dieanim: Node2D = $dieanim
 @onready var slealth: Node2D = $slealth
 
+
+var last_mask_step: int = -1  # for mask visuals
+
 func _ready() -> void:
 	dieanim.visible = false
 
@@ -34,14 +37,30 @@ func mask_logic(delta: float) -> void:
 		
 		if is_mask_equipped:
 			mask_timer += delta
-		elif !is_mask_equipped and velocity.length() < 5.0: # yes mask and standing still
+		elif !is_mask_equipped and velocity.length() < 5.0: # no mask and standing still
 			mask_timer -= delta
-		
+			
 		mask_timer = clamp(mask_timer, 0.0, mask_max_time) # so mask value not negative
+		update_mask_visuals()
 		
 		if mask_timer >= mask_max_time:
 			kill_player()
 		#print(mask_timer)
+
+func update_mask_visuals() -> void:
+	if mask_max_time <= 0:
+		return
+	
+	# Calculate normalized value (0.0 to 1.0)
+	var mask_percent := mask_timer / mask_max_time
+	
+	# Calculate current 5% step
+	var current_step := int(mask_percent * 20)
+	
+	# Only emit if step changed
+	if current_step != last_mask_step:
+		last_mask_step = current_step
+		Events.emit_signal("health_changed", mask_percent)
 
 func _physics_process(delta: float) -> void:
 	if can_move:

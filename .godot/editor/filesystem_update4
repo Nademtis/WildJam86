@@ -31,3 +31,6 @@ res://scenes/unlockMask.gd
 res://scenes/levelSwapper/level_swapper.tscn
 res://scenes/levelSwapper/level_swapper.gd
 res://scripts/globals/Events.gd
+res://levels/main.tscn
+res://shaders/chromaticAberration.gdshader
+res://scripts/juice_canvas_layer.gd
