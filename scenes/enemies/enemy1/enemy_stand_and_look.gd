@@ -22,7 +22,7 @@ var current_marker_index : int = 0
 #light stuff
 var target_rotation: float = 0.0
 @export var rotation_speed: float = 5.0 # higher = faster
-
+@export var DEBUG_player : CharacterBody2D
 
 #kill player variables
 var player_area: Area2D = null
@@ -30,7 +30,7 @@ var player_area: Area2D = null
 
 
 func _ready() -> void:
-	ray_cast_2d.enabled = false
+	#ray_cast_2d.enabled = false
 	check_errors()
 	if marker_list.size() == 1:
 		look_at_marker(marker_list[0], 0)
@@ -93,7 +93,6 @@ func _on_timer_timeout() -> void:
 		if player_area.get_parent().can_kill_player():
 			if check_los_with_player(player_area.global_position):
 				player_area.get_parent().kill_player()
-				#speed = speed * 0.2
 				kill_timer.stop()
 
 func check_errors() -> void:
@@ -114,10 +113,9 @@ func check_los_with_player(target_pos : Vector2) -> bool:
 	
 	if ray_cast_2d.is_colliding():
 		var collider = ray_cast_2d.get_collider()
-		if collider and collider.is_in_group("walls"):
+		if collider and collider.is_in_group("wall"):
 			print("Line of sight blocked by:", collider.name)
 			return false
-	# No collision — clear line of sight
 	return true
 
 func _on_look_at_timer_timeout() -> void:
