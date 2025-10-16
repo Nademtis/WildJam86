@@ -18,3 +18,10 @@ res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
 res://scenes/enemies/enemy1/enemy_stand_and_look.gd
 res://scenes/spotlight.tscn
 res://scenes/spotlight.gd
+res://levels/level_7.tscn
+res://levels/level_6_mask.tscn
+res://levels/level_template.tscn
+res://scripts/globals/PlayerStats.gd
+res://scenes/player/player.tscn
+res://scenes/player/player.gd
+res://scenes/enemies/enemy1/enemy_path.tscn

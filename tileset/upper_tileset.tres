@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://cnbrfba4o0fwm"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://cnbrfba4o0fwm"]
 
 [ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="1_arkeq"]
 
@@ -7,6 +7,12 @@ tile_data = PackedInt32Array(0, 524288, 2, 65536, 524288, 3, 131072, 524288, 5, 
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_arkeq"]
 tile_data = PackedInt32Array(65536, 524288, 2, 131072, 524288, 3, 65537, 655360, 2, 65538, 655360, 2, 65539, 655360, 2, 4, 524288, 2, 65540, 327680, 3, 5, 655360, 2, 6, 720896, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_vv36x"]
+tile_data = PackedInt32Array(0, 524288, 2, 65536, 524288, 5, 131072, 0, 7, 1, 655360, 2, 65537, 589824, 5, 131073, 524288, 6, 2, 655360, 2, 65538, 589824, 5, 131074, 655360, 6, 3, 655360, 2, 65539, 589824, 5, 131075, 524288, 6, 4, 720896, 2, 65540, 720896, 5, 131076, 393216, 7)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_ln052"]
+tile_data = PackedInt32Array(0, 524288, 2, 65536, 0, 7, 1, 655360, 2, 65537, 524288, 6, 2, 655360, 2, 65538, 655360, 6, 3, 655360, 2, 65539, 524288, 6, 4, 720896, 2, 65540, 393216, 7)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0unm6"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -647,3 +653,5 @@ terrain_set_0/terrain_0/color = Color(0.682955, 0.143194, 0.248297, 1)
 sources/0 = SubResource("TileSetAtlasSource_gjl0y")
 pattern_0 = SubResource("TileMapPattern_gj1dp")
 pattern_1 = SubResource("TileMapPattern_arkeq")
+pattern_2 = SubResource("TileMapPattern_vv36x")
+pattern_3 = SubResource("TileMapPattern_ln052")

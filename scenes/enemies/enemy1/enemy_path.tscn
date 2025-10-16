@@ -182,6 +182,7 @@ position = Vector2(0, 11)
 occluder = SubResource("OccluderPolygon2D_u8gn5")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(2, -19)
 occluder = SubResource("OccluderPolygon2D_mq2de")

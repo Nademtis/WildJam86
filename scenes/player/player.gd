@@ -9,7 +9,7 @@ class_name Player
 var can_move = true
 
 var is_mask_equipped : bool
-@export var mask_max_time: float = 2.0
+@export var mask_max_time: float = PlayerStats.max_mask_time
 var mask_timer: float = 0.0
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

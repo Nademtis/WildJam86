@@ -17,6 +17,8 @@ var look_at_duration : float
 @onready var look_at_timer: Timer = $lookAtTimer
 var current_marker_index : int = 0
 
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
+
 #light stuff
 var target_rotation: float = 0.0
 @export var rotation_speed: float = 5.0 # higher = faster
@@ -28,6 +30,7 @@ var player_area: Area2D = null
 
 
 func _ready() -> void:
+	ray_cast_2d.enabled = false
 	check_errors()
 	if marker_list.size() == 1:
 		look_at_marker(marker_list[0], 0)
@@ -88,9 +91,10 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func _on_timer_timeout() -> void:
 	if player_area:
 		if player_area.get_parent().can_kill_player():
-			player_area.get_parent().kill_player()
-			#speed = speed * 0.2
-			kill_timer.stop()
+			if check_los_with_player(player_area.global_position):
+				player_area.get_parent().kill_player()
+				#speed = speed * 0.2
+				kill_timer.stop()
 
 func check_errors() -> void:
 	if marker_list.is_empty():
@@ -100,6 +104,21 @@ func check_errors() -> void:
 	if marker_list.size() != duration_list.size():
 		printerr("list size does not match")
 
+func check_los_with_player(target_pos : Vector2) -> bool:
+	print("checks los")
+	ray_cast_2d.enabled = true
+	
+	var local_target = to_local(target_pos)
+	ray_cast_2d.target_position = local_target
+	ray_cast_2d.force_raycast_update()
+	
+	if ray_cast_2d.is_colliding():
+		var collider = ray_cast_2d.get_collider()
+		if collider and collider.is_in_group("walls"):
+			print("Line of sight blocked by:", collider.name)
+			return false
+	# No collision — clear line of sight
+	return true
 
 func _on_look_at_timer_timeout() -> void:
 	current_marker_index += 1

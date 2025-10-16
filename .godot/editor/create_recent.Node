@@ -1,7 +1,8 @@
+RayCast2D
+Marker2D
 Timer
 LightOccluder2D
 CanvasLayer
-Marker2D
 Node2D
 Path2D
 ColorRect
