@@ -30,7 +30,7 @@ var player_area: Area2D = null
 
 
 func _ready() -> void:
-	#ray_cast_2d.enabled = false
+	ray_cast_2d.enabled = false
 	check_errors()
 	if marker_list.size() == 1:
 		look_at_marker(marker_list[0], 0)
@@ -104,7 +104,7 @@ func check_errors() -> void:
 		printerr("list size does not match")
 
 func check_los_with_player(target_pos : Vector2) -> bool:
-	print("checks los")
+	#print("checks los")
 	ray_cast_2d.enabled = true
 	
 	var local_target = to_local(target_pos)
@@ -114,7 +114,8 @@ func check_los_with_player(target_pos : Vector2) -> bool:
 	if ray_cast_2d.is_colliding():
 		var collider = ray_cast_2d.get_collider()
 		if collider and collider.is_in_group("wall"):
-			print("Line of sight blocked by:", collider.name)
+			#print("los blocked by: ", collider.name)
+			ray_cast_2d.enabled = false
 			return false
 	return true
 
@@ -122,7 +123,7 @@ func _on_look_at_timer_timeout() -> void:
 	current_marker_index += 1
 
 	if current_marker_index >= marker_list.size():
-		current_marker_index = 0  # loop back around
+		current_marker_index = 0
 
 	var next_marker: Marker2D = marker_list[current_marker_index]
 	var next_duration: float = duration_list[current_marker_index]

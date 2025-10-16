@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dgrtl6u753p0p"]
+[gd_scene load_steps=31 format=4 uid="uid://dgrtl6u753p0p"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_rmdjx"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_fvc4i"]
@@ -13,11 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="11_1j6lr"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="12_qys3k"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="13_hutha"]
+[ext_resource type="PackedScene" uid="uid://c5doxycqekmqx" path="res://levels/level_7.tscn" id="14_b801l"]
 [ext_resource type="Script" uid="uid://bc02sfykkhkv5" path="res://scenes/cutscene/cutscene.gd" id="14_tojhh"]
 [ext_resource type="Texture2D" uid="uid://b4bupwh5dlvl5" path="res://scenes/enemies/enemy1/dead_enemy_body.png" id="15_nk80k"]
 [ext_resource type="Texture2D" uid="uid://l3mk104ocvb7" path="res://scenes/enemies/enemy1/dead_enemy_mask.png" id="16_22f44"]
 [ext_resource type="Texture2D" uid="uid://ct502h4g01gla" path="res://scenes/player/assets/mask/mask.png" id="17_rn8g8"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="18_ot846"]
+[ext_resource type="Script" uid="uid://scngum6vd60m" path="res://scenes/unlockMask.gd" id="19_fvc4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(408, 528)
@@ -1094,6 +1096,9 @@ _data = {
 &"create_mask_cutscene": SubResource("Animation_obhq7")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b801l"]
+size = Vector2(30, 33)
+
 [node name="level" type="Node2D"]
 script = ExtResource("1_rmdjx")
 
@@ -1208,7 +1213,7 @@ position = Vector2(-221, 383)
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("13_hutha")]
 position = Vector2(-87, 366)
-next_level_packed_scene = null
+next_level_packed_scene = ExtResource("14_b801l")
 
 [node name="cutscene" type="Node" parent="."]
 script = ExtResource("14_tojhh")
@@ -1261,4 +1266,13 @@ color = Color(0, 0, 0, 1)
 light_mask = 2
 position = Vector2(-82, 376)
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-114, 366)
+script = ExtResource("19_fvc4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, 3.5)
+shape = SubResource("RectangleShape2D_b801l")
+
 [connection signal="area_entered" from="cutscene/startCutsceneArea2D" to="cutscene" method="_on_start_cutscene_area_2d_area_entered"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c5doxycqekmqx"]
+[gd_scene load_steps=19 format=4 uid="uid://c5doxycqekmqx"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_3t5n2"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_v2dqh"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bo0tqunn5ba34" path="res://scenes/enemies/enemy1/enemy_stand_and_look.tscn" id="8_cicrg"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_g7b2g"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_6s2qa"]
+[ext_resource type="PackedScene" uid="uid://bvsw0k2kkt23" path="res://levels/level_8.tscn" id="13_4pmw3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(411, 397)
@@ -598,3 +599,4 @@ follow_path = NodePath("..")
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("9_6s2qa")]
 position = Vector2(-16, 632)
+next_level_packed_scene = ExtResource("13_4pmw3")

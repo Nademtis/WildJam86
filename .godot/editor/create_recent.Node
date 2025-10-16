@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 RayCast2D
 Marker2D
 Timer
@@ -7,9 +9,6 @@ Node2D
 Path2D
 ColorRect
 AnimationPlayer
-CollisionShape2D
-Area2D
 Node
 Sprite2D
 StaticBody2D
-TileMapLayer
