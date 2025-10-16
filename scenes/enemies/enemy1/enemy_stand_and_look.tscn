@@ -181,6 +181,7 @@ position = Vector2(0, 11)
 occluder = SubResource("OccluderPolygon2D_u8gn5")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="light"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 position = Vector2(2, -19)
 occluder = SubResource("OccluderPolygon2D_mq2de")
@@ -191,10 +192,13 @@ occluder = SubResource("OccluderPolygon2D_mq2de")
 visible = false
 polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="killTimer" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="lookAtTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="light/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="light/Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="killTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="lookAtTimer" to="." method="_on_look_at_timer_timeout"]

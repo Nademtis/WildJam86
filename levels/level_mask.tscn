@@ -1240,9 +1240,9 @@ libraries = {
 visible = false
 z_index = 2
 offset_left = -400.0
-offset_top = 240.0
+offset_top = 280.0
 offset_right = -360.0
-offset_bottom = 310.0
+offset_bottom = 350.0
 scale = Vector2(9.08908, 0.699585)
 color = Color(0, 0, 0, 1)
 
@@ -1250,9 +1250,9 @@ color = Color(0, 0, 0, 1)
 visible = false
 z_index = 2
 offset_left = -396.0
-offset_top = 477.0
+offset_top = 437.0
 offset_right = -356.0
-offset_bottom = 547.0
+offset_bottom = 507.0
 scale = Vector2(9.08908, 0.699585)
 color = Color(0, 0, 0, 1)
 

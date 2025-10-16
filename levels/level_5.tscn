@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bdd0n66iywf25"]
+[gd_scene load_steps=17 format=4 uid="uid://bdd0n66iywf25"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_ldpug"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_8vr3t"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bo0tqunn5ba34" path="res://scenes/enemies/enemy1/enemy_stand_and_look.tscn" id="7_ldpug"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_p0827"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_brp6y"]
+[ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="10_8vr3t"]
+[ext_resource type="PackedScene" uid="uid://dgrtl6u753p0p" path="res://levels/level_mask.tscn" id="10_a58qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(629, 403)
@@ -425,6 +427,9 @@ _data = {
 }
 point_count = 1
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ldpug"]
+polygon = PackedVector2Array(-286, 341, -275, 348, -275, 412, -274, 413, -273, 414, -272, 414, -272, 415, -271, 415, -271, 414, -268, 414, -268, 415, -260, 415, -260, 416, -258, 416, -258, 415, -255, 415, -255, 414, -252, 414, -252, 415, -244, 415, -244, 416, -242, 416, -242, 415, -239, 415, -239, 414, -235.98, 414, -236, 415, -228, 415, -228, 416, -226, 416, -226, 415, -223, 415, -223, 414, -219.944, 414, -220, 415, -212, 415, -212, 416, -210, 416, -210, 415, -208, 415, -207, 414, -206, 413, -205, 412, -205, 348, -191, 341, -191, 431, -286, 424)
+
 [node name="level" type="Node2D"]
 script = ExtResource("1_ldpug")
 
@@ -454,6 +459,7 @@ position = Vector2(0, 300)
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
+tile_map_data = PackedByteArray("AADz/wMAAAAGAAYAAADy/wMAAAAKAAYAAADx/wMAAAAIAAYAAADw/wMAAAAIAAYAAADv/wMAAAAIAAYAAADu/wMAAAABAAYAAADz/wQAAAAGAAYAAADy/wQAAAAIAAYAAADx/wQAAAAIAAYAAADw/wQAAAAIAAYAAADv/wQAAAAIAAYAAADz/wcAAAAFAAcAAADz/wYAAAAFAAYAAADz/wUAAAAEAAYAAADz/wIAAAAFAAYAAADy/wcAAAAIAAYAAADy/wYAAAAIAAYAAADy/wUAAAAIAAYAAADy/wIAAAAIAAYAAADx/wcAAAAIAAYAAADx/wYAAAAKAAYAAADx/wUAAAAIAAYAAADx/wIAAAAIAAYAAADw/wcAAAAIAAYAAADw/wYAAAAIAAYAAADw/wUAAAAIAAYAAADw/wIAAAAIAAYAAADv/wcAAAAIAAYAAADv/wYAAAAIAAYAAADv/wUAAAAIAAcAAADv/wIAAAAIAAYAAADu/wcAAAAAAAYAAADu/wYAAAABAAYAAADu/wUAAAAAAAYAAADu/wQAAAAAAAYAAADu/wIAAAABAAYAAAA=")
 tile_set = ExtResource("2_8vr3t")
 metadata/_edit_lock_ = true
 
@@ -496,18 +502,21 @@ y_sort_enabled = true
 
 [node name="player" parent="ysort" instance=ExtResource("6_gder6")]
 z_index = 1
-position = Vector2(-104, 213)
+position = Vector2(-119, 275)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
 
 [node name="enemyStandAndLook" parent="ysort/EnemyContainer" node_paths=PackedStringArray("marker_list") instance=ExtResource("7_ldpug")]
-position = Vector2(-181, 366)
-marker_list = [NodePath("Marker2D")]
-duration_list = Array[float]([1.0])
+position = Vector2(-238, 329)
+marker_list = [NodePath("Marker2D"), NodePath("Marker2D2")]
+duration_list = Array[float]([1.0, 1.0])
 
 [node name="Marker2D" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook"]
-position = Vector2(-57, 8)
+position = Vector2(8, 72)
+
+[node name="Marker2D2" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook"]
+position = Vector2(-4, 73)
 
 [node name="CameraContainer" type="Node" parent="."]
 
@@ -526,3 +535,15 @@ follow_path = NodePath("..")
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("9_brp6y")]
 position = Vector2(-461, 316)
+next_level_packed_scene = ExtResource("10_a58qw")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+occluder = SubResource("OccluderPolygon2D_ldpug")
+
+[node name="PointLight2D" parent="." instance=ExtResource("10_8vr3t")]
+position = Vector2(-240, 410)
+energy = 16.0
+shadow_enabled = true
+is_blinking = true
+light_color = Color(0.478431, 0.211765, 0.482353, 1)
