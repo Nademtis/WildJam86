@@ -34,3 +34,5 @@ res://scripts/globals/Events.gd
 res://levels/main.tscn
 res://shaders/chromaticAberration.gdshader
 res://scripts/juice_canvas_layer.gd
+res://scenes/camera/FixedCamera.tscn
+res://scenes/camera_shake.tres

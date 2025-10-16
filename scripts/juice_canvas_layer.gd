@@ -2,6 +2,10 @@ extends CanvasLayer
 #juice canvaslayer
 @onready var color_rect: ColorRect = $ColorRect
 
+@onready var phantom_camera_host: PhantomCameraHost = $"../Camera2D/PhantomCameraHost"
+const CAMERA_SHAKE = preload("res://scenes/camera_shake.tres")
+var old_cam : PhantomCamera2D #used for removing shake if camera swapped and new shake was added
+
 var r : Vector2
 var g : Vector2
 var b : Vector2
@@ -16,13 +20,48 @@ func _ready() -> void:
 		b = mat.get_shader_parameter("b_displacement")
 		
 	Events.connect("health_changed", update_chromaticAberration)
-	
+	reset()
 
 func update_chromaticAberration(percentage : float) -> void:
 	print(percentage)
+	if percentage <= 0.08:
+		reset()
+	else:
+		if percentage >= 0.2:
+			turn_on_camera_shake(true)
+		else:
+			turn_on_camera_shake(false)
+			
+
+		
+		var mat: ShaderMaterial = color_rect.material
+		if not mat:
+			return
+
+		var new_r = Vector2(r.x * percentage * strength_multiplier, r.y)
+		var new_b = Vector2(b.x * percentage * strength_multiplier, b.y)
+		mat.set_shader_parameter("r_displacement", new_r)
+		mat.set_shader_parameter("b_displacement", -new_b)
+
+func reset() -> void:
+	print("resets")
 	var mat: ShaderMaterial = color_rect.material
 	if not mat:
 		return
-	mat.set_shader_parameter("r_displacement", r * (percentage * strength_multiplier))
-	#mat.set_shader_parameter("g_displacement", g) # unchanged
-	mat.set_shader_parameter("b_displacement", b * (percentage * strength_multiplier))
+	mat.set_shader_parameter("r_displacement", 0)
+	mat.set_shader_parameter("b_displacement", 0)
+
+func turn_on_camera_shake(turn_on : bool) -> void:
+	var active_cam: PhantomCamera2D = phantom_camera_host._active_pcam_2d
+	
+	# Remove shake from old camera if it exists and isn't the active camera
+	if old_cam and old_cam != active_cam:
+		old_cam.noise = null
+		print("old cam noise removed")
+	
+	# Apply or remove shake on active camera
+	if active_cam:
+		active_cam.noise = CAMERA_SHAKE if turn_on else null
+	
+	# Update old_cam to track the previous camera
+	old_cam = active_cam

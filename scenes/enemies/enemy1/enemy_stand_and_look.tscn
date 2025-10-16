@@ -193,7 +193,7 @@ visible = false
 polygon = PackedVector2Array(0, 2, -41, 71, -2, 80, 34, 72)
 
 [node name="killTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.1
 
 [node name="lookAtTimer" type="Timer" parent="."]
 

@@ -14,8 +14,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jw1n3"]
 shader = ExtResource("2_etqu2")
 shader_parameter/r_displacement = Vector2(0.1, 0)
-shader_parameter/g_displacement = Vector2(0.1, 0)
-shader_parameter/b_displacement = Vector2(0, 0)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(0.1, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_etqu2"]
 shader = ExtResource("2_qy63d")
@@ -106,6 +106,7 @@ priority = 1
 follow_mode = 1
 zoom = Vector2(6, 6)
 tween_resource = SubResource("Resource_5k4jt")
+follow_damping = true
 draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 

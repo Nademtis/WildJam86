@@ -7,6 +7,7 @@ class_name Player
 
 #used for die animation
 var can_move = true
+var player_died = false
 
 var is_mask_equipped : bool
 @export var mask_max_time: float = PlayerStats.max_mask_time
@@ -93,9 +94,10 @@ func can_kill_player() -> bool:
 		return true
 
 func kill_player() -> void:
+	print("player died")
 	can_move = false
 	velocity = Vector2.ZERO
-	mask_timer = 0
+	mask_timer = PlayerStats.max_mask_time / 2
 
 	animated_sprite_2d.visible = false
 	dieanim.visible = true

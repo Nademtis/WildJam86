@@ -18,6 +18,7 @@ script = ExtResource("1_el2xd")
 zoom = Vector2(6, 6)
 tween_resource = SubResource("Resource_67vg4")
 draw_limits = true
+_preview_noise = false
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="Area2D" type="Area2D" parent="."]
