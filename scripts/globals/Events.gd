@@ -1,7 +1,7 @@
 extends Node
 #global Event bus
 
-signal swap_level(new_level_packed_scene : PackedScene)
+signal swap_level(new_level_path : String)
 signal restart_level
 
 signal new_level_done_loading

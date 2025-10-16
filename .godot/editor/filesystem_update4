@@ -28,3 +28,6 @@ res://scenes/enemies/enemy1/enemy_path.tscn
 res://levels/level_2.tscn
 res://levels/level_8.tscn
 res://scenes/unlockMask.gd
+res://scenes/levelSwapper/level_swapper.tscn
+res://scenes/levelSwapper/level_swapper.gd
+res://scripts/globals/Events.gd

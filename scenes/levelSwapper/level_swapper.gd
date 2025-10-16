@@ -1,9 +1,9 @@
 extends Area2D
 
-@export var next_level_packed_scene : PackedScene
+@export var next_level_path : String
 
 func _ready() -> void:
-	if !next_level_packed_scene:
+	if !next_level_path:
 		print("no path given on ", self)
 		queue_free()
 		
@@ -15,5 +15,5 @@ func _on_area_entered(area: Area2D) -> void:
 		swap_level()
 
 func swap_level() -> void:
-	Events.emit_signal("swap_level", next_level_packed_scene)
+	Events.emit_signal("swap_level", next_level_path)
 	

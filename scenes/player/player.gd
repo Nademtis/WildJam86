@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var max_speed: float = 60
+@export var max_speed: float = PlayerStats.max_player_speed 
 @export var acceleration: float = 8
 @export var deceleration: float = 60
 

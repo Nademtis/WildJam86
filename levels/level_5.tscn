@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bdd0n66iywf25"]
+[gd_scene load_steps=19 format=4 uid="uid://bdd0n66iywf25"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_ldpug"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_8vr3t"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_p0827"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_brp6y"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="10_8vr3t"]
-[ext_resource type="PackedScene" uid="uid://dgrtl6u753p0p" path="res://levels/level_6_mask.tscn" id="10_a58qw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(629, 403)
@@ -566,7 +565,7 @@ follow_path = NodePath("..")
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("9_brp6y")]
 position = Vector2(-461, 316)
-next_level_packed_scene = ExtResource("10_a58qw")
+next_level_path = "res://levels/level_6_mask.tscn"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 modulate = Color(1, 1, 1, 0)

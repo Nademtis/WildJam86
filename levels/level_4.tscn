@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ura4elmd4wrl"]
+[gd_scene load_steps=18 format=4 uid="uid://ura4elmd4wrl"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_0fd8o"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_dmnu2"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="7_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://bs10lsupi7a1p" path="res://scenes/bushes/bush3.tscn" id="8_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="9_8hlpj"]
-[ext_resource type="PackedScene" uid="uid://bdd0n66iywf25" path="res://levels/level_5.tscn" id="13_qhnv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(486, 415)
@@ -561,4 +560,4 @@ limit_target = NodePath("../../../cameraLimit/CollisionShape2D")
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("7_qhnv2")]
 position = Vector2(123, 684)
-next_level_packed_scene = ExtResource("13_qhnv2")
+next_level_path = "res://levels/level_5.tscn"

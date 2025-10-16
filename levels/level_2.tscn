@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cy7kuro31f7m5"]
+[gd_scene load_steps=20 format=4 uid="uid://cy7kuro31f7m5"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_j4s08"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_gpqau"]
@@ -10,7 +10,6 @@
 [ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="5_vm7no"]
 [ext_resource type="PackedScene" uid="uid://bs10lsupi7a1p" path="res://scenes/bushes/bush3.tscn" id="6_efwds"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="6_eq866"]
-[ext_resource type="PackedScene" uid="uid://c0cqtjfbm5ro" path="res://levels/level_3.tscn" id="7_gpqau"]
 [ext_resource type="PackedScene" uid="uid://w4u7ysrkfi2q" path="res://scenes/tree_5.tscn" id="9_uo0vl"]
 [ext_resource type="PackedScene" uid="uid://bljx1se6b2y3h" path="res://scenes/tree_1.tscn" id="10_k2aru"]
 [ext_resource type="PackedScene" uid="uid://dgirdur0fcok3" path="res://scenes/tree_4.tscn" id="11_ndgrd"]
@@ -558,7 +557,7 @@ top_level = true
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("6_eq866")]
 position = Vector2(265, 163)
-next_level_packed_scene = ExtResource("7_gpqau")
+next_level_path = "res://levels/level_3.tscn"
 
 [node name="PointLight2D" parent="." instance=ExtResource("12_hbb88")]
 position = Vector2(283, 156)

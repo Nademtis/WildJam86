@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://dgrtl6u753p0p"]
+[gd_scene load_steps=30 format=4 uid="uid://dgrtl6u753p0p"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_rmdjx"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_fvc4i"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="11_1j6lr"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="12_qys3k"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="13_hutha"]
-[ext_resource type="PackedScene" uid="uid://c5doxycqekmqx" path="res://levels/level_7.tscn" id="14_b801l"]
 [ext_resource type="Script" uid="uid://bc02sfykkhkv5" path="res://scenes/cutscene/cutscene.gd" id="14_tojhh"]
 [ext_resource type="Texture2D" uid="uid://b4bupwh5dlvl5" path="res://scenes/enemies/enemy1/dead_enemy_body.png" id="15_nk80k"]
 [ext_resource type="Texture2D" uid="uid://l3mk104ocvb7" path="res://scenes/enemies/enemy1/dead_enemy_mask.png" id="16_22f44"]
@@ -1213,7 +1212,7 @@ position = Vector2(-221, 383)
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("13_hutha")]
 position = Vector2(-87, 366)
-next_level_packed_scene = ExtResource("14_b801l")
+next_level_path = "res://levels/level_7.tscn"
 
 [node name="cutscene" type="Node" parent="."]
 script = ExtResource("14_tojhh")
@@ -1246,9 +1245,9 @@ libraries = {
 visible = false
 z_index = 2
 offset_left = -400.0
-offset_top = 240.0
+offset_top = 280.0
 offset_right = -360.0
-offset_bottom = 310.0
+offset_bottom = 350.0
 scale = Vector2(9.08908, 0.699585)
 color = Color(0, 0, 0, 1)
 
@@ -1256,9 +1255,9 @@ color = Color(0, 0, 0, 1)
 visible = false
 z_index = 2
 offset_left = -396.0
-offset_top = 477.0
+offset_top = 437.0
 offset_right = -356.0
-offset_bottom = 547.0
+offset_bottom = 507.0
 scale = Vector2(9.08908, 0.699585)
 color = Color(0, 0, 0, 1)
 
