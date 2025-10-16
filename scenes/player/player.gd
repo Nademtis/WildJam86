@@ -38,7 +38,7 @@ func mask_logic(delta: float) -> void:
 		if is_mask_equipped:
 			mask_timer += delta
 		elif !is_mask_equipped and velocity.length() < 5.0: # no mask and standing still
-			mask_timer -= delta
+			mask_timer -= delta * 2
 			
 		mask_timer = clamp(mask_timer, 0.0, mask_max_time) # so mask value not negative
 		update_mask_visuals()
