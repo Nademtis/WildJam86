@@ -27,3 +27,4 @@ res://levels/level_4.tscn
 res://levels/level_5.tscn
 res://scenes/camera_shake.tres
 res://scripts/juice_canvas_layer.gd
+res://scenes/player/player.gd

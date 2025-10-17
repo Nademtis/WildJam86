@@ -94,7 +94,6 @@ func can_kill_player() -> bool:
 		return true
 
 func kill_player() -> void:
-	print("player died")
 	can_move = false
 	velocity = Vector2.ZERO
 	mask_timer = PlayerStats.max_mask_time / 2

@@ -23,7 +23,6 @@ func _ready() -> void:
 	reset()
 
 func update_chromaticAberration(percentage : float) -> void:
-	print(percentage)
 	if percentage <= 0.08:
 		reset()
 	else:
@@ -57,7 +56,7 @@ func turn_on_camera_shake(turn_on : bool, percentage : float) -> void:
 		active_cam.noise = CAMERA_SHAKE if turn_on else null
 		
 		if active_cam.noise:
-			active_cam.noise.frequency = percentage
+			active_cam.noise.frequency = percentage * 2
 			active_cam.noise.amplitude = percentage * 2
 			if active_cam.noise.frequency <= 0.08: # remove jitters
 				active_cam.noise.frequency = 0.0
