@@ -1,3 +1,4 @@
+res://shaders
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.6.3
 res://assets/audio/music
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.6.2
@@ -7,7 +8,6 @@ res://scripts/globals
 res://scripts
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.5
 res://scenes
-res://shaders
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.4
 res://scenes/enemies/enemy1
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.3.1
@@ -20,4 +20,3 @@ res://scenes/camera
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.2.1
 C:/Users/Mathias/Desktop/WildJam-86-Masked-Escape-exported/0.2
 res://scenes/stealthVisuals
-res://scenes/bushes

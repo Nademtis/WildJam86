@@ -439,7 +439,6 @@ metadata/_edit_lock_ = true
 [node name="cameraLimit" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraLimit"]
-visible = false
 position = Vector2(-112.25, 335)
 shape = SubResource("RectangleShape2D_l53as")
 

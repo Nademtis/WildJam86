@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://bo0tqunn5ba34"]
 
 [ext_resource type="Script" uid="uid://dsluei4a2v7x6" path="res://scenes/enemies/enemy1/enemy_stand_and_look.gd" id="1_jatj5"]
-[ext_resource type="Shader" uid="uid://6ie7ed3aasje" path="res://shaders/foliage.gdshader" id="2_hnhid"]
+[ext_resource type="Shader" uid="uid://6yeo1c81tl53" path="res://shaders/outerBushes.gdshader" id="2_yj12u"]
 [ext_resource type="Texture2D" uid="uid://bjql4kkg0jy4" path="res://scenes/enemies/enemy1/enemy_body_spritesheet.png" id="3_yj12u"]
 [ext_resource type="Texture2D" uid="uid://cem845ub2fsis" path="res://scenes/enemies/enemy1/enemy_mask_spritesheet.png" id="4_cim20"]
 [ext_resource type="Texture2D" uid="uid://cg8v7xryf038s" path="res://scenes/enemies/enemy1/512x512 textures (61).png" id="5_4aica"]
@@ -17,7 +17,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_m0bq8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d6oql"]
-shader = ExtResource("2_hnhid")
+shader = ExtResource("2_yj12u")
 shader_parameter/render_noise = false
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_u8gn5")
 shader_parameter/amplitude = 0.2

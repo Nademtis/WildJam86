@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bjejpaty1orbw"]
+
+[ext_resource type="Shader" uid="uid://6yeo1c81tl53" path="res://shaders/outerBushes.gdshader" id="1_nmn08"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nt7gq"]
+
+[resource]
+shader = ExtResource("1_nmn08")
+shader_parameter/render_noise = false
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_nt7gq")
+shader_parameter/amplitude = 0.03
+shader_parameter/time_scale = 0.08
+shader_parameter/noise_scale = 0.001
+shader_parameter/rotation_strength = 1.0
+shader_parameter/rotation_pivot = Vector2(0.5, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://butei8yip7reh"]
+[gd_scene load_steps=24 format=3 uid="uid://butei8yip7reh"]
 
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_2262g"]
 [ext_resource type="Script" uid="uid://b0sb5c542mjmt" path="res://scripts/main.gd" id="1_wdj6m"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ifaiv"]
 [ext_resource type="AudioStream" uid="uid://cci0b5h3ovd3p" path="res://assets/audio/music/intro_3.ogg" id="5_4fc0e"]
 [ext_resource type="AudioStream" uid="uid://dw5xkav51aysd" path="res://assets/audio/music/intro_3_drums.ogg" id="6_21ko3"]
+[ext_resource type="Material" uid="uid://bjejpaty1orbw" path="res://shaders/outerBushes_material.tres" id="11_iwo8l"]
 [ext_resource type="Texture2D" uid="uid://pqwkf6kffrma" path="res://assets/nature/outer_camera_bushes_top.png" id="11_s07ge"]
 [ext_resource type="Texture2D" uid="uid://degiala04m5eh" path="res://assets/nature/outer_camera_bushes_right.png" id="12_iwo8l"]
 
@@ -94,13 +95,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OuterCameraBushesTop" type="Sprite2D" parent="stealthCanvaslayer"]
+[node name="bushUp" type="Sprite2D" parent="stealthCanvaslayer"]
+material = ExtResource("11_iwo8l")
 position = Vector2(0, -165)
 scale = Vector2(6, 6)
 texture = ExtResource("11_s07ge")
 offset = Vector2(165, 90)
 
-[node name="OuterCameraBushesTop2" type="Sprite2D" parent="stealthCanvaslayer"]
+[node name="bushDown" type="Sprite2D" parent="stealthCanvaslayer"]
+material = ExtResource("11_iwo8l")
 position = Vector2(0, 165)
 scale = Vector2(6, 6)
 texture = ExtResource("11_s07ge")
@@ -108,13 +111,15 @@ offset = Vector2(165, 90)
 flip_h = true
 flip_v = true
 
-[node name="OuterCameraBushesRight" type="Sprite2D" parent="stealthCanvaslayer"]
+[node name="bushRight" type="Sprite2D" parent="stealthCanvaslayer"]
+material = ExtResource("11_iwo8l")
 position = Vector2(200, 0)
 scale = Vector2(6, 6)
 texture = ExtResource("12_iwo8l")
 offset = Vector2(165, 90)
 
-[node name="OuterCameraBushesleft" type="Sprite2D" parent="stealthCanvaslayer"]
+[node name="bushLeft" type="Sprite2D" parent="stealthCanvaslayer"]
+material = ExtResource("11_iwo8l")
 position = Vector2(-200, 0)
 scale = Vector2(6, 6)
 texture = ExtResource("12_iwo8l")
@@ -132,7 +137,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FadeToBlackCanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("2_ifaiv")
 
 [node name="ColorRect" type="ColorRect" parent="FadeToBlackCanvasLayer"]
