@@ -17,14 +17,14 @@ var duration : float = 0.6
 
 var PITCH_SHIFT : AudioEffectPitchShift
 var pitch_scale_max : float = 1.0
-var pitch_scale_min : float = 0.95
+var pitch_scale_min : float = 0.7
 
 
 func _ready() -> void:
 	MUSIC_BUS_INDEX = AudioServer.get_bus_index(MUSIC_BUS)
 	
 	LOW_PASS = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 0)
-	PITCH_SHIFT = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 1)
+	#PITCH_SHIFT = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 1)
 	
 	Events.connect("is_hidden", in_bush_effects)
 	start_sounds()
@@ -39,7 +39,7 @@ func start_sounds() -> void:
 	music_1_drums.play()
 
 func in_bush_effects(is_hidden : bool) -> void:
-	add_pitchShift(is_hidden)
+	#add_pitchShift(is_hidden)
 	add_eq_filter(is_hidden)
 
 

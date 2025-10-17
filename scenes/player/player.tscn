@@ -992,6 +992,7 @@ bus = &"SFX"
 
 [node name="maskingSFX" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("28_iqsei")
+volume_db = 4.0
 bus = &"SFX"
 
 [node name="playerDiedSFX" type="AudioStreamPlayer2D" parent="sfx"]
