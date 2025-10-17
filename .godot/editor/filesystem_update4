@@ -1,4 +1,4 @@
-res://levels/level_7.tscn
+res://levels/level_6_mask.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://tileset/tileset.tres
 res://tileset/dark_corner_bush_tileset.tres
@@ -8,12 +8,11 @@ res://shaders/sway.gdshader
 res://shaders/sway_material.tres
 res://tileset/upper_tileset.tres
 res://shaders/chromaticAberration.gdshader
+res://scenes/camera_shake.tres
 res://shaders/vignette.gdshader
 res://shaders/black_screen.gdshader
-res://scripts/main.gd
-res://scripts/globals/PlayerStats.gd
-res://levels/level_6_mask.tscn
 res://levels/level_template.tscn
+res://levels/level_7.tscn
 res://scenes/enemies/enemy1/enemy_path.tscn
 res://scenes/levelSwapper/level_swapper.tscn
 res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
@@ -25,6 +24,4 @@ res://levels/level_2.tscn
 res://levels/level_3.tscn
 res://levels/level_4.tscn
 res://levels/level_5.tscn
-res://scenes/camera_shake.tres
 res://scripts/juice_canvas_layer.gd
-res://scenes/player/player.gd

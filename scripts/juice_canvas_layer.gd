@@ -61,6 +61,6 @@ func turn_on_camera_shake(turn_on : bool, percentage : float) -> void:
 			if active_cam.noise.frequency <= 0.08: # remove jitters
 				active_cam.noise.frequency = 0.0
 				active_cam.noise.amplitude = 0.0
-			print("cam_frequency: ", active_cam.noise.frequency)
+			#print("cam_frequency: ", active_cam.noise.frequency)
 	# Update old_cam to track the previous camera
 	old_cam = active_cam
