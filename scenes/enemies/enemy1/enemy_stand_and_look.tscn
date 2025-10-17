@@ -207,6 +207,7 @@ collide_with_areas = true
 
 [node name="enemyPositional" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_yj12u")
+stream_paused = true
 max_distance = 200.0
 attenuation = 1.5
 panning_strength = 2.5

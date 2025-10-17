@@ -1,7 +1,7 @@
 extends Node2D
 #main
 
-const FIRST_LEVEL_PATH = "res://levels/level_1.tscn"
+const FIRST_LEVEL_PATH = "res://levels/level_7.tscn"
 
 @onready var level_container: Node2D = $levelContainer
 @onready var follow_pcam: PhantomCamera2D = $FollowPhantomCamera2D

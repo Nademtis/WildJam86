@@ -34,7 +34,9 @@ var player_area: Area2D = null
 
 
 func _ready() -> void:
-	enemy_positional.play()
+	if not Engine.is_editor_hint(): # so the sfx does not play in editor
+		enemy_positional.play()
+	
 	ray_cast_2d.enabled = false
 	check_errors()
 	if marker_list.size() == 1:

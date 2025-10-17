@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dgrtl6u753p0p"]
+[gd_scene load_steps=31 format=4 uid="uid://dgrtl6u753p0p"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_rmdjx"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_fvc4i"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://l3mk104ocvb7" path="res://scenes/enemies/enemy1/dead_enemy_mask.png" id="16_22f44"]
 [ext_resource type="Texture2D" uid="uid://ct502h4g01gla" path="res://scenes/player/assets/mask/mask.png" id="17_rn8g8"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="18_ot846"]
+[ext_resource type="AudioStream" uid="uid://c88s5svdtf5ft" path="res://assets/audio/sfx/crafting_mask.ogg" id="19_b801l"]
 [ext_resource type="Script" uid="uid://scngum6vd60m" path="res://scenes/unlockMask.gd" id="19_fvc4i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
@@ -1307,6 +1308,11 @@ is_blinking = true
 light_color = Color(0.478431, 0.211765, 0.482353, 1)
 max_pause_time = 0.5
 min_pause_time = 0.2
+
+[node name="CraftingSFX" type="AudioStreamPlayer2D" parent="cutscene"]
+stream = ExtResource("19_b801l")
+volume_db = -10.895
+bus = &"SFX"
 
 [node name="PointLight2D" parent="." instance=ExtResource("18_ot846")]
 light_mask = 2

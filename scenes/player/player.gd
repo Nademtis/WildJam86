@@ -99,7 +99,7 @@ func play_mask_sfx(percentage : float) -> void:
 	
 	if new_volume >= sfx_max_mask_volume:
 		new_volume = sfx_max_mask_volume
-	print("new_volume: ", new_volume)
+	#print("new_volume: ", new_volume)
 	masking_sfx.volume_db = new_volume
 
 func move_player(delta : float) -> void:

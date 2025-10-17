@@ -1,4 +1,4 @@
-res://levels/main.tscn
+res://levels/level_6_mask.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://shaders/chromaticAberration.gdshader
 res://scenes/camera_shake.tres
@@ -10,7 +10,18 @@ res://tileset/upper_tileset.tres
 res://tileset/dark_corner_bush_tileset.tres
 res://shaders/foliage_material.tres
 res://shaders/sway.gdshader
+res://shaders/sway_material.tres
+res://scenes/cutscene/cutscene.gd
+res://levels/main.tscn
 res://scenes/player/player.tscn
 res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
 res://levels/level_7.tscn
 res://scenes/enemies/enemy1/enemy_path.tscn
+res://scripts/main.gd
+res://levels/level_8.tscn
+res://scenes/enemies/enemy1/enemy_stand_and_look.gd
+res://default_bus_layout.tres
+res://scripts/audio_manager.gd
+res://scripts/globals/PlayerStats.gd
+res://assets/audio/music/lowPassFilter.tres
+res://scenes/player/player.gd
