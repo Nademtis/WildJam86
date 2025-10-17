@@ -5,6 +5,17 @@ class_name Player
 @export var acceleration: float = 8
 @export var deceleration: float = 60
 
+#SFX
+@onready var step_playlist: AudioStreamPlayer2D = $sfx/stepPlaylist
+@onready var bush_playlist: AudioStreamPlayer2D = $sfx/bushPlaylist
+@onready var mask_on_sfx: AudioStreamPlayer2D = $sfx/maskOnSFX
+@onready var mask_off_sfx: AudioStreamPlayer2D = $sfx/maskOffSFX
+@onready var masking_sfx: AudioStreamPlayer2D = $sfx/maskingSFX
+@onready var player_died_sfx: AudioStreamPlayer2D = $sfx/playerDiedSFX
+
+
+
+
 #used for die animation
 var can_move = true
 var player_died = false
@@ -31,6 +42,11 @@ func _process(delta: float) -> void:
 		mask_logic(delta)
 
 func mask_logic(delta: float) -> void:
+		if Input.is_action_just_pressed("mask"):
+			mask_on_sfx.play()
+		if Input.is_action_just_released("mask"):
+			mask_off_sfx.play()
+	
 		if Input.is_action_pressed("mask"):
 			is_mask_equipped = true
 		else:
@@ -83,8 +99,13 @@ func move_player(delta : float) -> void:
 		# acceleration
 	if input_vector != Vector2.ZERO:
 		velocity = lerp(velocity, input_vector * max_speed, acceleration * delta)
+		if !step_playlist.playing:
+			step_playlist.play()
+				
 	else: #deceleration
 		velocity = lerp(velocity, input_vector * max_speed, deceleration * delta)
+		step_playlist.stop()
+
 
 func can_kill_player() -> bool:
 	if slealth.is_hidden or is_mask_equipped:
@@ -97,6 +118,9 @@ func kill_player() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
 	mask_timer = PlayerStats.max_mask_time / 2
+
+	player_died_sfx.play() #sfx
+
 
 	animated_sprite_2d.visible = false
 	dieanim.visible = true

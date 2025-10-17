@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 Events="*res://scripts/globals/Events.gd"
 PlayerStats="*res://scripts/globals/PlayerStats.gd"
+SFXutil="*res://scripts/globals/SFXutil.gd"
 
 [debug]
 

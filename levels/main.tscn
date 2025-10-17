@@ -1,14 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://butei8yip7reh"]
+[gd_scene load_steps=19 format=3 uid="uid://butei8yip7reh"]
 
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_2262g"]
 [ext_resource type="Script" uid="uid://b0sb5c542mjmt" path="res://scripts/main.gd" id="1_wdj6m"]
+[ext_resource type="Script" uid="uid://b0o7ianxcwc3u" path="res://scripts/audio_manager.gd" id="2_1fput"]
 [ext_resource type="Script" uid="uid://be8bheb7a4qrb" path="res://scenes/stealthVisuals/stealth_canvaslayer.gd" id="2_6et1j"]
 [ext_resource type="Shader" uid="uid://c8m40cql11q7k" path="res://shaders/chromaticAberration.gdshader" id="2_etqu2"]
 [ext_resource type="Script" uid="uid://mtj0sitiaxmd" path="res://scripts/fade_to_black_canvas_layer.gd" id="2_ifaiv"]
 [ext_resource type="Script" uid="uid://ddo5xvmpype8u" path="res://scripts/juice_canvas_layer.gd" id="2_jw1n3"]
 [ext_resource type="Shader" uid="uid://cfmov07a0e6c1" path="res://shaders/vignette.gdshader" id="2_qy63d"]
 [ext_resource type="Shader" uid="uid://c7g1odt280dvm" path="res://shaders/black_screen.gdshader" id="3_5k4jt"]
+[ext_resource type="AudioStream" uid="uid://bf5ivkb3vo6a7" path="res://assets/audio/sfx/ambience/ambience1.ogg" id="3_6yxbg"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="3_m1504"]
+[ext_resource type="AudioStream" uid="uid://b05r26h7206dn" path="res://assets/audio/sfx/ambience/ambience2.ogg" id="4_4fc0e"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ifaiv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jw1n3"]
@@ -43,6 +46,17 @@ ease = 2
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_wdj6m")
+
+[node name="AudioManager" type="Node" parent="."]
+script = ExtResource("2_1fput")
+
+[node name="Ambience1" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("3_6yxbg")
+bus = &"Ambience"
+
+[node name="Ambience2" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("4_4fc0e")
+bus = &"Ambience"
 
 [node name="juiceCanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_jw1n3")

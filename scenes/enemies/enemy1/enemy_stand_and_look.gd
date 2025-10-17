@@ -9,6 +9,10 @@ extends Node2D
 @onready var light_occluder_2d_2: LightOccluder2D = $light/LightOccluder2D2
 @onready var point_light_2d: PointLight2D = $light/PointLight2D
 
+#sfx
+@onready var enemy_positional: AudioStreamPlayer2D = $enemyPositional
+@onready var enemy_turn: AudioStreamPlayer2D = $enemyTurn
+
 
 var look_at_position : Marker2D
 var look_at_duration : float
@@ -30,6 +34,7 @@ var player_area: Area2D = null
 
 
 func _ready() -> void:
+	enemy_positional.play()
 	ray_cast_2d.enabled = false
 	check_errors()
 	if marker_list.size() == 1:
@@ -41,6 +46,8 @@ func _process(delta: float) -> void:
 	light.rotation = lerp_angle(light.rotation, target_rotation, delta * rotation_speed)
 
 func look_at_marker(marker : Marker2D, duration : float) -> void:
+	SFXutil.play_with_pitch(enemy_turn, 0.7, 1.1)
+	
 	var dir: Vector2 = (marker.global_position - global_position).normalized()
 	play_direction_animation(dir)
 	target_rotation = dir.angle() - PI / 2

@@ -25,3 +25,8 @@ res://levels/level_3.tscn
 res://levels/level_4.tscn
 res://levels/level_5.tscn
 res://scripts/juice_canvas_layer.gd
+res://default_bus_layout.tres
+res://scenes/player/player.gd
+res://scripts/audio_manager.gd
+res://scenes/enemies/enemy1/enemy_stand_and_look.gd
+res://scripts/globals/SFXutil.gd

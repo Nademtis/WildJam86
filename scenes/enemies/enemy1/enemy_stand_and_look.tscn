@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://bo0tqunn5ba34"]
+[gd_scene load_steps=24 format=3 uid="uid://bo0tqunn5ba34"]
 
 [ext_resource type="Script" uid="uid://dsluei4a2v7x6" path="res://scenes/enemies/enemy1/enemy_stand_and_look.gd" id="1_jatj5"]
 [ext_resource type="Shader" uid="uid://6ie7ed3aasje" path="res://shaders/foliage.gdshader" id="2_hnhid"]
 [ext_resource type="Texture2D" uid="uid://bjql4kkg0jy4" path="res://scenes/enemies/enemy1/enemy_body_spritesheet.png" id="3_yj12u"]
 [ext_resource type="Texture2D" uid="uid://cem845ub2fsis" path="res://scenes/enemies/enemy1/enemy_mask_spritesheet.png" id="4_cim20"]
 [ext_resource type="Texture2D" uid="uid://cg8v7xryf038s" path="res://scenes/enemies/enemy1/512x512 textures (61).png" id="5_4aica"]
+[ext_resource type="AudioStream" uid="uid://fv8f5813p0x0" path="res://assets/audio/sfx/enemy/enemy_positional.ogg" id="6_yj12u"]
+[ext_resource type="AudioStream" uid="uid://dr1hevt2ehtxv" path="res://assets/audio/sfx/enemy/enemy_turn.ogg" id="7_cim20"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m0bq8"]
 domain_warp_amplitude = 100.0
@@ -202,6 +204,21 @@ enabled = false
 collision_mask = 4
 hit_from_inside = true
 collide_with_areas = true
+
+[node name="enemyPositional" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_yj12u")
+max_distance = 200.0
+attenuation = 1.5
+panning_strength = 2.5
+bus = &"Enemy"
+
+[node name="enemyTurn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_cim20")
+volume_db = -2.971
+max_distance = 150.0
+attenuation = 1.5
+panning_strength = 2.5
+bus = &"Enemy"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_entered" from="light/Area2D" to="." method="_on_area_2d_area_entered"]
