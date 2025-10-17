@@ -601,6 +601,7 @@ position = Vector2(-160, 368)
 follow_mode = 4
 follow_target = NodePath("../../../ysort/player")
 follow_path = NodePath("..")
+follow_damping = true
 
 [node name="LevelSwapperContainer" type="Node" parent="."]
 

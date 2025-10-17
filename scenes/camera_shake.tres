@@ -4,13 +4,13 @@
 
 [resource]
 script = ExtResource("1_hlh6a")
-amplitude = 5.0
+amplitude = 2.0
 frequency = 1.0
 randomize_noise_seed = 1
 noise_seed = 0
 positional_noise = true
 rotational_noise = false
 positional_multiplier_x = 1.0
-positional_multiplier_y = 1.0
+positional_multiplier_y = 0.5
 rotational_multiplier = 1.0
 metadata/_custom_type_script = "uid://dimvdouy8g0sv"

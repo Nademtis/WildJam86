@@ -27,13 +27,8 @@ func update_chromaticAberration(percentage : float) -> void:
 	if percentage <= 0.08:
 		reset()
 	else:
-		if percentage >= 0.2:
-			turn_on_camera_shake(true)
-		else:
-			turn_on_camera_shake(false)
+		turn_on_camera_shake(true, percentage)
 			
-
-		
 		var mat: ShaderMaterial = color_rect.material
 		if not mat:
 			return
@@ -44,14 +39,13 @@ func update_chromaticAberration(percentage : float) -> void:
 		mat.set_shader_parameter("b_displacement", -new_b)
 
 func reset() -> void:
-	print("resets")
 	var mat: ShaderMaterial = color_rect.material
 	if not mat:
 		return
 	mat.set_shader_parameter("r_displacement", 0)
 	mat.set_shader_parameter("b_displacement", 0)
 
-func turn_on_camera_shake(turn_on : bool) -> void:
+func turn_on_camera_shake(turn_on : bool, percentage : float) -> void:
 	var active_cam: PhantomCamera2D = phantom_camera_host._active_pcam_2d
 	
 	# Remove shake from old camera if it exists and isn't the active camera
@@ -59,9 +53,15 @@ func turn_on_camera_shake(turn_on : bool) -> void:
 		old_cam.noise = null
 		print("old cam noise removed")
 	
-	# Apply or remove shake on active camera
 	if active_cam:
 		active_cam.noise = CAMERA_SHAKE if turn_on else null
-	
+		
+		if active_cam.noise:
+			active_cam.noise.frequency = percentage
+			active_cam.noise.amplitude = percentage * 2
+			if active_cam.noise.frequency <= 0.08: # remove jitters
+				active_cam.noise.frequency = 0.0
+				active_cam.noise.amplitude = 0.0
+			print("cam_frequency: ", active_cam.noise.frequency)
 	# Update old_cam to track the previous camera
 	old_cam = active_cam
