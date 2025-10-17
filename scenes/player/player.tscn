@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://ceoxrx67n38fq" path="res://scenes/player/assets/mask/w_right__mask.png" id="8_myrg7"]
 [ext_resource type="Texture2D" uid="uid://dmo8vdk1r5uyw" path="res://scenes/player/assets/mask/w_up__mask.png" id="9_kvlxm"]
 [ext_resource type="Texture2D" uid="uid://c3yxmwdkrlg76" path="res://scenes/player/assets/mask/die.png" id="15_fcs02"]
-[ext_resource type="AudioStream" uid="uid://ir66340cxyic" path="res://assets/audio/sfx/player/step1.wav" id="18_8ydkj"]
-[ext_resource type="AudioStream" uid="uid://bvl02oqciyko8" path="res://assets/audio/sfx/player/step2.wav" id="19_3j4b4"]
-[ext_resource type="AudioStream" uid="uid://cs75gt74lue3p" path="res://assets/audio/sfx/player/step3.wav" id="20_yj68g"]
+[ext_resource type="AudioStream" uid="uid://bf3ljdh28j4es" path="res://assets/audio/sfx/player/step1.ogg" id="18_uniwh"]
+[ext_resource type="AudioStream" uid="uid://cfvkmnvfx0qa" path="res://assets/audio/sfx/player/step2.ogg" id="19_iqsei"]
+[ext_resource type="AudioStream" uid="uid://mckhp7tndc7v" path="res://assets/audio/sfx/player/step3.ogg" id="20_tffgl"]
 [ext_resource type="AudioStream" uid="uid://bogfenbrcotm5" path="res://assets/audio/sfx/player/bush1.ogg" id="21_007i1"]
 [ext_resource type="AudioStream" uid="uid://c6320u6kei680" path="res://assets/audio/sfx/player/bush2.ogg" id="22_6cv16"]
 [ext_resource type="AudioStream" uid="uid://4mhm30t1id1r" path="res://assets/audio/sfx/player/bush3.ogg" id="23_j4nxn"]
@@ -891,9 +891,9 @@ _data = {
 shuffle = true
 fade_time = 0.5
 stream_count = 3
-stream_0 = ExtResource("18_8ydkj")
-stream_1 = ExtResource("19_3j4b4")
-stream_2 = ExtResource("20_yj68g")
+stream_0 = ExtResource("18_uniwh")
+stream_1 = ExtResource("19_iqsei")
+stream_2 = ExtResource("20_tffgl")
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_iqsei"]
 shuffle = true
@@ -996,6 +996,7 @@ bus = &"SFX"
 
 [node name="playerDiedSFX" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("29_uniwh")
+volume_db = -6.5
 bus = &"SFX"
 
 [connection signal="area_entered" from="slealth/stealthArea2D" to="slealth" method="_on_stealth_area_2d_area_entered"]

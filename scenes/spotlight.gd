@@ -21,7 +21,7 @@ func _ready() -> void:
 		timer.start(randf_range(min_pause_time, max_pause_time))
 	
 func _on_timer_timeout() -> void:
-	print("here")
+	#print("here")
 	if is_blinking == true:
 		if is_turned_off:
 			#should turn on
