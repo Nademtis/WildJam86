@@ -30,3 +30,4 @@ res://scenes/player/player.gd
 res://scripts/audio_manager.gd
 res://scenes/enemies/enemy1/enemy_stand_and_look.gd
 res://scripts/globals/SFXutil.gd
+res://scenes/enemies/enemy1/path_enemy.gd

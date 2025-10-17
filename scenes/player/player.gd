@@ -13,7 +13,8 @@ class_name Player
 @onready var masking_sfx: AudioStreamPlayer2D = $sfx/maskingSFX
 @onready var player_died_sfx: AudioStreamPlayer2D = $sfx/playerDiedSFX
 
-
+var sfx_max_mask_volume : float
+var sfx_current_mask_volume : float
 
 
 #used for die animation
@@ -35,6 +36,7 @@ var mask_timer: float = 0.0
 var last_mask_step: int = -1  # for mask visuals
 
 func _ready() -> void:
+	sfx_max_mask_volume =  masking_sfx.volume_db
 	dieanim.visible = false
 
 func _process(delta: float) -> void:
@@ -77,6 +79,7 @@ func update_mask_visuals() -> void:
 	# Only emit if step changed
 	if current_step != last_mask_step:
 		last_mask_step = current_step
+		play_mask_sfx(mask_percent)
 		Events.emit_signal("health_changed", mask_percent)
 
 func _physics_process(delta: float) -> void:
@@ -84,6 +87,20 @@ func _physics_process(delta: float) -> void:
 		move_player(delta) #also animates
 	move_and_slide()
 
+func play_mask_sfx(percentage : float) -> void:
+	if !masking_sfx.playing:
+		masking_sfx.play()
+		
+	if percentage <= 0.08:
+		masking_sfx.stop()
+	
+	var min_volume_db : float = -20.0
+	var new_volume : float = lerp(min_volume_db, sfx_max_mask_volume, percentage)
+	
+	if new_volume >= sfx_max_mask_volume:
+		new_volume = sfx_max_mask_volume
+	print("new_volume: ", new_volume)
+	masking_sfx.volume_db = new_volume
 
 func move_player(delta : float) -> void:
 	var input_vector = Vector2(
@@ -118,8 +135,9 @@ func kill_player() -> void:
 	can_move = false
 	velocity = Vector2.ZERO
 	mask_timer = PlayerStats.max_mask_time / 2
-
-	player_died_sfx.play() #sfx
+	
+	if !player_died_sfx.playing: # don't play if allready play
+		player_died_sfx.play() #sfx
 
 
 	animated_sprite_2d.visible = false

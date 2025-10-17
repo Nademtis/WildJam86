@@ -11,8 +11,12 @@ var last_position: Vector2
 var player_area: Area2D = null
 @onready var timer: Timer = $Timer
 
+#sfx
+@onready var enemy_positional: AudioStreamPlayer2D = $enemyPositional
+
 
 func _ready() -> void:
+	enemy_positional.play()
 	last_position = global_position
 
 func _process(delta: float) -> void:
