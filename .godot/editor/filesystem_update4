@@ -29,3 +29,6 @@ res://levels/level_11.tscn
 res://scripts/main.gd
 res://scenes/bushes/bush.gd
 res://scripts/globals/PlayerStats.gd
+res://levels/level_5.tscn
+res://scenes/enemies/enemy1/enemy_stand_and_look.gd
+res://scenes/enemies/kill_proximity.gd

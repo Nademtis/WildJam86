@@ -532,7 +532,7 @@ y_sort_enabled = true
 
 [node name="player" parent="ysort" instance=ExtResource("6_gder6")]
 z_index = 1
-position = Vector2(-105, 223)
+position = Vector2(-151, 361)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true

@@ -87,10 +87,10 @@ func play_direction_animation(dir: Vector2) -> void:
 	animated_body.play(anim)
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(area: Area2D) -> void: 
 	if area.is_in_group("player"):
 		player_area = area
-		kill_timer.start()
+		kill_timer.start() #TODO fix this logic
 			
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
