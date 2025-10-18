@@ -25,3 +25,6 @@ res://scripts/main.gd
 res://levels/level_8.tscn
 res://scripts/use_mask_cutscene.gd
 res://scenes/player/player.gd
+res://levels/level_9.tscn
+res://levels/level_7.tscn
+res://scripts/globals/PlayerStats.gd
