@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ura4elmd4wrl"]
+[gd_scene load_steps=20 format=4 uid="uid://ura4elmd4wrl"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_0fd8o"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_dmnu2"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="7_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://bs10lsupi7a1p" path="res://scenes/bushes/bush3.tscn" id="8_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="9_8hlpj"]
+[ext_resource type="PackedScene" uid="uid://w6o0cnwkm2p5" path="res://scenes/AudioLevelup.tscn" id="13_qhnv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(486, 415)
@@ -434,6 +435,9 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhnv2"]
+size = Vector2(110.96, 20)
+
 [node name="level" type="Node2D"]
 script = ExtResource("1_0fd8o")
 
@@ -562,3 +566,12 @@ limit_target = NodePath("../../../cameraLimit/CollisionShape2D")
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("7_qhnv2")]
 position = Vector2(73, 684)
 next_level_path = "res://levels/level_5.tscn"
+
+[node name="audioLevelUp" parent="." instance=ExtResource("13_qhnv2")]
+position = Vector2(-207, 432)
+level_up_music = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="audioLevelUp"]
+position = Vector2(25, 42)
+rotation = -0.869831
+shape = SubResource("RectangleShape2D_qhnv2")

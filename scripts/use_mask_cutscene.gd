@@ -69,6 +69,10 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	
 	#mask_equipped = false
 	cutscene_is_showing = false
+	Events.emit_signal("level_up_music", true)
+	Events.emit_signal("level_up_music", true)
+	Events.emit_signal("level_up_music", true)
+	
 	Events.emit_signal("health_changed", 0.0)
 
 func update_mask_visuals() -> void:

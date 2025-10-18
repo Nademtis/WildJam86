@@ -9,6 +9,9 @@ signal fade_to_black
 signal screen_is_black
 signal fade_to_black_and_restart_current_level
 
+#music
+signal level_up_music
+signal level_up_ambience
 
 #stealth
 signal is_hidden(is_hidden : bool)

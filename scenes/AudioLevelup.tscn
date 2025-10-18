@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://w6o0cnwkm2p5"]
+
+[ext_resource type="Script" uid="uid://cadequr8cavvh" path="res://scenes/audio_levelup.gd" id="1_7oxq8"]
+
+[node name="audioLevelUp" type="Area2D"]
+script = ExtResource("1_7oxq8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

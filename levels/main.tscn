@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://butei8yip7reh"]
+[gd_scene load_steps=26 format=3 uid="uid://butei8yip7reh"]
 
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_2262g"]
 [ext_resource type="Script" uid="uid://b0sb5c542mjmt" path="res://scripts/main.gd" id="1_wdj6m"]
@@ -14,7 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://b05r26h7206dn" path="res://assets/audio/sfx/ambience/ambience2.ogg" id="4_4fc0e"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_ifaiv"]
 [ext_resource type="AudioStream" uid="uid://cci0b5h3ovd3p" path="res://assets/audio/music/intro_3.ogg" id="5_4fc0e"]
+[ext_resource type="AudioStream" uid="uid://chsfh4t2imvbj" path="res://assets/audio/music/intro_1.ogg" id="5_fd7wu"]
 [ext_resource type="AudioStream" uid="uid://dw5xkav51aysd" path="res://assets/audio/music/intro_3_drums.ogg" id="6_21ko3"]
+[ext_resource type="AudioStream" uid="uid://c1t0534ptehap" path="res://assets/audio/music/intro_2.ogg" id="6_m080e"]
 [ext_resource type="Material" uid="uid://bjejpaty1orbw" path="res://shaders/outerBushes_material.tres" id="11_iwo8l"]
 [ext_resource type="Texture2D" uid="uid://pqwkf6kffrma" path="res://assets/nature/outer_camera_bushes_top.png" id="11_s07ge"]
 [ext_resource type="Texture2D" uid="uid://degiala04m5eh" path="res://assets/nature/outer_camera_bushes_right.png" id="12_iwo8l"]
@@ -64,13 +66,22 @@ stream = ExtResource("4_4fc0e")
 bus = &"Ambience"
 
 [node name="music1" type="AudioStreamPlayer" parent="AudioManager"]
-stream = ExtResource("5_4fc0e")
-volume_db = -16.0
+stream = ExtResource("5_fd7wu")
+volume_db = 4.0
 bus = &"Music"
 
-[node name="music1_drums" type="AudioStreamPlayer" parent="AudioManager"]
+[node name="music2" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("6_m080e")
+bus = &"Music"
+
+[node name="music3" type="AudioStreamPlayer" parent="AudioManager"]
+stream = ExtResource("5_4fc0e")
+volume_db = -2.0
+bus = &"Music"
+
+[node name="music3_drums" type="AudioStreamPlayer" parent="AudioManager"]
 stream = ExtResource("6_21ko3")
-volume_db = -18.0
+volume_db = -4.0
 bus = &"Music"
 
 [node name="juiceCanvasLayer" type="CanvasLayer" parent="."]

@@ -30,3 +30,12 @@ res://levels/level_7.tscn
 res://scripts/globals/PlayerStats.gd
 res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
 res://scenes/enemies/enemy1/enemy_stand_and_look.gd
+res://levels/level_2.tscn
+res://levels/level_3.tscn
+res://scripts/audio_manager.gd
+res://scripts/globals/Events.gd
+res://scenes/audio_levelup.gd
+res://scenes/AudioLevelup.tscn
+res://scenes/spotlight.tscn
+res://levels/level_4.tscn
+res://levels/level_5.tscn
