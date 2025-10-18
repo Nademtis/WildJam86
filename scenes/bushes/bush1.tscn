@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3jw4ey7orykn"]
+[gd_scene load_steps=14 format=3 uid="uid://d3jw4ey7orykn"]
 
 [ext_resource type="Material" uid="uid://brbu71tq3lkw8" path="res://shaders/foliage_material.tres" id="1_4m1dg"]
 [ext_resource type="Texture2D" uid="uid://by1sgdq0yi3ry" path="res://assets/nature/bush1.png" id="1_c2dbl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b0isyk71j8233" path="res://assets/nature/bush7.png" id="5_k5kug"]
 [ext_resource type="Texture2D" uid="uid://oh5cokdkd2q2" path="res://assets/nature/bush8.png" id="6_4m1dg"]
 [ext_resource type="Texture2D" uid="uid://b6vc3mu4lg41" path="res://assets/nature/bush5.png" id="7_j6fjt"]
+[ext_resource type="AudioStream" uid="uid://1iluumj6lbka" path="res://assets/audio/sfx/player/bush_walk_1.ogg" id="10_xnbkf"]
 
 [sub_resource type="Animation" id="Animation_j6fjt"]
 length = 0.001
@@ -117,5 +118,10 @@ texture = ExtResource("7_j6fjt")
 libraries = {
 &"": SubResource("AnimationLibrary_hbcn3")
 }
+
+[node name="BushSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_xnbkf")
+volume_db = -20.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

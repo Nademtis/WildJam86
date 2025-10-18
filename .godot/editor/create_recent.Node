@@ -1,12 +1,12 @@
+AudioStreamPlayer2D
+AudioStreamPlayer
 Marker2D
 WorldEnvironment
 AnimationPlayer
 RichTextLabel
 CollisionShape2D
 Area2D
-AudioStreamPlayer
 Path2D
-AudioStreamPlayer2D
 Timer
 Node
 Node2D

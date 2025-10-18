@@ -7,7 +7,7 @@ class_name Player
 
 #SFX
 @onready var step_playlist: AudioStreamPlayer2D = $sfx/stepPlaylist
-@onready var bush_playlist: AudioStreamPlayer2D = $sfx/bushPlaylist
+@onready var bush_step_playlist: AudioStreamPlayer2D = $sfx/bushStepPlaylist
 @onready var mask_on_sfx: AudioStreamPlayer2D = $sfx/maskOnSFX
 @onready var mask_off_sfx: AudioStreamPlayer2D = $sfx/maskOffSFX
 @onready var masking_sfx: AudioStreamPlayer2D = $sfx/maskingSFX
@@ -30,7 +30,7 @@ var mask_timer: float = 0.0
 # used for player die anim
 @onready var animation_player: AnimationPlayer = $dieanim/AnimationPlayer
 @onready var dieanim: Node2D = $dieanim
-@onready var slealth: Node2D = $slealth
+@onready var stealth: Node2D = $slealth
 
 
 var last_mask_step: int = -1  # for mask visuals
@@ -116,16 +116,22 @@ func move_player(delta : float) -> void:
 		# acceleration
 	if input_vector != Vector2.ZERO:
 		velocity = lerp(velocity, input_vector * max_speed, acceleration * delta)
-		if !step_playlist.playing:
-			step_playlist.play()
+		if stealth.is_hidden:
+			if !bush_step_playlist.playing:
+				pass #TODO fix bush walk
+				#bush_step_playlist.play()
+		else:
+			if !step_playlist.playing:
+				step_playlist.play()
 				
 	else: #deceleration
 		velocity = lerp(velocity, input_vector * max_speed, deceleration * delta)
 		step_playlist.stop()
+		bush_step_playlist.stop()
 
 
 func can_kill_player() -> bool:
-	if slealth.is_hidden or is_mask_equipped:
+	if stealth.is_hidden or is_mask_equipped:
 		#print("not killing since mask or hidden")
 		return false
 	else:

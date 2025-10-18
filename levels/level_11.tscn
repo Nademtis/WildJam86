@@ -525,7 +525,7 @@ position = Vector2(-203, 335)
 speed = 50.0
 
 [node name="enemy2" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("7_g3m3p")]
-position = Vector2(-306.568, 454.97)
+position = Vector2(-306.567, 454.97)
 progress = 196.129
 speed = 50.0
 
