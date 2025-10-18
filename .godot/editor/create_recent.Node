@@ -1,14 +1,15 @@
+AnimationPlayer
+Node
+Marker2D
 AudioStreamPlayer
 AudioStreamPlayer2D
 Node2D
-Node
 AudioListener2D
 ColorRect
 CanvasLayer
 CollisionShape2D
 Area2D
 RayCast2D
-Marker2D
 Timer
 LightOccluder2D
 Path2D

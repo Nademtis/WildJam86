@@ -22,3 +22,5 @@ res://scenes/bushes/bush1.tscn
 res://scenes/bushes/bush2.tscn
 res://scenes/bushes/bush3.tscn
 res://scripts/main.gd
+res://levels/level_8.tscn
+res://scripts/use_mask_cutscene.gd
