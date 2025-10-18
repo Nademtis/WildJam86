@@ -50,7 +50,7 @@ func turn_on_camera_shake(turn_on : bool, percentage : float) -> void:
 	# Remove shake from old camera if it exists and isn't the active camera
 	if old_cam and old_cam != active_cam:
 		old_cam.noise = null
-		print("old cam noise removed")
+		#print("old cam noise removed")
 	
 	if active_cam:
 		active_cam.noise = CAMERA_SHAKE if turn_on else null

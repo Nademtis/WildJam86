@@ -87,15 +87,9 @@ grow_vertical = 2
 [node name="stealthCanvaslayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_6et1j")
 
-[node name="ColorRect" type="ColorRect" parent="stealthCanvaslayer"]
-material = SubResource("ShaderMaterial_etqu2")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="bushUp" type="Sprite2D" parent="stealthCanvaslayer"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
 material = ExtResource("11_iwo8l")
 position = Vector2(0, -165)
 scale = Vector2(6, 6)
@@ -125,6 +119,14 @@ scale = Vector2(6, 6)
 texture = ExtResource("12_iwo8l")
 offset = Vector2(165, 90)
 flip_h = true
+
+[node name="ColorRect" type="ColorRect" parent="stealthCanvaslayer"]
+material = SubResource("ShaderMaterial_etqu2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="vignette" type="CanvasLayer" parent="."]
 

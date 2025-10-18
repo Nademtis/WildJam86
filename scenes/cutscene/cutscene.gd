@@ -6,7 +6,7 @@ extends Node
 
 func _on_start_cutscene_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		print("start cutscene")
+		#print("start cutscene")
 		player.velocity = Vector2.ZERO
 		player.can_move = false
 		player.step_playlist.stop()
