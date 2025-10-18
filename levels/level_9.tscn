@@ -607,6 +607,7 @@ follow_damping = true
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("12_st0pf")]
 position = Vector2(-16, 632)
+next_level_path = "res://levels/level_10.tscn"
 
 [node name="PointLight2D" parent="." instance=ExtResource("13_v1sno")]
 position = Vector2(-12, 637)

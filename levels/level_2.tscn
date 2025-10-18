@@ -516,16 +516,19 @@ y_sort_enabled = true
 position = Vector2(-122, 353)
 
 [node name="bush2" parent="ysort/BushContainer" instance=ExtResource("5_oo4vc")]
-position = Vector2(127, 439)
+position = Vector2(140, 446)
 
 [node name="bush3" parent="ysort/BushContainer" instance=ExtResource("6_efwds")]
-position = Vector2(-110, 453)
+position = Vector2(-126, 371)
+
+[node name="bush6" parent="ysort/BushContainer" instance=ExtResource("6_efwds")]
+position = Vector2(-140, 396)
 
 [node name="bush4" parent="ysort/BushContainer" instance=ExtResource("4_j4s08")]
-position = Vector2(103, 301)
+position = Vector2(99, 290)
 
 [node name="bush5" parent="ysort/BushContainer" instance=ExtResource("5_oo4vc")]
-position = Vector2(200, 159)
+position = Vector2(200, 145)
 
 [node name="TreeContainer" type="Node2D" parent="ysort"]
 z_as_relative = false

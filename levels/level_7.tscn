@@ -726,7 +726,7 @@ follow_path = NodePath("..")
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("10_nwhq7")]
 position = Vector2(96, 536)
-next_level_path = "res://levels/level_9.tscn"
+next_level_path = "res://levels/level_8.tscn"
 
 [node name="cutscene" type="Node" parent="."]
 script = ExtResource("11_02co5")
