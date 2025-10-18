@@ -32,3 +32,8 @@ res://scripts/globals/PlayerStats.gd
 res://levels/level_5.tscn
 res://scenes/enemies/enemy1/enemy_stand_and_look.gd
 res://scenes/enemies/kill_proximity.gd
+res://levels/level_8.tscn
+res://levels/parallax.gd
+res://scenes/AudioLevelup.tscn
+res://scenes/audio_levelup.gd
+res://levels/level_9.tscn

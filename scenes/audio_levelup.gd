@@ -3,7 +3,7 @@ extends Area2D
 
 @export var level_up_music : bool = false
 #@export var level_up_ambience : bool = false
-@export var indented_level : int
+#@export var indented_level : int
 
 
 
