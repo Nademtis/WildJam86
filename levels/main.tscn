@@ -88,8 +88,6 @@ grow_vertical = 2
 script = ExtResource("2_6et1j")
 
 [node name="bushUp" type="Sprite2D" parent="stealthCanvaslayer"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
 material = ExtResource("11_iwo8l")
 position = Vector2(0, -165)
 scale = Vector2(6, 6)

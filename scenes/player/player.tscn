@@ -926,8 +926,10 @@ debug_color = Color(0.247433, 0.635779, 0, 0.42)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"stand_still"
+animation = &"look_up"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.196078)

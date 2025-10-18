@@ -32,3 +32,5 @@ func walk_right() -> void:
 	player.step_playlist.play()
 	player.animated_sprite_2d.play("walk_right")
 	
+func look_up() -> void:
+	player.animated_sprite_2d.play("look_up")
