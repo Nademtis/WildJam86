@@ -191,7 +191,6 @@ occluder = SubResource("OccluderPolygon2D_mq2de")
 [node name="Area2D" type="Area2D" parent="light"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="light/Area2D"]
-visible = false
 polygon = PackedVector2Array(0, 2, -34, 69, 28, 69)
 
 [node name="Timer" type="Timer" parent="."]
