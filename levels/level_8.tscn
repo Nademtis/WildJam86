@@ -435,7 +435,7 @@ point_count = 1
 
 [sub_resource type="Animation" id="Animation_vko6h"]
 resource_name = "use_mask_cutscene"
-length = 10.0
+length = 8.5
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -444,10 +444,10 @@ tracks/0/path = NodePath("blackborderUpper:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 7.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -456,10 +456,10 @@ tracks/1/path = NodePath("blackborderLower:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 7.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -468,10 +468,10 @@ tracks/2/path = NodePath("blackborderUpper:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 7.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-464, 258)]
+"values": [Vector2(-464, 258), Vector2(-464, 258), Vector2(-464, 218)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -480,10 +480,10 @@ tracks/3/path = NodePath("blackborderLower:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 7.5, 8.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-458, 409)]
+"values": [Vector2(-458, 409), Vector2(-458, 409), Vector2(-458, 449)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -492,10 +492,10 @@ tracks/4/path = NodePath("../ysort/player:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(1, 3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(1, 3, 4.1, 6.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-422, 357), Vector2(-350, 358)]
+"values": [Vector2(-422, 357), Vector2(-350, 358), Vector2(-350, 358), Vector2(-242, 359)]
 }
 tracks/5/type = "method"
 tracks/5/imported = false
@@ -504,9 +504,24 @@ tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(1, 3, 3.5, 4.1, 6.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"walk_right"
+}, {
+"args": [],
+"method": &"stop"
+}, {
+"args": [],
+"method": &"mask_idle"
+}, {
+"args": [],
+"method": &"mask_walk_right"
+}, {
+"args": [],
+"method": &"stop"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_k2ajo"]
@@ -640,6 +655,7 @@ metadata/_edit_lock_ = true
 light_mask = 0
 z_index = 2
 position = Vector2(0, -300)
+tile_map_data = PackedByteArray("AADn/xIAAAAGAAIAAADm/xIAAAAJAAIAAADm/xMAAAAGAAIAAADl/xMAAAAJAAIAAADk/xQAAAAJAAIAAADl/xQAAAAJAAIAAADl/xIAAAAJAAIAAADk/xUAAAAJAAIAAADk/xYAAAAJAAIAAADk/xMAAAAJAAIAAADj/xUAAAAIAAEAAADj/xYAAAAFAAEAAADj/xcAAAAJAAIAAADk/xcAAAAJAAIAAADl/xYAAAAJAAIAAADl/xUAAAAJAAIAAADm/xQAAAALAAIAAADm/xUAAAALAAIAAADl/xcAAAAJAAIAAADk/xgAAAAJAAIAAADk/xkAAAAJAAIAAADl/xkAAAAJAAIAAADm/xkAAAAJAAIAAADn/xkAAAAJAAIAAADo/xkAAAAGAAEAAADo/xoAAAAJAAIAAADn/xgAAAAGAAEAAADm/xgAAAAJAAIAAADl/xgAAAAJAAIAAADk/xoAAAAJAAIAAADl/xoAAAAJAAIAAADm/xoAAAAJAAIAAADn/xoAAAAJAAIAAADn/xsAAAAJAAIAAADo/xsAAAAJAAIAAADp/xsAAAAJAAIAAADp/xoAAAAJAAIAAADq/xsAAAAGAAEAAADr/xsAAAALAAAAAADs/xwAAAAKAAAAAADt/xwAAAALAAAAAADu/x0AAAALAAAAAADt/x0AAAAKAAIAAADs/x0AAAAJAAMAAADr/x0AAAAJAAMAAADq/x0AAAAJAAMAAADp/x0AAAAJAAMAAADo/x0AAAAJAAMAAADo/xwAAAAJAAIAAADn/xwAAAAJAAIAAADp/xwAAAAJAAIAAADq/xwAAAAJAAIAAADr/xwAAAAGAAEAAADm/xwAAAAJAAIAAADl/xwAAAAJAAIAAADl/x0AAAAJAAMAAADk/xwAAAAFAAIAAADk/xsAAAAJAAIAAADj/xgAAAAJAAIAAADj/xkAAAAFAAIAAADj/xoAAAAIAAEAAADj/xsAAAAIAAEAAADj/xwAAAAIAAMAAADm/xsAAAAJAAIAAADl/xsAAAAJAAIAAADk/x0AAAAIAAMAAADm/x0AAAAJAAMAAADn/x0AAAAJAAMAAADj/xQAAAAFAAIAAADn/xEAAAAJAAIAAADo/xEAAAAGAAIAAADo/xAAAAAJAAIAAADp/xAAAAAJAAIAAADq/xAAAAAGAAIAAADq/w8AAAAKAAAAAADk/xIAAAAJAAIAAADm/xEAAAAJAAIAAADn/xAAAAAFAAEAAADo/w8AAAAKAAAAAADl/xEAAAAJAAIAAADm/xAAAAAKAAAAAADl/xAAAAAKAAAAAADj/xIAAAAFAAEAAADj/xMAAAAJAAIAAADi/xMAAAAIAAEAAADi/xQAAAAIAAMAAADj/xEAAAAIAAEAAADk/xEAAAAJAAIAAADk/xAAAAAJAAAAAADn/w8AAAAIAAAAAADp/w8AAAAKAAAAAADr/w8AAAAKAAAAAADj/xAAAAAIAAAAAADk/w8AAAAAAAAAAADi/xIAAAAIAAAAAADh/xUAAAAAAAAAAADh/xYAAAABAAIAAADi/xYAAAAFAAAAAADi/xcAAAAIAAEAAADi/xgAAAAIAAEAAADi/xkAAAAIAAMAAADm/xcAAAAJAAIAAADm/xYAAAAGAAEAAADt/x4AAAAIAAMAAADu/x4AAAALAAMAAADq/xoAAAALAAIAAADq/xkAAAALAAAAAADp/xkAAAAKAAAAAADo/xgAAAALAAAAAADn/xcAAAALAAIAAADn/xYAAAALAAAAAADp/xEAAAAJAAMAAADs/w8AAAAKAAAAAADr/xAAAAAJAAMAAADq/xEAAAALAAMAAADo/xIAAAALAAMAAADn/xMAAAALAAMAAADs/xAAAAAJAAMAAADt/xAAAAAJAAMAAADu/xAAAAAFAAIAAADu/xEAAAAIAAMAAADv/xEAAAAFAAIAAADv/xIAAAAIAAMAAADw/xIAAAAFAAIAAADw/xMAAAAIAAMAAADx/xMAAAAFAAIAAADx/xQAAAAIAAMAAADy/xQAAAAJAAMAAADz/xQAAAAJAAMAAAD0/xQAAAAJAAMAAAD1/xQAAAAJAAMAAAD2/xQAAAALAAMAAAD2/xMAAAAGAAIAAAD3/xMAAAALAAMAAAD3/xIAAAAGAAIAAAD4/xIAAAALAAMAAAD4/xEAAAAGAAIAAAD5/xEAAAALAAMAAAD5/xAAAAALAAAAAAD4/xAAAAAGAAEAAAD4/w8AAAALAAAAAAD3/w8AAAAKAAAAAAD2/w8AAAAKAAAAAAD1/w8AAAAKAAAAAAD0/w8AAAAKAAAAAADz/w8AAAAKAAAAAADy/w8AAAAKAAAAAADx/w8AAAAKAAAAAADw/w8AAAAKAAAAAADv/w8AAAAKAAAAAADu/w8AAAAKAAAAAADt/w8AAAAKAAAAAAD3/xEAAAAJAAIAAAD3/xAAAAAJAAIAAAD2/xIAAAAJAAIAAAD2/xEAAAAJAAIAAAD2/xAAAAAJAAIAAAD1/xMAAAAJAAIAAAD1/xIAAAAJAAIAAAD1/xEAAAAJAAIAAAD1/xAAAAAJAAIAAAD0/xMAAAAJAAIAAAD0/xIAAAAJAAIAAAD0/xEAAAAJAAIAAAD0/xAAAAAJAAIAAADz/xMAAAAJAAIAAADz/xIAAAAJAAIAAADz/xEAAAAJAAIAAADz/xAAAAAJAAIAAADy/xMAAAAJAAIAAADy/xIAAAAJAAIAAADy/xEAAAAJAAIAAADy/xAAAAAJAAIAAADx/xIAAAAJAAIAAADx/xEAAAAJAAIAAADx/xAAAAAJAAIAAADw/xEAAAAJAAIAAADw/xAAAAAJAAIAAADv/xAAAAAJAAIAAAA=")
 tile_set = ExtResource("5_6kkia")
 metadata/_edit_lock_ = true
 
@@ -665,12 +681,20 @@ curve = SubResource("Curve2D_5mrsh")
 position = Vector2(-166, 321)
 speed = 50.0
 
-[node name="enemyStandAndLook" parent="ysort" node_paths=PackedStringArray("marker_list") instance=ExtResource("8_lxcpb")]
+[node name="CUTSCENEenemyStandAndLook" parent="ysort" node_paths=PackedStringArray("marker_list") instance=ExtResource("8_lxcpb")]
 position = Vector2(-295, 303)
 marker_list = [NodePath("Marker2D")]
 duration_list = Array[float]([0.0])
 
-[node name="Marker2D" type="Marker2D" parent="ysort/enemyStandAndLook"]
+[node name="Area2D" parent="ysort/CUTSCENEenemyStandAndLook" index="3"]
+monitoring = false
+monitorable = false
+
+[node name="Area2D" parent="ysort/CUTSCENEenemyStandAndLook/light" index="3"]
+monitoring = false
+monitorable = false
+
+[node name="Marker2D" type="Marker2D" parent="ysort/CUTSCENEenemyStandAndLook"]
 position = Vector2(0, 48)
 
 [node name="CameraContainer" type="Node" parent="."]
@@ -725,4 +749,9 @@ position = Vector2(-175, 45)
 position = Vector2(-243.625, 310.5)
 shape = SubResource("RectangleShape2D_vko6h")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="cutscene"]
+
+[connection signal="animation_finished" from="cutscene/AnimationPlayer" to="cutscene" method="_on_animation_player_animation_finished"]
 [connection signal="area_entered" from="cutscene/startCutsceneArea2D" to="cutscene" method="_on_start_cutscene_area_2d_area_entered"]
+
+[editable path="ysort/CUTSCENEenemyStandAndLook"]
