@@ -216,7 +216,7 @@ bus = &"Enemy"
 [node name="enemyTurn" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_cim20")
 volume_db = -2.971
-max_distance = 150.0
+max_distance = 200.0
 attenuation = 1.5
 panning_strength = 2.5
 bus = &"Enemy"

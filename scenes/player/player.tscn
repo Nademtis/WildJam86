@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://ko3hyfcl18x3"]
+[gd_scene load_steps=114 format=3 uid="uid://ko3hyfcl18x3"]
 
 [ext_resource type="Script" uid="uid://csomb53cwt1pc" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://sqn36fcbdfc" path="res://scenes/player/assets/idle.png" id="1_p47bc"]
@@ -905,7 +905,10 @@ stream_2 = ExtResource("23_j4nxn")
 stream_3 = ExtResource("24_28m0y")
 stream_4 = ExtResource("25_uniwh")
 
-[node name="player" type="CharacterBody2D" groups=["player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uniwh"]
+radius = 1.0
+
+[node name="player" type="CharacterBody2D" groups=["player", "player_movement_coll"]]
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 5
@@ -918,7 +921,6 @@ script = ExtResource("2_qek5x")
 [node name="stealthArea2D" type="Area2D" parent="slealth"]
 
 [node name="stealthCollisionShape2D" type="CollisionShape2D" parent="slealth/stealthArea2D"]
-visible = false
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_5gtgg")
 debug_color = Color(0.247433, 0.635779, 0, 0.42)
@@ -943,7 +945,6 @@ position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_p47bc")
 
 [node name="movementColl" type="CollisionShape2D" parent="." groups=["player"]]
-visible = false
 position = Vector2(0, -1)
 shape = SubResource("CircleShape2D_75vfm")
 
@@ -997,8 +998,14 @@ bus = &"SFX"
 
 [node name="playerDiedSFX" type="AudioStreamPlayer2D" parent="sfx"]
 stream = ExtResource("29_uniwh")
-volume_db = -6.5
+volume_db = -10.462
 bus = &"SFX"
+
+[node name="player_centrum" type="Area2D" parent="." groups=["player_movement_coll"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_centrum"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_uniwh")
 
 [connection signal="area_entered" from="slealth/stealthArea2D" to="slealth" method="_on_stealth_area_2d_area_entered"]
 [connection signal="area_exited" from="slealth/stealthArea2D" to="slealth" method="_on_stealth_area_2d_area_exited"]

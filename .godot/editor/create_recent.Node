@@ -1,11 +1,12 @@
+AnimationPlayer
+RichTextLabel
 CollisionShape2D
 Area2D
+Marker2D
 AudioStreamPlayer
 Path2D
-Marker2D
 AudioStreamPlayer2D
 Timer
-AnimationPlayer
 Node
 Node2D
 AudioListener2D
