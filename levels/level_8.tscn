@@ -1,21 +1,24 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8wv53b6agllw"]
+[gd_scene load_steps=19 format=4 uid="uid://cvlapyg455qjo"]
 
-[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="1_80vhd"]
-[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_safpt"]
-[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="2_hjsbj"]
-[ext_resource type="TileSet" uid="uid://cnbrfba4o0fwm" path="res://tileset/upper_tileset.tres" id="3_22dcj"]
-[ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="3_gjl0y"]
-[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="4_5mrsh"]
-[ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="4_glpk1"]
-[ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_path.tscn" id="4_safpt"]
-[ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_8urs1"]
-[ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="10_64qpc"]
+[ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_ho0ug"]
+[ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_lxcpb"]
+[ext_resource type="TileSet" uid="uid://cnbrfba4o0fwm" path="res://tileset/upper_tileset.tres" id="3_vko6h"]
+[ext_resource type="Texture2D" uid="uid://34s48ye51n4o" path="res://assets/tilemap/tilemap_terrain.png" id="4_k2ajo"]
+[ext_resource type="TileSet" uid="uid://dr7fp48si7onw" path="res://tileset/dark_corner_bush_tileset.tres" id="5_6kkia"]
+[ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="6_fksli"]
+[ext_resource type="PackedScene" uid="uid://d3jw4ey7orykn" path="res://scenes/bushes/bush1.tscn" id="6_vko6h"]
+[ext_resource type="PackedScene" uid="uid://bs10lsupi7a1p" path="res://scenes/bushes/bush3.tscn" id="7_6kkia"]
+[ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_path.tscn" id="7_lyejb"]
+[ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_85qo6"]
+[ext_resource type="PackedScene" uid="uid://bo0tqunn5ba34" path="res://scenes/enemies/enemy1/enemy_stand_and_look.tscn" id="8_lxcpb"]
+[ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_6vtyo"]
+[ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="12_k2ajo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
-size = Vector2(597, 298)
+size = Vector2(514, 301)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnv7o"]
-texture = ExtResource("3_gjl0y")
+texture = ExtResource("4_k2ajo")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -422,18 +425,18 @@ sources/0 = SubResource("TileSetAtlasSource_vnv7o")
 
 [sub_resource type="Curve2D" id="Curve2D_5mrsh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -166, 321, 0, 0, 0, 0, -184, 358, 0, 0, 0, 0, -166, 414, 0, 0, 0, 0, -94, 415, 0, 0, 0, 0, -82, 358, 0, 0, 0, 0, -97, 322, 0, 0, 0, 0, -128, 312, 0, 0, 0, 0, -166, 321)
+"points": PackedVector2Array(0, 0, 0, 0, -224, 385, 0, 0, 0, 0, -194, 390, 0, 0, 0, 0, -178, 385, 0, 0, 0, 0, -177, 366, 0, 0, 0, 0, -192, 342, 0, 0, 0, 0, -200, 330, 34.7118, -3.1121, -34.7118, 3.1121, -245, 313, 9.0969, -38.7815, -9.0969, 38.7815, -315, 365, 0, 0, 0, 0, -279, 413, 0, 0, 0, 0, -239, 403, 0, 0, 0, 0, -224, 385)
 }
-point_count = 8
+point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_64qpc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -320, 320)
+"points": PackedVector2Array(0, 0, 0, 0, -272, 368, 0, 0, 0, 0, -272, 464)
 }
-point_count = 1
+point_count = 2
 
 [node name="level" type="Node2D"]
-script = ExtResource("1_safpt")
+script = ExtResource("1_ho0ug")
 
 [node name="BG" type="ColorRect" parent="."]
 z_index = -5
@@ -447,7 +450,7 @@ metadata/_edit_lock_ = true
 [node name="cameraLimit" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraLimit"]
-position = Vector2(-152.5, 411)
+position = Vector2(-194, 412.5)
 shape = SubResource("RectangleShape2D_yglgk")
 
 [node name="ysort" type="Node2D" parent="."]
@@ -460,23 +463,24 @@ position = Vector2(0, 300)
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
-tile_set = ExtResource("1_80vhd")
+tile_set = ExtResource("2_lxcpb")
 metadata/_edit_lock_ = true
 
 [node name="walkable" type="TileMapLayer" parent="ysort/tilemaps"]
 y_sort_enabled = true
-tile_set = ExtResource("1_80vhd")
+tile_map_data = PackedByteArray("AAD9/wAAAAAKAAIAAAD9/wEAAAAJAAUAAAD8/wAAAAAKAAIAAAD8/wEAAAAJAAUAAAD7/wEAAAAGAAQAAAD+/wAAAAAKAAIAAAD+/wEAAAAJAAUAAAD7/wAAAAAKAAIAAAD6/wAAAAAKAAIAAAD5/wAAAAAKAAIAAAD4/wAAAAAIAAIAAADy/wAAAAALAAIAAAD6/wEAAAAJAAQAAAD5/wEAAAAJAAQAAAD5/wIAAAAJAAUAAAD6/wIAAAAJAAUAAAD4/wEAAAAFAAMAAAD4/wIAAAAGAAQAAAD7/wIAAAALAAUAAAD//wAAAAAKAAIAAAD//wEAAAAJAAUAAAAAAAEAAAALAAUAAAAAAAAAAAALAAIAAAD3/wIAAAAFAAMAAAD3/wMAAAAJAAQAAAD3/wQAAAAJAAQAAAD3/wUAAAAJAAQAAAD4/wQAAAALAAQAAAD4/wMAAAALAAQAAAD3/wYAAAAJAAQAAAD4/wYAAAALAAQAAAD4/wUAAAALAAQAAADw/wcAAAALAAUAAAD2/wcAAAAIAAUAAAD3/wcAAAAJAAUAAADx/wAAAAAKAAIAAADw/wAAAAAGAAMAAADv/wAAAAAJAAQAAADu/wAAAAAJAAQAAADt/wAAAAAJAAQAAADs/wAAAAAFAAMAAADr/wAAAAAKAAIAAADq/wAAAAAIAAIAAADn/wMAAAAIAAIAAADn/wQAAAAIAAMAAADn/wUAAAAIAAMAAADn/wYAAAAFAAMAAADo/wQAAAAJAAQAAADo/wMAAAAFAAMAAADp/wMAAAAJAAQAAADp/wIAAAAFAAMAAADq/wIAAAAJAAQAAADq/wEAAAAFAAMAAADr/wEAAAAJAAQAAADv/wEAAAAJAAQAAADw/wEAAAAJAAQAAADx/wEAAAAJAAQAAADy/wEAAAAGAAMAAADy/wIAAAAJAAQAAADz/wIAAAAGAAMAAAD0/wIAAAAKAAIAAAD3/wEAAAAIAAIAAADz/wEAAAALAAIAAADy/wMAAAAJAAQAAADz/wMAAAAJAAQAAADz/wQAAAAJAAQAAAD0/wQAAAAJAAQAAAD1/wQAAAAJAAQAAAD1/wMAAAAJAAQAAAD1/wIAAAAKAAIAAAD2/wQAAAAJAAQAAAD2/wUAAAAJAAQAAAD2/wYAAAAFAAQAAAD2/wIAAAAKAAIAAAD2/wMAAAAJAAQAAAD1/wYAAAAJAAUAAAD1/wUAAAAJAAQAAAD0/wUAAAAJAAQAAAD0/wMAAAAJAAQAAADx/wIAAAAJAAQAAADx/wMAAAAJAAQAAADw/wMAAAAJAAQAAADv/wMAAAAJAAQAAADu/wMAAAAIAAMAAADu/wIAAAAFAAQAAADv/wIAAAAJAAQAAADu/wEAAAAJAAQAAADt/wEAAAAJAAQAAADs/wEAAAAJAAQAAADp/wEAAAAIAAIAAADo/wIAAAAIAAIAAADo/wUAAAAJAAQAAADo/wYAAAAJAAQAAADo/wcAAAAJAAQAAADp/wcAAAAJAAQAAADq/wcAAAAJAAQAAADr/wcAAAAJAAQAAADs/wcAAAAJAAQAAADt/wcAAAAJAAQAAADu/wcAAAAJAAQAAADv/wcAAAAGAAQAAAD0/wYAAAAJAAUAAADy/wQAAAAJAAQAAADw/wIAAAAJAAQAAADt/wIAAAAJAAUAAADs/wIAAAAJAAUAAADr/wIAAAAGAAQAAADp/wQAAAAGAAQAAADp/wUAAAALAAQAAADq/wQAAAALAAUAAADr/wMAAAALAAUAAADp/wYAAAAGAAMAAADq/wMAAAAGAAQAAADr/wUAAAAIAAIAAADs/wUAAAAKAAIAAADt/wUAAAAKAAIAAADx/wYAAAALAAUAAADx/wUAAAAGAAQAAADx/wQAAAAJAAQAAADw/wYAAAAGAAQAAADw/wUAAAAJAAQAAADw/wQAAAAJAAQAAADv/wYAAAAJAAQAAADv/wUAAAAJAAQAAADv/wQAAAAJAAQAAADu/wYAAAAJAAQAAADu/wUAAAAFAAMAAADu/wQAAAAIAAMAAADt/wYAAAAJAAQAAADs/wYAAAAJAAQAAADr/wYAAAAFAAMAAADq/wYAAAAKAAIAAADv/wgAAAALAAUAAADu/wgAAAAGAAQAAADt/wgAAAAJAAQAAADs/wgAAAAJAAQAAADr/wgAAAAFAAQAAADq/wgAAAAJAAUAAADp/wgAAAAJAAUAAADs/wkAAAAJAAQAAADs/woAAAAJAAQAAADs/wsAAAAFAAQAAADs/wwAAAAIAAMAAADt/wwAAAAGAAMAAADt/wsAAAALAAQAAADt/woAAAALAAQAAADt/wkAAAAGAAQAAADt/w0AAAAFAAQAAADs/w0AAAAIAAUAAADr/wkAAAAIAAMAAADu/wkAAAALAAUAAADr/woAAAAIAAMAAADr/wsAAAAIAAUAAADu/wwAAAAKAAIAAADu/w0AAAAJAAQAAADu/w4AAAAFAAQAAADt/w4AAAAIAAUAAADv/wwAAAAKAAIAAADv/w0AAAAJAAQAAADv/w4AAAAJAAQAAADv/w8AAAAJAAUAAADw/w8AAAALAAUAAADw/w4AAAALAAQAAADw/w0AAAAGAAQAAADu/w8AAAAIAAUAAADu////AAAKAAIAAADv////AAAKAAIAAADw////AAALAAIAAADt////AAAKAAIAAADs////AAAIAAIAAADy/wUAAAAJAAUAAADz/wUAAAAFAAQAAADz/wYAAAAIAAUAAADy/wsAAAALAAIAAADx/wsAAAAKAAIAAADx/wwAAAAGAAQAAADy/wwAAAALAAUAAADw/wsAAAAIAAIAAADw/wwAAAAFAAMAAADx/w0AAAALAAUAAAD4/wcAAAALAAUAAADn/wcAAAAJAAQAAADm/wcAAAAJAAQAAADm/wgAAAAJAAUAAADn/wgAAAAJAAUAAADo/wgAAAAJAAUAAADm/wYAAAAKAAIAAADl/wcAAAAIAAMAAADl/wgAAAAIAAUAAADl/wYAAAAIAAIAAAA=")
+tile_set = ExtResource("2_lxcpb")
 metadata/_edit_lock_ = true
 
 [node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
 y_sort_enabled = true
-tile_set = ExtResource("1_80vhd")
+tile_set = ExtResource("2_lxcpb")
 metadata/_edit_lock_ = true
 
 [node name="upper" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 y_sort_enabled = true
-tile_set = ExtResource("3_22dcj")
+tile_set = ExtResource("3_vko6h")
 metadata/_edit_lock_ = true
 
 [node name="visual_upper" type="TileMapLayer" parent="ysort/tilemaps"]
@@ -489,47 +493,82 @@ metadata/_edit_lock_ = true
 light_mask = 0
 z_index = 2
 position = Vector2(0, -300)
-tile_set = ExtResource("4_glpk1")
+tile_map_data = PackedByteArray("AADx/yEAAAAHAAEAAADx/yIAAAALAAIAAADw/yIAAAAFAAEAAADw/yMAAAAJAAMAAADv/yMAAAAJAAMAAADv/yIAAAAKAAAAAADu/yIAAAAGAAEAAADt/yIAAAAJAAIAAADs/yIAAAAFAAEAAADr/yIAAAAKAAAAAADu/yMAAAAJAAMAAADt/yMAAAAJAAMAAADt/yEAAAAKAAAAAADs/yEAAAAIAAAAAADr/yMAAAAJAAMAAADq/yMAAAAIAAMAAADq/yIAAAAIAAAAAADs/yMAAAAJAAMAAADx/yMAAAALAAMAAADx/yAAAAAAAAAAAADw/yEAAAAIAAAAAADu/yEAAAALAAAAAADq/xAAAAALAAAAAADq/xEAAAALAAMAAADp/xEAAAAGAAIAAADp/xIAAAALAAMAAADo/xIAAAAJAAMAAADn/xMAAAALAAMAAADm/xMAAAAGAAIAAADm/xQAAAALAAMAAADl/xQAAAAJAAMAAADk/xQAAAAJAAMAAADj/xQAAAAIAAMAAADk/xMAAAAJAAIAAADl/xMAAAAJAAIAAADm/xIAAAAJAAIAAADn/xIAAAAGAAIAAADo/xEAAAAJAAIAAADn/xEAAAAJAAIAAADo/xAAAAAKAAAAAADn/xAAAAAKAAAAAADm/xEAAAAJAAIAAADl/xIAAAAJAAIAAADk/xIAAAAFAAEAAADl/xEAAAAFAAEAAADl/xAAAAAIAAAAAADk/xEAAAAIAAAAAADj/xIAAAAIAAAAAADj/xMAAAAIAAEAAADm/xAAAAAKAAAAAADp/xAAAAAKAAAAAAD6/xsAAAAKAAAAAAD5/xsAAAAKAAAAAAD4/xsAAAAIAAAAAAD4/xwAAAAFAAEAAAD3/xwAAAAIAAAAAAD3/x0AAAAFAAEAAAD2/x0AAAAIAAAAAAD2/x4AAAAIAAEAAAD3/x4AAAAJAAIAAAD4/x0AAAAJAAIAAAD5/xwAAAAJAAIAAAD6/xwAAAAJAAIAAAD4/x4AAAAJAAIAAAD5/x0AAAAJAAIAAAD7/xsAAAAKAAAAAAD8/xsAAAALAAAAAAD8/xwAAAAGAAEAAAD9/xwAAAALAAAAAAD9/x0AAAAGAAEAAAD+/x0AAAALAAAAAAD9/xAAAAAIAAAAAAD9/xEAAAAIAAMAAAD+/xEAAAAFAAIAAAD+/xIAAAAIAAMAAAD//xIAAAAJAAMAAAAAABIAAAAFAAIAAAAAABMAAAAIAAEAAAABABMAAAAJAAIAAAABABQAAAAJAAIAAAAAABQAAAAIAAEAAAAAABUAAAAIAAMAAAABABUAAAAFAAIAAAABABYAAAAIAAMAAAACABYAAAAFAAIAAAADABYAAAAJAAIAAAAEABYAAAALAAIAAAAEABUAAAALAAIAAAAEABQAAAALAAIAAAAEABMAAAALAAIAAAAEABIAAAALAAIAAAAEABEAAAALAAIAAAADABEAAAAJAAIAAAACABAAAAAKAAAAAAABABAAAAAKAAAAAAABABEAAAAJAAIAAAACABIAAAAJAAIAAAACABMAAAAJAAIAAAADABQAAAAJAAIAAAADABUAAAAJAAIAAAACABUAAAAJAAIAAAACABQAAAAJAAIAAAABABIAAAAJAAIAAAAAABAAAAAKAAAAAAD//xAAAAAKAAAAAAD+/xAAAAAKAAAAAAD//xEAAAAJAAIAAAAAABEAAAAJAAIAAAADABIAAAAJAAIAAAADABMAAAAJAAIAAAADABAAAAAKAAAAAAACABEAAAAJAAIAAAACABcAAAAIAAMAAAADABgAAAAIAAMAAAAEABgAAAALAAMAAAAEABcAAAALAAIAAAADABcAAAAFAAIAAAAEABAAAAALAAAAAAD2/x8AAAAFAAEAAAD1/x8AAAAIAAAAAAD1/yAAAAAIAAEAAAD1/yEAAAAFAAEAAAD0/yEAAAAIAAAAAAD0/yIAAAAFAAEAAADz/yIAAAAIAAAAAADz/yMAAAAIAAMAAAD0/yMAAAAJAAMAAAD1/yMAAAAJAAMAAAD2/yMAAAAJAAMAAAD3/yMAAAAJAAMAAAD4/yMAAAAJAAMAAAD5/yMAAAAJAAMAAAD6/yIAAAAJAAIAAAD6/yEAAAAJAAIAAAD7/yEAAAAJAAIAAAD7/yAAAAAJAAIAAAD7/x8AAAAJAAIAAAD7/x4AAAAJAAIAAAD7/x0AAAAJAAIAAAD7/xwAAAAJAAIAAAD8/x0AAAAJAAIAAAD9/x4AAAAJAAIAAAD+/x4AAAALAAIAAAD+/x8AAAALAAIAAAD+/yAAAAAGAAEAAAD//yAAAAALAAAAAAD//yEAAAALAAIAAAD//yIAAAALAAMAAAD+/yIAAAAGAAIAAAD+/yMAAAALAAMAAAD9/yMAAAAJAAMAAAD8/yMAAAAGAAIAAAD8/yQAAAALAAMAAAD7/yQAAAAJAAMAAAD6/yQAAAAIAAMAAAD6/yMAAAAFAAIAAAD7/yMAAAAJAAIAAAD8/yIAAAAJAAIAAAD9/yIAAAAJAAIAAAD9/yEAAAAJAAIAAAD9/yAAAAAJAAIAAAD+/yEAAAAJAAIAAAD8/yAAAAAJAAIAAAD8/x8AAAAJAAIAAAD8/x4AAAAJAAIAAAD6/x0AAAAJAAIAAAD5/x4AAAAJAAIAAAD4/x8AAAAJAAIAAAD3/x8AAAAJAAIAAAD3/yAAAAAJAAIAAAD3/yEAAAAJAAIAAAD2/yEAAAAJAAIAAAD2/yAAAAAJAAIAAAD4/yAAAAAJAAIAAAD2/yIAAAAJAAIAAAD1/yIAAAAJAAIAAAD3/yIAAAAJAAIAAAD4/yIAAAAJAAIAAAD5/yIAAAAJAAIAAAD7/yIAAAAJAAIAAAD9/x8AAAAJAAIAAAD8/yEAAAAJAAIAAAD6/x8AAAAJAAIAAAD6/x4AAAAJAAIAAAD5/x8AAAAJAAIAAAD5/yAAAAAJAAIAAAD4/yEAAAAJAAIAAAD6/yAAAAAJAAIAAAD5/yEAAAAJAAIAAAA=")
+tile_set = ExtResource("5_6kkia")
 metadata/_edit_lock_ = true
 
 [node name="BushContainer" type="Node2D" parent="ysort"]
 y_sort_enabled = true
 
+[node name="bush" parent="ysort/BushContainer" instance=ExtResource("6_vko6h")]
+position = Vector2(-264, 314)
+
+[node name="bush3" parent="ysort/BushContainer" instance=ExtResource("7_6kkia")]
+position = Vector2(-413, 427)
+
+[node name="bush4" parent="ysort/BushContainer" instance=ExtResource("7_6kkia")]
+position = Vector2(-85, 321)
+
 [node name="TreeContainer" type="Node2D" parent="ysort"]
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="player" parent="ysort" instance=ExtResource("2_hjsbj")]
+[node name="player" parent="ysort" instance=ExtResource("6_fksli")]
 z_index = 1
-position = Vector2(-46, 326)
+position = Vector2(-6, 319)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
 
 [node name="Path2D" type="Path2D" parent="ysort/EnemyContainer"]
-position = Vector2(-10, -20)
+position = Vector2(-64, 9)
 curve = SubResource("Curve2D_5mrsh")
 
-[node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("4_safpt")]
-position = Vector2(-166, 321)
+[node name="enemy1" parent="ysort/EnemyContainer/Path2D" instance=ExtResource("7_lyejb")]
+position = Vector2(-224, 385)
 speed = 50.0
+
+[node name="enemyStandAndLook" parent="ysort/EnemyContainer" node_paths=PackedStringArray("marker_list") instance=ExtResource("8_lxcpb")]
+position = Vector2(-137, 397)
+marker_list = [NodePath("Marker2D"), NodePath("Marker2D2")]
+duration_list = Array[float]([2.0, 4.0])
+
+[node name="Marker2D" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook"]
+position = Vector2(3, -66)
+
+[node name="Marker2D2" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook"]
+position = Vector2(-60, -27)
+
+[node name="enemyStandAndLook2" parent="ysort/EnemyContainer" node_paths=PackedStringArray("marker_list") instance=ExtResource("8_lxcpb")]
+position = Vector2(-229, 485)
+marker_list = [NodePath("Marker2D"), NodePath("Marker2D2"), NodePath("Marker2D3")]
+duration_list = Array[float]([1.5, 4.0, 1.0])
+
+[node name="Marker2D" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook2"]
+position = Vector2(-50, -59)
+
+[node name="Marker2D2" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook2"]
+position = Vector2(-68, 7)
+
+[node name="Marker2D3" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook2"]
+position = Vector2(-38, 29)
 
 [node name="CameraContainer" type="Node" parent="."]
 
 [node name="Path2D" type="Path2D" parent="CameraContainer"]
 curve = SubResource("Curve2D_64qpc")
 
-[node name="FixedCamera" parent="CameraContainer/Path2D" node_paths=PackedStringArray("follow_target", "follow_path") instance=ExtResource("8_8urs1")]
+[node name="FixedCamera" parent="CameraContainer/Path2D" node_paths=PackedStringArray("follow_target", "follow_path") instance=ExtResource("8_85qo6")]
 top_level = true
-position = Vector2(-320, 320)
+position = Vector2(-272, 368)
 follow_mode = 4
 follow_target = NodePath("../../../ysort/player")
 follow_path = NodePath("..")
 
 [node name="LevelSwapperContainer" type="Node" parent="."]
 
-[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("4_5mrsh")]
-position = Vector2(31, 318)
+[node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("9_6vtyo")]
+position = Vector2(-264, 552)
 
-[node name="PointLight2D" parent="LevelSwapperContainer" instance=ExtResource("10_64qpc")]
-position = Vector2(48, 312)
+[node name="PointLight2D" parent="." instance=ExtResource("12_k2ajo")]
+position = Vector2(-265, 559)

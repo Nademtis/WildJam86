@@ -661,7 +661,7 @@ metadata/_edit_lock_ = true
 y_sort_enabled = true
 
 [node name="bush" parent="ysort/BushContainer" instance=ExtResource("6_38k6x")]
-position = Vector2(80, 427)
+position = Vector2(89, 437)
 
 [node name="bush3" parent="ysort/BushContainer" instance=ExtResource("7_cl460")]
 position = Vector2(62, 340)
