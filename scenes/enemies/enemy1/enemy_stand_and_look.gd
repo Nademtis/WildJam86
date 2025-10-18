@@ -48,7 +48,8 @@ func _process(delta: float) -> void:
 	light.rotation = lerp_angle(light.rotation, target_rotation, delta * rotation_speed)
 
 func look_at_marker(marker : Marker2D, duration : float) -> void:
-	SFXutil.play_with_pitch(enemy_turn, 0.7, 1.1)
+	if not Engine.is_editor_hint():
+		SFXutil.play_with_pitch(enemy_turn, 0.7, 1.1)
 	
 	var dir: Vector2 = (marker.global_position - global_position).normalized()
 	play_direction_animation(dir)

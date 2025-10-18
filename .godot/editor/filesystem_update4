@@ -28,3 +28,5 @@ res://scenes/player/player.gd
 res://levels/level_9.tscn
 res://levels/level_7.tscn
 res://scripts/globals/PlayerStats.gd
+res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
+res://scenes/enemies/enemy1/enemy_stand_and_look.gd

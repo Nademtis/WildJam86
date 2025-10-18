@@ -6,7 +6,7 @@ extends Node
 @onready var blackborder_lower: ColorRect = $blackborderLower
 
 @onready var start_cutscene_area_2d: Area2D = $startCutsceneArea2D # to stop the triggering again
-@onready var enemy_area_2d: Area2D = $"../ysort/CUTSCENEenemyStandAndLook/light/Area2D"
+#@onready var enemy_area_2d: Area2D = $"../ysort/CUTSCENEenemyStandAndLook/light/Area2D"
 
 var mask_max_time : float = 3.0
 var current_mask_time : float = 0.0
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		current_mask_time -= delta * 2
 	current_mask_time = clamp(current_mask_time, 0.0, mask_max_time) # so mask value not negative
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if cutscene_is_showing:
 		update_mask_visuals()
 		pass
@@ -62,10 +62,10 @@ func mask_idle() -> void:
 	mask_equipped = true
 	player.animated_sprite_2d.play("mask_idle")
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	start_cutscene_area_2d.monitoring = false # don't start again
 	player.can_move = true
-	enemy_area_2d.monitoring = true # enemy can hit again
+	#enemy_area_2d.monitoring = true # enemy can hit again
 	
 	#mask_equipped = false
 	cutscene_is_showing = false
