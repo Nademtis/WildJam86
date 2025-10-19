@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ct1st4ee13rjr"]
+[gd_scene load_steps=23 format=4 uid="uid://ct1st4ee13rjr"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_vndwe"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_gn8iv"]
@@ -8,13 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://ko3hyfcl18x3" path="res://scenes/player/player.tscn" id="6_wgo1c"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_5r2q3"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="10_b27ru"]
-[ext_resource type="Texture2D" uid="uid://bttt0r41qgerr" path="res://assets/backgroundImages/city_city.png" id="10_gn8iv"]
 [ext_resource type="FontFile" uid="uid://boilabbqlw5ic" path="res://assets/BoldPixels.ttf" id="10_vndwe"]
 [ext_resource type="Script" uid="uid://chxl2fv6yxgt4" path="res://levels/parallax.gd" id="10_wgo1c"]
-[ext_resource type="Texture2D" uid="uid://cmimbxltwsr2b" path="res://assets/backgroundImages/city_hills.png" id="11_cr0e4"]
-[ext_resource type="Texture2D" uid="uid://bi16tea24uyfi" path="res://assets/backgroundImages/city_middletrees.png" id="12_wgo1c"]
-[ext_resource type="Texture2D" uid="uid://cp8x3dfj7ppfj" path="res://assets/backgroundImages/city_biggertrees.png" id="13_s88sk"]
-[ext_resource type="Texture2D" uid="uid://dqn8001qrs265" path="res://assets/backgroundImages/city_foreground.png" id="14_aoyam"]
+[ext_resource type="Texture2D" uid="uid://cl4y3s0xrd4xv" path="res://assets/backgroundImages/parra/parr_city.png" id="11_s88sk"]
+[ext_resource type="Texture2D" uid="uid://bk4hk6fm6ikli" path="res://assets/backgroundImages/parra/parr_hill.png" id="12_aoyam"]
+[ext_resource type="Texture2D" uid="uid://dqu2ykrka6g2s" path="res://assets/backgroundImages/parra/parr_cloud.png" id="12_s88sk"]
+[ext_resource type="Texture2D" uid="uid://bhp0ogq0n20v5" path="res://assets/backgroundImages/parra/parr_smallTreess.png" id="13_5r2q3"]
+[ext_resource type="Texture2D" uid="uid://cial280fx31hk" path="res://assets/backgroundImages/parra/parr_bigtree.png" id="14_b27ru"]
+[ext_resource type="Texture2D" uid="uid://c8767u8wvs45y" path="res://assets/backgroundImages/parra/parr_cloud_back.png" id="16_aoyam"]
 [ext_resource type="PackedScene" uid="uid://w6o0cnwkm2p5" path="res://scenes/AudioLevelup.tscn" id="16_s88sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
@@ -550,20 +551,34 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="city" type="Parallax2D" parent="parallax/ParallaxBackground"]
+scroll_offset = Vector2(17, 7)
 follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/city"]
 texture_repeat = 2
-texture = ExtResource("10_gn8iv")
+position = Vector2(45, 0)
+texture = ExtResource("11_s88sk")
+
+[node name="cloud2" type="Parallax2D" parent="parallax/ParallaxBackground"]
+autoscroll = Vector2(-1, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/cloud2"]
+modulate = Color(1, 1, 1, 0.0705882)
+position = Vector2(185, 1)
+texture = ExtResource("12_s88sk")
 
 [node name="Parallax2D" type="Parallax2D" parent="parallax/ParallaxBackground"]
+scroll_offset = Vector2(35, -1)
 follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/Parallax2D"]
 texture_repeat = 2
-texture = ExtResource("11_cr0e4")
+position = Vector2(30, 12)
+texture = ExtResource("12_aoyam")
 
 [node name="Parallax2D2" type="Parallax2D" parent="parallax/ParallaxBackground"]
 follow_viewport = false
@@ -571,7 +586,8 @@ ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/Parallax2D2"]
 texture_repeat = 2
-texture = ExtResource("12_wgo1c")
+position = Vector2(76, 6)
+texture = ExtResource("13_5r2q3")
 
 [node name="Parallax2D3" type="Parallax2D" parent="parallax/ParallaxBackground"]
 follow_viewport = false
@@ -579,17 +595,19 @@ ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/Parallax2D3"]
 texture_repeat = 2
-texture = ExtResource("13_s88sk")
+position = Vector2(60, 0)
+texture = ExtResource("14_b27ru")
 
-[node name="Parallax2D4" type="Parallax2D" parent="parallax/ParallaxBackground"]
-scroll_offset = Vector2(6, -52)
+[node name="cloud" type="Parallax2D" parent="parallax/ParallaxBackground"]
+scroll_offset = Vector2(129, 56)
+autoscroll = Vector2(-5, 0)
 follow_viewport = false
 ignore_camera_scroll = true
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/Parallax2D4"]
-visible = false
-texture_repeat = 2
-texture = ExtResource("14_aoyam")
+[node name="Sprite2D" type="Sprite2D" parent="parallax/ParallaxBackground/cloud"]
+modulate = Color(1, 1, 1, 0.0509804)
+position = Vector2(6, 30)
+texture = ExtResource("16_aoyam")
 
 [node name="audioLevelUp" parent="." instance=ExtResource("16_s88sk")]
 position = Vector2(-309, 388)

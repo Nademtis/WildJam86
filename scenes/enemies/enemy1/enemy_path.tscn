@@ -129,7 +129,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uu7d"]
-radius = 22.0
+radius = 16.0312
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u8gn5"]
 polygon = PackedVector2Array(-34, 45, 0, -15, 29, 46, 0, -46)

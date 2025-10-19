@@ -978,7 +978,7 @@ bus = &"SFX"
 
 [node name="bushStepPlaylist" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamPlaylist_j4nxn")
-volume_db = -14.857
+volume_db = -8.0
 pitch_scale = 0.8
 
 [node name="maskOnSFX" type="AudioStreamPlayer2D" parent="sfx"]

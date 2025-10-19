@@ -1,12 +1,12 @@
-CollisionShape2D
+Marker2D
 Sprite2D
 Parallax2D
 ParallaxLayer
+CollisionShape2D
 ParallaxBackground
 Node2D
 AudioStreamPlayer2D
 AudioStreamPlayer
-Marker2D
 WorldEnvironment
 AnimationPlayer
 RichTextLabel

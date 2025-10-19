@@ -514,7 +514,7 @@ y_sort_enabled = true
 
 [node name="player" parent="ysort" instance=ExtResource("6_hgdib")]
 z_index = 1
-position = Vector2(-117, 374)
+position = Vector2(-401, 355)
 
 [node name="EnemyContainer" type="Node2D" parent="ysort"]
 top_level = true
@@ -602,6 +602,7 @@ follow_path = NodePath("..")
 
 [node name="levelSwapper" parent="LevelSwapperContainer" instance=ExtResource("9_p8hxd")]
 position = Vector2(-24, 604)
+next_level_path = "res://levels/level_12.tscn"
 
 [node name="PointLight2D" parent="LevelSwapperContainer" instance=ExtResource("10_lc84k")]
 position = Vector2(-6, 612)

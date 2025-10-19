@@ -29,5 +29,5 @@ bus/4/name = &"Enemy"
 bus/4/solo = false
 bus/4/mute = false
 bus/4/bypass_fx = false
-bus/4/volume_db = -4.003
+bus/4/volume_db = -7.63485
 bus/4/send = &"Master"
