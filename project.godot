@@ -12,6 +12,8 @@ config_version=5
 
 config/name="WildJam86-ver.4.4"
 run/main_scene="uid://butei8yip7reh"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="MaskedEscape"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
