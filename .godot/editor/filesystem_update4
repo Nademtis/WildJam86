@@ -33,3 +33,7 @@ res://scripts/level.gd
 res://scripts/fade_to_black_canvas_layer.gd
 res://scenes/openingSequence.gd
 res://levels/level_end.tscn
+res://levels/level_6_mask.tscn
+res://scenes/cutscene/cutscene.gd
+res://scenes/cutscene/end_cutscene.gd
+res://scenes/player/player.tscn

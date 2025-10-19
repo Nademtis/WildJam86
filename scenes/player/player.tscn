@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://ko3hyfcl18x3"]
+[gd_scene load_steps=113 format=3 uid="uid://ko3hyfcl18x3"]
 
 [ext_resource type="Script" uid="uid://csomb53cwt1pc" path="res://scenes/player/player.gd" id="1_75vfm"]
 [ext_resource type="Texture2D" uid="uid://sqn36fcbdfc" path="res://scenes/player/assets/idle.png" id="1_p47bc"]
@@ -230,6 +230,10 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lfxt"]
 atlas = ExtResource("9_kvlxm")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21yht"]
+atlas = ExtResource("5_5gtgg")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_myrg7"]
 atlas = ExtResource("2_75vfm")
@@ -602,6 +606,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"stand_still",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21yht")
+}],
+"loop": true,
+"name": &"stand_still_look_up",
 "speed": 5.0
 }, {
 "frames": [{

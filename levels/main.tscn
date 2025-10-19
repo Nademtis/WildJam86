@@ -330,6 +330,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="reccomended" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("2_nljbn")
 
 [node name="headphones Recommended" type="RichTextLabel" parent="reccomended"]
