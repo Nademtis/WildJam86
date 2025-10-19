@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ura4elmd4wrl"]
+[gd_scene load_steps=24 format=4 uid="uid://ura4elmd4wrl"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_0fd8o"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_dmnu2"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="7_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://bs10lsupi7a1p" path="res://scenes/bushes/bush3.tscn" id="8_qhnv2"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="9_8hlpj"]
+[ext_resource type="PackedScene" uid="uid://bljx1se6b2y3h" path="res://scenes/tree_1.tscn" id="9_dp2yl"]
+[ext_resource type="PackedScene" uid="uid://djsdexvhq6aho" path="res://scenes/tree_2.tscn" id="10_a7qdg"]
+[ext_resource type="PackedScene" uid="uid://qufqtwowdaqs" path="res://scenes/tree_3.tscn" id="11_g1ha7"]
+[ext_resource type="PackedScene" uid="uid://w4u7ysrkfi2q" path="res://scenes/tree_5.tscn" id="12_52a3b"]
 [ext_resource type="PackedScene" uid="uid://w6o0cnwkm2p5" path="res://scenes/AudioLevelup.tscn" id="13_qhnv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
@@ -466,6 +470,7 @@ position = Vector2(0, 300)
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
+tile_map_data = PackedByteArray("AAD6/wMAAAAGAAcAAAD5/wMAAAAKAAYAAAD4/wMAAAAJAAYAAAD3/wMAAAAIAAYAAADz/wIAAAAFAAcAAAD2/wMAAAAJAAYAAAD1/wMAAAAIAAYAAAD0/wMAAAAJAAcAAADz/wMAAAAAAAcAAADx/wsAAAACAAcAAADy/wsAAAAGAAcAAAABAA4AAAAEAAcAAAAAAA4AAAALAAcAAAD//w4AAAAJAAYAAAD+/w4AAAAAAAcAAAAKABkAAAAGAAcAAAAJABkAAAAJAAcAAAAIABkAAAAJAAYAAAAHABkAAAALAAcAAAAGABkAAAALAAcAAAAFABkAAAALAAcAAAAEABkAAAAKAAcAAAADABkAAAAKAAcAAAACABkAAAAIAAYAAAABABkAAAALAAcAAAAAABkAAAAKAAYAAAD//xkAAAAIAAYAAAD+/xkAAAAIAAcAAAD9/xkAAAAJAAYAAAD8/xkAAAAJAAYAAAD7/xkAAAAJAAYAAAD6/xkAAAAIAAYAAAD5/xkAAAALAAYAAAD4/xkAAAAJAAYAAAD3/xkAAAAKAAYAAAD2/xkAAAALAAcAAAD1/xkAAAABAAcAAADx/xYAAAAFAAcAAADw/xYAAAABAAcAAADz/xcAAAALAAcAAADy/xcAAAAIAAYAAADx/xcAAAAAAAcAAAD0/xgAAAAEAAcAAADz/xgAAAACAAcAAAD0/xcAAAAFAAYAAAA=")
 tile_set = ExtResource("2_dmnu2")
 metadata/_edit_lock_ = true
 
@@ -477,6 +482,7 @@ metadata/_edit_lock_ = true
 
 [node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD7/w4AAAAHAAAAAAD7/w8AAAAEAAAAAAD7/xAAAAAGAAAAAAD8/w8AAAAFAAAAAADz/wkAAAAHAAAAAADz/woAAAAEAAAAAADz/wsAAAAGAAAAAAD0/woAAAAFAAAAAAD0/xQAAAANAAAAAAD0/xUAAAAEAAAAAAD0/xYAAAAGAAAAAAD1/xUAAAAFAAAAAAD4/xcAAAAKAAAAAAD5/xYAAAAKAAAAAAD5/xcAAAALAAAAAADy/xMAAAAKAAAAAADz/xIAAAAKAAAAAADz/xMAAAALAAAAAAD5/wkAAAAHAAAAAAD5/woAAAAEAAAAAAD5/wsAAAAGAAAAAAD6/woAAAAFAAAAAAD3/woAAAAHAAAAAAD3/wsAAAAEAAAAAAD3/wwAAAAGAAAAAAD4/wsAAAAFAAAAAAD7/wwAAAAEAAAAAAD8/wsAAAAKAAAAAAD8/wwAAAAHAAAAAAD9/wwAAAAHAAAAAAD+/wwAAAAKAAAAAAD9/xYAAAAHAAAAAAD9/xcAAAAEAAAAAAD9/xgAAAAGAAAAAAD+/xcAAAAFAAAAAAA=")
 tile_set = ExtResource("2_dmnu2")
 metadata/_edit_lock_ = true
 
@@ -525,6 +531,33 @@ position = Vector2(-48, 680)
 [node name="TreeContainer" type="Node2D" parent="ysort"]
 z_as_relative = false
 y_sort_enabled = true
+
+[node name="tree1" parent="ysort/TreeContainer" instance=ExtResource("9_dp2yl")]
+position = Vector2(-177, 681)
+
+[node name="tree2" parent="ysort/TreeContainer" instance=ExtResource("10_a7qdg")]
+position = Vector2(-102, 601)
+
+[node name="tree3" parent="ysort/TreeContainer" instance=ExtResource("11_g1ha7")]
+position = Vector2(-148, 585)
+
+[node name="tree4" parent="ysort/TreeContainer" instance=ExtResource("9_dp2yl")]
+position = Vector2(-98, 502)
+
+[node name="tree5" parent="ysort/TreeContainer" instance=ExtResource("12_52a3b")]
+position = Vector2(-140, 495)
+
+[node name="tree6" parent="ysort/TreeContainer" instance=ExtResource("12_52a3b")]
+position = Vector2(-226, 323)
+
+[node name="tree7" parent="ysort/TreeContainer" instance=ExtResource("10_a7qdg")]
+position = Vector2(-205, 385)
+
+[node name="tree8" parent="ysort/TreeContainer" instance=ExtResource("11_g1ha7")]
+position = Vector2(-136, 325)
+
+[node name="tree9" parent="ysort/TreeContainer" instance=ExtResource("10_a7qdg")]
+position = Vector2(-33, 479)
 
 [node name="player" parent="ysort" instance=ExtResource("5_04hp8")]
 z_index = 1

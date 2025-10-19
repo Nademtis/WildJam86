@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bdd0n66iywf25"]
+[gd_scene load_steps=24 format=4 uid="uid://bdd0n66iywf25"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_ldpug"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_8vr3t"]
@@ -12,7 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://d3jw4ey7orykn" path="res://scenes/bushes/bush1.tscn" id="8_brp6y"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_p0827"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_brp6y"]
+[ext_resource type="PackedScene" uid="uid://qufqtwowdaqs" path="res://scenes/tree_3.tscn" id="9_mgx0j"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="10_8vr3t"]
+[ext_resource type="PackedScene" uid="uid://bljx1se6b2y3h" path="res://scenes/tree_1.tscn" id="10_k3t65"]
+[ext_resource type="PackedScene" uid="uid://w4u7ysrkfi2q" path="res://scenes/tree_5.tscn" id="11_bon8i"]
+[ext_resource type="PackedScene" uid="uid://dgirdur0fcok3" path="res://scenes/tree_4.tscn" id="12_av2kh"]
+[ext_resource type="PackedScene" uid="uid://djsdexvhq6aho" path="res://scenes/tree_2.tscn" id="13_mmy2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(473, 403)
@@ -447,7 +452,6 @@ metadata/_edit_lock_ = true
 [node name="cameraLimit" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraLimit"]
-visible = false
 position = Vector2(-246.5, 358.5)
 shape = SubResource("RectangleShape2D_yglgk")
 
@@ -461,7 +465,7 @@ position = Vector2(0, 300)
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
-tile_map_data = PackedByteArray("AADz/wMAAAAGAAYAAADy/wMAAAAKAAYAAADx/wMAAAAIAAYAAADw/wMAAAAIAAYAAADv/wMAAAAIAAYAAADu/wMAAAABAAYAAADz/wQAAAAGAAYAAADy/wQAAAAIAAYAAADx/wQAAAAIAAYAAADw/wQAAAAIAAYAAADv/wQAAAAIAAYAAADz/wcAAAAFAAcAAADz/wYAAAAFAAYAAADz/wUAAAAEAAYAAADz/wIAAAAFAAYAAADy/wcAAAAIAAYAAADy/wYAAAAIAAYAAADy/wUAAAAIAAYAAADy/wIAAAAIAAYAAADx/wcAAAAIAAYAAADx/wYAAAAKAAYAAADx/wUAAAAIAAYAAADx/wIAAAAIAAYAAADw/wcAAAAIAAYAAADw/wYAAAAIAAYAAADw/wUAAAAIAAYAAADw/wIAAAAIAAYAAADv/wcAAAAIAAYAAADv/wYAAAAIAAYAAADv/wUAAAAIAAcAAADv/wIAAAAIAAYAAADu/wcAAAAAAAYAAADu/wYAAAABAAYAAADu/wUAAAAAAAYAAADu/wQAAAAAAAYAAADu/wIAAAABAAYAAAA=")
+tile_map_data = PackedByteArray("AADz/wMAAAAGAAYAAADy/wMAAAAKAAYAAADx/wMAAAAIAAYAAADw/wMAAAAIAAYAAADv/wMAAAAIAAYAAADu/wMAAAABAAYAAADz/wQAAAAGAAYAAADy/wQAAAAIAAYAAADx/wQAAAAIAAYAAADw/wQAAAAIAAYAAADv/wQAAAAIAAYAAADz/wcAAAAFAAcAAADz/wYAAAAFAAYAAADz/wUAAAAEAAYAAADz/wIAAAAFAAYAAADy/wcAAAAIAAYAAADy/wYAAAAIAAYAAADy/wUAAAAIAAYAAADy/wIAAAAIAAYAAADx/wcAAAAIAAYAAADx/wYAAAAKAAYAAADx/wUAAAAIAAYAAADx/wIAAAAIAAYAAADw/wcAAAAIAAYAAADw/wYAAAAIAAYAAADw/wUAAAAIAAYAAADw/wIAAAAIAAYAAADv/wcAAAAIAAYAAADv/wYAAAAIAAYAAADv/wUAAAAIAAcAAADv/wIAAAAIAAYAAADu/wcAAAAAAAYAAADu/wYAAAABAAYAAADu/wUAAAAAAAYAAADu/wQAAAAAAAYAAADu/wIAAAABAAYAAAD6/wIAAAAGAAcAAAD5/wMAAAAGAAcAAAD4/wMAAAAAAAcAAAD4/wQAAAAGAAcAAAD3/wQAAAACAAcAAAD3/wUAAAAEAAcAAAD2/wUAAAACAAcAAAD2/wYAAAAFAAcAAAD1/wYAAAABAAcAAAD1/wUAAAAAAAYAAAD2/wQAAAABAAYAAAD3/wMAAAABAAYAAAD4/wIAAAAJAAcAAAD5/wEAAAACAAYAAAD5/wIAAAALAAYAAAD1/woAAAAGAAcAAAD0/woAAAAKAAYAAADz/woAAAAJAAcAAADy/woAAAAIAAcAAADx/woAAAAIAAYAAADw/woAAAAIAAcAAADv/woAAAAIAAYAAADu/woAAAAKAAcAAADt/woAAAAIAAcAAADs/woAAAAAAAcAAADs/wYAAAAEAAcAAADs/wcAAAAGAAcAAADr/wcAAAAAAAcAAADr/wIAAAAFAAcAAADr/wMAAAAEAAcAAADq/wMAAAAIAAYAAADp/wMAAAAAAAcAAADp/wEAAAAEAAcAAADp/wIAAAAEAAYAAADo/wIAAAAKAAcAAADn/wIAAAAJAAcAAADm/wIAAAAKAAYAAADl/wIAAAAIAAYAAADk/wIAAAALAAYAAADj/wIAAAACAAcAAADo//v/AAAIAAIAAADo//z/AAAIAAMAAADo//3/AAAIAAUAAADo//7/AAAAAAcAAADp//v/AAAKAAIAAADp//z/AAAJAAQAAADp//3/AAAJAAUAAADp//7/AAAIAAYAAADq//v/AAAKAAIAAADq//z/AAAJAAQAAADq//3/AAAJAAUAAADq//7/AAAKAAYAAADr//v/AAAKAAIAAADr//z/AAAJAAQAAADr//3/AAAJAAUAAADr//7/AAAIAAYAAADs//v/AAALAAIAAADs//z/AAALAAQAAADs//3/AAALAAUAAADs//7/AAAGAAcAAAA=")
 tile_set = ExtResource("2_8vr3t")
 metadata/_edit_lock_ = true
 
@@ -473,6 +477,7 @@ metadata/_edit_lock_ = true
 
 [node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AADs/wAAAAAHAAAAAADs/wEAAAAEAAAAAADs/wIAAAAGAAAAAADt/wEAAAAFAAAAAADs/wMAAAANAAAAAADs/wQAAAAEAAAAAADs/wUAAAAGAAAAAADt/wQAAAAFAAAAAADw/wcAAAANAAAAAADw/wgAAAAEAAAAAADw/wkAAAAGAAAAAADx/wgAAAAFAAAAAAD1/wMAAAAKAAAAAAD2/wIAAAAKAAAAAAD2/wMAAAALAAAAAAD4/wAAAAAKAAAAAAD5////AAAKAAAAAAD5/wAAAAALAAAAAAA=")
 tile_set = ExtResource("2_8vr3t")
 metadata/_edit_lock_ = true
 
@@ -529,6 +534,30 @@ position = Vector2(-143, 332)
 [node name="TreeContainer" type="Node2D" parent="ysort"]
 z_as_relative = false
 y_sort_enabled = true
+
+[node name="tree1" parent="ysort/TreeContainer" instance=ExtResource("9_mgx0j")]
+position = Vector2(-380, 413)
+
+[node name="tree2" parent="ysort/TreeContainer" instance=ExtResource("10_k3t65")]
+position = Vector2(-124, 423)
+
+[node name="tree3" parent="ysort/TreeContainer" instance=ExtResource("11_bon8i")]
+position = Vector2(-91, 417)
+
+[node name="tree4" parent="ysort/TreeContainer" instance=ExtResource("12_av2kh")]
+position = Vector2(-360, 310)
+
+[node name="tree5" parent="ysort/TreeContainer" instance=ExtResource("12_av2kh")]
+position = Vector2(-254, 293)
+
+[node name="tree6" parent="ysort/TreeContainer" instance=ExtResource("9_mgx0j")]
+position = Vector2(-321, 396)
+
+[node name="tree7" parent="ysort/TreeContainer" instance=ExtResource("13_mmy2b")]
+position = Vector2(-178, 416)
+
+[node name="tree8" parent="ysort/TreeContainer" instance=ExtResource("9_mgx0j")]
+position = Vector2(-142, 371)
 
 [node name="player" parent="ysort" instance=ExtResource("6_gder6")]
 z_index = 1

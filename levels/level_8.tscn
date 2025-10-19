@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cvlapyg455qjo"]
+[gd_scene load_steps=24 format=4 uid="uid://cvlapyg455qjo"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_ho0ug"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_lxcpb"]
@@ -11,7 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://ddmksap2gxosk" path="res://scenes/enemies/enemy1/enemy_path.tscn" id="7_lyejb"]
 [ext_resource type="PackedScene" uid="uid://s3s7v5llf8da" path="res://scenes/camera/FixedCamera.tscn" id="8_85qo6"]
 [ext_resource type="PackedScene" uid="uid://bo0tqunn5ba34" path="res://scenes/enemies/enemy1/enemy_stand_and_look.tscn" id="8_lxcpb"]
+[ext_resource type="PackedScene" uid="uid://qufqtwowdaqs" path="res://scenes/tree_3.tscn" id="8_lyejb"]
 [ext_resource type="PackedScene" uid="uid://ccydbfmd3a76c" path="res://scenes/levelSwapper/level_swapper.tscn" id="9_6vtyo"]
+[ext_resource type="PackedScene" uid="uid://w4u7ysrkfi2q" path="res://scenes/tree_5.tscn" id="9_85qo6"]
+[ext_resource type="PackedScene" uid="uid://bljx1se6b2y3h" path="res://scenes/tree_1.tscn" id="10_nrsmh"]
+[ext_resource type="PackedScene" uid="uid://djsdexvhq6aho" path="res://scenes/tree_2.tscn" id="11_ody6k"]
+[ext_resource type="PackedScene" uid="uid://dgirdur0fcok3" path="res://scenes/tree_4.tscn" id="12_f41nr"]
 [ext_resource type="PackedScene" uid="uid://o0l13h4qxyp8" path="res://scenes/spotlight.tscn" id="12_k2ajo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
@@ -463,6 +468,7 @@ position = Vector2(0, 300)
 [node name="lower" type="TileMapLayer" parent="ysort/tilemaps"]
 modulate = Color(0.784314, 0.784314, 0.784314, 1)
 z_index = -1
+tile_map_data = PackedByteArray("AAD//wIAAAAIAAcAAAD//wEAAAAJAAYAAAD+/wIAAAAKAAYAAAD+/wEAAAALAAYAAAD9/wIAAAAJAAcAAAD9/wEAAAAJAAYAAAD8/wIAAAALAAYAAAD8/wEAAAAIAAYAAAD7/wMAAAAEAAcAAAD7/wIAAAAIAAcAAAD7/wEAAAAIAAcAAAD6/wMAAAAIAAYAAAD6/wIAAAALAAYAAAD6/wEAAAALAAYAAAD5/wMAAAAIAAYAAAD5/wIAAAAIAAYAAAD5/wEAAAALAAYAAAD4/wMAAAACAAYAAAD4/wIAAAAAAAYAAAD4/wEAAAABAAYAAAAAAAIAAAAGAAcAAAAAAAEAAAAEAAYAAAD4/wgAAAAEAAcAAAD4/wcAAAAEAAYAAAD3/wgAAAAKAAYAAAD3/wcAAAAIAAYAAAD2/wgAAAACAAYAAAD2/wcAAAAKAAYAAAD2/wYAAAAKAAYAAAD1/wcAAAAIAAYAAAD1/wYAAAAIAAcAAAD0/wcAAAAIAAYAAAD0/wYAAAAKAAcAAADz/wcAAAABAAYAAADz/wYAAAAKAAYAAADz/wUAAAAKAAcAAADy/wYAAAAIAAcAAADy/wUAAAAIAAcAAADx/wYAAAAJAAcAAADx/wUAAAACAAYAAADx/wcAAAAGAAcAAADw/wcAAAALAAYAAADw/wYAAAACAAYAAADw/wgAAAAFAAcAAADv/wgAAAAJAAcAAADv/wcAAAACAAYAAADv/wkAAAAEAAcAAADu/wkAAAAIAAYAAADu/wgAAAAAAAYAAADr/wkAAAAFAAcAAADr/wgAAAAGAAYAAADq/wkAAAAJAAcAAADq/wgAAAAIAAYAAADp/wkAAAAJAAYAAADp/wgAAAAIAAYAAADo/wkAAAAJAAYAAADo/wgAAAAJAAcAAADn/wkAAAAIAAcAAADn/wgAAAALAAYAAADm/wkAAAAIAAYAAADm/wgAAAAKAAYAAADl/wkAAAAAAAYAAADl/wgAAAAAAAYAAADu/wMAAAAEAAcAAADu/wIAAAAFAAYAAADt/wMAAAAIAAcAAADt/wIAAAAJAAYAAADs/wMAAAAIAAYAAADs/wIAAAAJAAcAAADr/wQAAAAFAAcAAADr/wMAAAALAAYAAADr/wIAAAAKAAcAAADq/wQAAAAJAAYAAADq/wMAAAABAAYAAADq/wIAAAAAAAYAAADq/wUAAAAFAAcAAADp/wUAAAABAAcAAADp/wQAAAACAAYAAADs/wwAAAAEAAcAAADs/wsAAAAFAAYAAADr/wwAAAAAAAcAAADr/wsAAAABAAYAAADt/w4AAAAEAAcAAADt/w0AAAAFAAYAAADs/w4AAAAAAAcAAADs/w0AAAABAAYAAADx/w4AAAAGAAcAAADx/w0AAAAGAAYAAADw/w4AAAABAAcAAADw/w0AAAAAAAYAAADu/woAAAAFAAcAAADt/woAAAABAAcAAADt/wkAAAAAAAYAAADl/wsAAAAIAAIAAADl/wwAAAAIAAMAAADl/w0AAAAIAAUAAADl/w4AAAAAAAcAAADm/wsAAAAKAAIAAADm/wwAAAAJAAQAAADm/w0AAAAJAAUAAADm/w4AAAAIAAYAAADn/wsAAAAKAAIAAADn/wwAAAAJAAQAAADn/w0AAAAJAAUAAADn/w4AAAAKAAYAAADo/wsAAAAKAAIAAADo/wwAAAAJAAQAAADo/w0AAAAJAAUAAADo/w4AAAAIAAYAAADp/wsAAAALAAIAAADp/wwAAAALAAQAAADp/w0AAAALAAUAAADp/w4AAAAGAAcAAAA=")
 tile_set = ExtResource("2_lxcpb")
 metadata/_edit_lock_ = true
 
@@ -474,6 +480,7 @@ metadata/_edit_lock_ = true
 
 [node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AADv/wAAAAAHAAAAAADv/wEAAAAEAAAAAADv/wIAAAAGAAAAAADw/wEAAAAFAAAAAAD8/wAAAAAJAAAAAAD9/wAAAAAKAAAAAAD+/wAAAAANAAAAAAD4/wEAAAAJAAAAAAD5/wEAAAAKAAAAAAD6/wEAAAANAAAAAAD2/wYAAAAKAAAAAAD3/wUAAAAKAAAAAAD3/wYAAAALAAAAAADr/wYAAAANAAAAAADr/wcAAAAEAAAAAADr/wgAAAAGAAAAAADs/wcAAAAFAAAAAADv/wMAAAAHAAAAAADv/wQAAAAEAAAAAADv/wUAAAAGAAAAAADw/wQAAAAFAAAAAADn/wcAAAAJAAAAAADo/wcAAAAKAAAAAADp/wcAAAANAAAAAADw/wIAAAAJAAAAAADx/wIAAAAKAAAAAADy/wIAAAANAAAAAADr/wEAAAAJAAAAAADs/wEAAAAKAAAAAADt/wEAAAANAAAAAADo/wQAAAAKAAAAAADp/wMAAAAKAAAAAADp/wQAAAALAAAAAADu/w4AAAAKAAAAAADv/w0AAAAKAAAAAADv/w4AAAALAAAAAADs/wkAAAAKAAAAAADt/wgAAAAKAAAAAADt/wkAAAALAAAAAAA=")
 tile_set = ExtResource("2_lxcpb")
 metadata/_edit_lock_ = true
 
@@ -512,6 +519,42 @@ position = Vector2(-85, 321)
 [node name="TreeContainer" type="Node2D" parent="ysort"]
 z_as_relative = false
 y_sort_enabled = true
+
+[node name="tree1" parent="ysort/TreeContainer" instance=ExtResource("8_lyejb")]
+position = Vector2(-117, 308)
+
+[node name="tree2" parent="ysort/TreeContainer" instance=ExtResource("8_lyejb")]
+position = Vector2(-136, 332)
+
+[node name="tree3" parent="ysort/TreeContainer" instance=ExtResource("9_85qo6")]
+position = Vector2(-221, 306)
+
+[node name="tree4" parent="ysort/TreeContainer" instance=ExtResource("10_nrsmh")]
+position = Vector2(-340, 309)
+
+[node name="tree5" parent="ysort/TreeContainer" instance=ExtResource("11_ody6k")]
+position = Vector2(-422, 404)
+
+[node name="tree6" parent="ysort/TreeContainer" instance=ExtResource("8_lyejb")]
+position = Vector2(-373, 340)
+
+[node name="tree7" parent="ysort/TreeContainer" instance=ExtResource("12_f41nr")]
+position = Vector2(-393, 369)
+
+[node name="tree8" parent="ysort/TreeContainer" instance=ExtResource("10_nrsmh")]
+position = Vector2(-326, 388)
+
+[node name="tree9" parent="ysort/TreeContainer" instance=ExtResource("12_f41nr")]
+position = Vector2(-348, 402)
+
+[node name="tree10" parent="ysort/TreeContainer" instance=ExtResource("9_85qo6")]
+position = Vector2(-364, 485)
+
+[node name="tree11" parent="ysort/TreeContainer" instance=ExtResource("11_ody6k")]
+position = Vector2(-418, 510)
+
+[node name="tree12" parent="ysort/TreeContainer" instance=ExtResource("10_nrsmh")]
+position = Vector2(-387, 510)
 
 [node name="player" parent="ysort" instance=ExtResource("6_fksli")]
 z_index = 1

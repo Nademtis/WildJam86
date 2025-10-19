@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://ct1st4ee13rjr"]
+[gd_scene load_steps=24 format=4 uid="uid://ct1st4ee13rjr"]
 
 [ext_resource type="Script" uid="uid://behciuga33unj" path="res://scripts/level.gd" id="1_vndwe"]
 [ext_resource type="TileSet" uid="uid://bd3tahrpnqfb4" path="res://tileset/tileset.tres" id="2_gn8iv"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cial280fx31hk" path="res://assets/backgroundImages/parra/parr_bigtree.png" id="14_b27ru"]
 [ext_resource type="Texture2D" uid="uid://c8767u8wvs45y" path="res://assets/backgroundImages/parra/parr_cloud_back.png" id="16_aoyam"]
 [ext_resource type="PackedScene" uid="uid://w6o0cnwkm2p5" path="res://scenes/AudioLevelup.tscn" id="16_s88sk"]
+[ext_resource type="Texture2D" uid="uid://cg8v7xryf038s" path="res://scenes/enemies/enemy1/512x512 textures (61).png" id="18_5r2q3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yglgk"]
 size = Vector2(665, 175.5)
@@ -476,6 +477,7 @@ metadata/_edit_lock_ = true
 
 [node name="deco" type="TileMapLayer" parent="ysort/tilemaps/walkable"]
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AADn/wYAAAAKAAAAAADo/wUAAAAKAAAAAADo/wYAAAALAAAAAADt/wYAAAAKAAAAAADu/wUAAAAKAAAAAADu/wYAAAALAAAAAAD5/wYAAAAKAAAAAAD6/wUAAAAKAAAAAAD6/wYAAAALAAAAAAD8/wYAAAAEAAAAAAD9/wUAAAAKAAAAAAD9/wYAAAAHAAAAAAD+/wYAAAAHAAAAAAD//wYAAAAKAAAAAADp/wYAAAAEAAAAAADq/wUAAAAKAAAAAADq/wYAAAAHAAAAAADr/wYAAAAHAAAAAADs/wYAAAAKAAAAAAA=")
 tile_set = ExtResource("2_gn8iv")
 metadata/_edit_lock_ = true
 
@@ -622,3 +624,22 @@ position = Vector2(-309, 388)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="audioLevelUp2"]
 position = Vector2(-102, 14)
 shape = SubResource("RectangleShape2D_aoyam")
+
+[node name="audioLevelUp3" parent="." instance=ExtResource("16_s88sk")]
+position = Vector2(-309, 388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="audioLevelUp3"]
+position = Vector2(-102, 14)
+shape = SubResource("RectangleShape2D_aoyam")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-56, 329)
+color = Color(0.92549, 0.596078, 0.313726, 1)
+texture = ExtResource("18_5r2q3")
+texture_scale = 0.3
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-143, 337)
+color = Color(0.92549, 0.596078, 0.313726, 1)
+texture = ExtResource("18_5r2q3")
+texture_scale = 0.3
