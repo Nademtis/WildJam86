@@ -601,7 +601,7 @@ position = Vector2(73, 684)
 next_level_path = "res://levels/level_5.tscn"
 
 [node name="audioLevelUp" parent="." instance=ExtResource("13_qhnv2")]
-position = Vector2(-207, 432)
+position = Vector2(-93, 254)
 level_up_music = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="audioLevelUp"]

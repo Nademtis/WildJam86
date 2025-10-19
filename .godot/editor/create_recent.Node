@@ -1,9 +1,10 @@
+Sprite2D
+AnimationPlayer
 ColorRect
 CanvasLayer
 PointLight2D
 Marker2D
 CollisionShape2D
-Sprite2D
 Parallax2D
 ParallaxLayer
 ParallaxBackground
@@ -11,5 +12,3 @@ Node2D
 AudioStreamPlayer2D
 AudioStreamPlayer
 WorldEnvironment
-AnimationPlayer
-RichTextLabel

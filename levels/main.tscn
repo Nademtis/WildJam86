@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://butei8yip7reh"]
+[gd_scene load_steps=31 format=3 uid="uid://butei8yip7reh"]
 
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_2262g"]
 [ext_resource type="Script" uid="uid://b0sb5c542mjmt" path="res://scripts/main.gd" id="1_wdj6m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://c8m40cql11q7k" path="res://shaders/chromaticAberration.gdshader" id="2_etqu2"]
 [ext_resource type="Script" uid="uid://mtj0sitiaxmd" path="res://scripts/fade_to_black_canvas_layer.gd" id="2_ifaiv"]
 [ext_resource type="Script" uid="uid://ddo5xvmpype8u" path="res://scripts/juice_canvas_layer.gd" id="2_jw1n3"]
+[ext_resource type="Script" uid="uid://nban54rmnrdy" path="res://scenes/openingSequence.gd" id="2_nljbn"]
 [ext_resource type="Shader" uid="uid://cfmov07a0e6c1" path="res://shaders/vignette.gdshader" id="2_qy63d"]
 [ext_resource type="Shader" uid="uid://c7g1odt280dvm" path="res://shaders/black_screen.gdshader" id="3_5k4jt"]
 [ext_resource type="AudioStream" uid="uid://bf5ivkb3vo6a7" path="res://assets/audio/sfx/ambience/ambience1.ogg" id="3_6yxbg"]
@@ -45,6 +46,140 @@ shader = ExtResource("3_5k4jt")
 shader_parameter/radius = 0.0
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/screen_size = Vector2(1920, 1080)
+
+[sub_resource type="Animation" id="Animation_nljbn"]
+resource_name = "intro"
+length = 10.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.1, 7.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("headphones Recommended:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fullscreen recommended:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fullscreen recommended:theme_override_colors/default_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.1, 6.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.74902, 0.74902, 0.74902, 1), Color(0.74902, 0.74902, 0.74902, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("headphones Recommended:theme_override_colors/default_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4.1, 6.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.74978, 0.74978, 0.74978, 1), Color(0.74902, 0.74902, 0.74902, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w23s1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("headphones Recommended:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fullscreen recommended:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fullscreen recommended:theme_override_colors/default_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.74902, 0.74902, 0.74902, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("headphones Recommended:theme_override_colors/default_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.74978, 0.74978, 0.74978, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n1xy8"]
+_data = {
+&"RESET": SubResource("Animation_w23s1"),
+&"intro": SubResource("Animation_nljbn")
+}
 
 [sub_resource type="Resource" id="Resource_5k4jt"]
 script = ExtResource("4_ifaiv")
@@ -86,6 +221,7 @@ volume_db = -4.0
 bus = &"Music"
 
 [node name="focusMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="focusMenu"]
 z_index = 3
@@ -193,6 +329,59 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="reccomended" type="CanvasLayer" parent="."]
+script = ExtResource("2_nljbn")
+
+[node name="headphones Recommended" type="RichTextLabel" parent="reccomended"]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.74978, 0.74978, 0.74978, 1)
+theme_override_fonts/normal_font = ExtResource("9_m080e")
+theme_override_font_sizes/normal_font_size = 80
+text = "Headphones Recommended"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fullscreen recommended" type="RichTextLabel" parent="reccomended"]
+z_index = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.74902, 0.74902, 0.74902, 1)
+theme_override_fonts/normal_font = ExtResource("9_m080e")
+theme_override_font_sizes/normal_font_size = 80
+text = "Fullscreen recommended -->"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="reccomended"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="reccomended"]
+libraries = {
+&"": SubResource("AnimationLibrary_n1xy8")
+}
+autoplay = "intro"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(6, 6)
 editor_draw_limits = true
@@ -216,3 +405,5 @@ draw_limits = true
 metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
 
 [node name="levelContainer" type="Node2D" parent="."]
+
+[connection signal="animation_finished" from="reccomended/AnimationPlayer" to="reccomended" method="_on_animation_player_animation_finished"]

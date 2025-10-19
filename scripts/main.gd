@@ -28,7 +28,6 @@ func _on_window_focus_entered() -> void:
 func _on_window_focus_exited() -> void:
 	focus_menu.visible = true
 
-
 func set_follow_cam_limit(coll_shape : CollisionShape2D) -> void:
 	follow_pcam.limit_target = coll_shape.get_path()
 

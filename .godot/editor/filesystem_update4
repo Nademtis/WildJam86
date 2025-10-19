@@ -30,3 +30,6 @@ res://scripts/main.gd
 res://scripts/globals/PlayerStats.gd
 res://scenes/enemies/enemy1/enemy_stand_and_look.tscn
 res://scripts/level.gd
+res://scripts/fade_to_black_canvas_layer.gd
+res://scenes/openingSequence.gd
+res://levels/level_end.tscn

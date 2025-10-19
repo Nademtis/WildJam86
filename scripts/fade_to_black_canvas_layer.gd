@@ -6,6 +6,7 @@ var fade_time : float = 0.5
 
 func _ready() -> void:
 	#remove_black()
+	visible = true
 	Events.connect("fade_to_black", fade_to_black)
 	Events.connect("new_level_done_loading", remove_black)
 
