@@ -9,6 +9,8 @@ const FIRST_LEVEL_PATH = "res://levels/level_1.tscn"
 var current_level_path: String
 var new_level_path: String
 
+@onready var focus_menu: CanvasLayer = $focusMenu
+
 func _ready() -> void:
 	start_new_level(FIRST_LEVEL_PATH)
 	#current_level_path = FIRST_LEVEL
@@ -16,6 +18,16 @@ func _ready() -> void:
 	Events.connect("swap_level", init_level_swapping) # level_swapper uses this
 	Events.connect("restart_level", restart_level)
 	Events.connect("screen_is_black", swap_levels)
+	
+	get_window().focus_entered.connect(_on_window_focus_entered)
+	get_window().focus_exited.connect(_on_window_focus_exited)
+
+func _on_window_focus_entered() -> void:
+	focus_menu.visible = false
+
+func _on_window_focus_exited() -> void:
+	focus_menu.visible = true
+
 
 func set_follow_cam_limit(coll_shape : CollisionShape2D) -> void:
 	follow_pcam.limit_target = coll_shape.get_path()
