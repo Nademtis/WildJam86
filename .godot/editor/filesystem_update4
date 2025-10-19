@@ -29,3 +29,6 @@ res://levels/parallax.gd
 res://levels/level_12.tscn
 res://scripts/globals/PlayerStats.gd
 res://default_bus_layout.tres
+res://levels/level_end.tscn
+res://levels/level_2.tscn
+res://levels/level_13.tscn
