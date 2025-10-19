@@ -547,11 +547,11 @@ position = Vector2(-15, 38)
 [node name="enemyStandAndLook4" parent="ysort/EnemyContainer" node_paths=PackedStringArray("marker_list") instance=ExtResource("7_q8c6i")]
 position = Vector2(-77, 553)
 marker_list = [NodePath("Marker2D"), NodePath("Marker2D3")]
-duration_list = Array[float]([4.0, 4.0])
-rotation_speed = 1.0
+duration_list = Array[float]([4.0, 2.5])
+rotation_speed = 2.0
 
 [node name="Marker2D" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook4"]
-position = Vector2(37, -41)
+position = Vector2(-7, -59)
 
 [node name="Marker2D3" type="Marker2D" parent="ysort/EnemyContainer/enemyStandAndLook4"]
 position = Vector2(-39, 37)
