@@ -87,6 +87,8 @@ mask={
 
 [physics]
 
+2d/run_on_separate_thread=true
+2d/solver/solver_iterations=8
 common/physics_interpolation=true
 
 [rendering]

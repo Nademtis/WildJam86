@@ -35,9 +35,14 @@ var mask_timer: float = 0.0
 
 var last_mask_step: int = -1  # for mask visuals
 
+	
+
 func _ready() -> void:
 	sfx_max_mask_volume =  masking_sfx.volume_db
 	dieanim.visible = false
+	
+	#print(step_playlist.stream)
+	#print(step_playlist.stream.can_be_sampled())
 
 func _process(delta: float) -> void:
 	if PlayerStats.mask_unlocked:
@@ -158,9 +163,9 @@ func kill_player() -> void:
 	while elapsed < shake_time:
 		var offset_x := sin(elapsed * 50.0) * amplitude
 		position.x += offset_x
-		await get_tree().process_frame
+		#await get_tree().process_frame
 		position.x -= offset_x
-		elapsed += get_process_delta_time()
+		#elapsed += get_process_delta_time()
 	
 	#await get_tree().create_timer(1).timeout
 	

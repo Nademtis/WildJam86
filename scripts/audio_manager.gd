@@ -16,7 +16,7 @@ var max_level : int = 4
 const MUSIC_BUS : String = "Music"
 var MUSIC_BUS_INDEX : int
 
-var LOW_PASS : AudioEffectLowPassFilter
+#var LOW_PASS : AudioEffectLowPassFilter
 var min_hz : float= 1200.0
 var max_hz : float = 20000.0
 var duration : float = 0.6
@@ -38,6 +38,11 @@ func start_sounds() -> void:
 	#ambience
 	ambience_1.play()
 	#ambience_2.play()
+	
+	print(music_1.stream)
+	print(music_1.stream.can_be_sampled())
+	
+	print(AudioServer.get_driver_name())
 	
 	#music
 	#music_1.play()
@@ -74,12 +79,12 @@ func stop_all_music() -> void:
 	music_3.stop()
 	music_3_drums.stop()
 
-func add_eq_filter(is_hidden : bool) -> void:
-	if not LOW_PASS:
-		push_warning("lowpas filter not found on music bus")
-		return
-	
-	var target_hz := min_hz if is_hidden else max_hz
-	
-	var tween := create_tween()
-	tween.tween_property(LOW_PASS, "cutoff_hz", target_hz, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+#func add_eq_filter(is_hidden : bool) -> void:
+	#if not LOW_PASS:
+		#push_warning("lowpas filter not found on music bus")
+		#return
+	#
+	#var target_hz := min_hz if is_hidden else max_hz
+	#
+	#var tween := create_tween()
+	#tween.tween_property(LOW_PASS, "cutoff_hz", target_hz, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)

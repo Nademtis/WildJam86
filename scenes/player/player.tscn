@@ -987,6 +987,7 @@ metadata/_edit_lock_ = true
 stream = SubResource("AudioStreamPlaylist_ioxgp")
 volume_db = -10.895
 bus = &"SFX"
+playback_type = 2
 
 [node name="bushStepPlaylist" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamPlaylist_j4nxn")
