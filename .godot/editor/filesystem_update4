@@ -1,5 +1,4 @@
-res://default_bus_layout.tres
-res://levels/main.tscn
+res://levels/level_11.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://shaders/chromaticAberration.gdshader
 res://scenes/camera_shake.tres
@@ -14,13 +13,13 @@ res://shaders/foliage.gdshader
 res://shaders/foliage_material.tres
 res://shaders/sway.gdshader
 res://shaders/sway_material.tres
+res://levels/main.tscn
 res://levels/level_end.tscn
 res://levels/level_6_mask.tscn
 res://scenes/player/player.tscn
-res://scripts/main.gd
 res://levels/level_5.tscn
 res://levels/level_7.tscn
 res://levels/level_8.tscn
 res://levels/level_9.tscn
-res://scripts/globals/PlayerStats.gd
-res://levels/level_11.tscn
+res://scripts/audio_manager.gd
+res://addons/phantom_camera/scripts/panel/updater/download_update_panel.gd

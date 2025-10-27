@@ -21,15 +21,13 @@ var min_hz : float= 1200.0
 var max_hz : float = 20000.0
 var duration : float = 0.6
 
-var PITCH_SHIFT : AudioEffectPitchShift
-var pitch_scale_max : float = 1.0
-var pitch_scale_min : float = 0.7
+
 
 
 func _ready() -> void:
 	MUSIC_BUS_INDEX = AudioServer.get_bus_index(MUSIC_BUS)
 	
-	LOW_PASS = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 0)
+	#LOW_PASS = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 0)
 	#PITCH_SHIFT = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 1)
 	
 	Events.connect("is_hidden", in_bush_effects)
@@ -47,7 +45,8 @@ func start_sounds() -> void:
 
 func in_bush_effects(is_hidden : bool) -> void:
 	#add_pitchShift(is_hidden)
-	add_eq_filter(is_hidden)
+	#add_eq_filter(is_hidden)
+	pass
 
 func level_up_music(level_up : bool) -> void:
 	var new_level = clamp(current_level + (1 if level_up else -1), 0, max_level)
@@ -74,15 +73,6 @@ func stop_all_music() -> void:
 	music_2.stop()
 	music_3.stop()
 	music_3_drums.stop()
-
-func add_pitchShift(is_hidden : bool) -> void:
-	if not PITCH_SHIFT:
-		push_warning("pitchshift filter not found on music bus")
-		return
-	
-	var target_pitch := pitch_scale_min if is_hidden else pitch_scale_max
-	var tween := create_tween()
-	tween.tween_property(PITCH_SHIFT, "pitch_scale", target_pitch, duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 
 func add_eq_filter(is_hidden : bool) -> void:
 	if not LOW_PASS:

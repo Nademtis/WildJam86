@@ -109,7 +109,7 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 	zip_file.store_buffer(body)
 	zip_file.close()
 
-	OS.move_to_trash(ProjectSettings.globalize_path("res://addons/phantom_camera"))
+	#OS.move_to_trash(ProjectSettings.globalize_path("res://addons/phantom_camera"))
 
 	var zip_reader: ZIPReader = ZIPReader.new()
 	zip_reader.open(TEMP_FILE_NAME)

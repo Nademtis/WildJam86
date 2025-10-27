@@ -444,6 +444,7 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgdib"]
 
 [node name="level" type="Node2D"]
+position = Vector2(22, -1)
 script = ExtResource("1_lomhg")
 
 [node name="BG" type="ColorRect" parent="."]
@@ -457,6 +458,7 @@ color = Color(0.121569, 0.160784, 0.215686, 1)
 [node name="cameraLimit" type="Node2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cameraLimit"]
+visible = false
 position = Vector2(-221, 471)
 shape = SubResource("RectangleShape2D_yglgk")
 
