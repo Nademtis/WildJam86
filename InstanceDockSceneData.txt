@@ -1,0 +1,17 @@
+[{
+"name": "tree",
+"scenes": [{
+&"scene": "res://scenes/tree_1.tscn"
+}, {
+&"scene": "res://scenes/tree_2.tscn"
+}, {
+&"scene": "res://scenes/tree_3.tscn"
+}, {
+&"scene": "res://scenes/tree_4.tscn"
+}, {
+&"scene": "res://scenes/tree_5.tscn"
+}]
+}, {
+"name": "bush",
+"scenes": []
+}]

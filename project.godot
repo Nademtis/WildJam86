@@ -8,13 +8,18 @@
 
 config_version=5
 
+[addons]
+
+instance_dock/scene_data_file="res://InstanceDockSceneData.txt"
+instance_dock/preview_resolution=Vector2i(64, 64)
+
 [application]
 
-config/name="WildJam86-ver.4.4"
+config/name="WildJam86-ver.4.5.1"
 run/main_scene="uid://butei8yip7reh"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="MaskedEscape"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]

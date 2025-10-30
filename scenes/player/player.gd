@@ -163,11 +163,9 @@ func kill_player() -> void:
 	while elapsed < shake_time:
 		var offset_x := sin(elapsed * 50.0) * amplitude
 		position.x += offset_x
-		#await get_tree().process_frame
+		await get_tree().process_frame
 		position.x -= offset_x
-		#elapsed += get_process_delta_time()
-	
-	#await get_tree().create_timer(1).timeout
+		elapsed += get_process_delta_time()
 	
 	Events.emit_signal("restart_level")
 

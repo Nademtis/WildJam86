@@ -25,12 +25,12 @@ var duration : float = 0.6
 
 
 func _ready() -> void:
-	MUSIC_BUS_INDEX = AudioServer.get_bus_index(MUSIC_BUS)
+	#MUSIC_BUS_INDEX = AudioServer.get_bus_index(MUSIC_BUS)
 	
 	#LOW_PASS = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 0)
 	#PITCH_SHIFT = AudioServer.get_bus_effect(MUSIC_BUS_INDEX, 1)
 	
-	Events.connect("is_hidden", in_bush_effects)
+	#Events.connect("is_hidden", in_bush_effects)
 	Events.connect("level_up_music", level_up_music)
 	start_sounds()
 
@@ -39,19 +39,14 @@ func start_sounds() -> void:
 	ambience_1.play()
 	#ambience_2.play()
 	
-	print(music_1.stream)
-	print(music_1.stream.can_be_sampled())
-	
-	print(AudioServer.get_driver_name())
-	
 	#music
 	#music_1.play()
 	#music_1_drums.play()
 
-func in_bush_effects(is_hidden : bool) -> void:
-	#add_pitchShift(is_hidden)
+#func in_bush_effects(is_hidden : bool) -> void:
+	##add_pitchShift(is_hidden)
 	#add_eq_filter(is_hidden)
-	pass
+	#pass
 
 func level_up_music(level_up : bool) -> void:
 	var new_level = clamp(current_level + (1 if level_up else -1), 0, max_level)

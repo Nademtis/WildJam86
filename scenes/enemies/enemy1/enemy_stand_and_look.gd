@@ -101,7 +101,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 func _on_timer_timeout() -> void:
 	if player_area:
 		if player_area.get_parent().can_kill_player():
-			if check_los_with_player(player_area.global_position):
+			if await check_los_with_player(player_area.global_position):
 				player_area.get_parent().kill_player()
 				kill_timer.stop()
 
@@ -119,6 +119,8 @@ func check_los_with_player(target_pos : Vector2) -> bool:
 	
 	var local_target = to_local(target_pos)
 	ray_cast_2d.target_position = local_target
+
+	await get_tree().physics_frame
 	ray_cast_2d.force_raycast_update()
 	
 	if ray_cast_2d.is_colliding():
